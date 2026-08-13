@@ -1,0 +1,11 @@
+4 Fingers Hand:
+
+cd allegro_hand_ros_v5
+source devel/setup.bash
+roslaunch allegro_hand_controllers allegro_hand.launch NUM:=1 CAN_DEVICE:=/dev/pcanusb33 AUTO_CAN:=false KEYBOARD:=true HAND:=right TYPE:=B
+
+3 Fingers Hand:
+
+cd allegro_hand_ros_v5-3Finger
+source devel/setup.bash
+roslaunch allegro_3f_hand_controllers allegro_hand.launch NUM:=0 CAN_DEVICE:=/dev/pcanusb32 AUTO_CAN:=false KEYBOARD:=true

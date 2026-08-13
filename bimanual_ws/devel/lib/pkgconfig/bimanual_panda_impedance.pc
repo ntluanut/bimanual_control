@@ -1,0 +1,8 @@
+prefix=/home/scstln/bimanual_ws/devel
+
+Name: bimanual_panda_impedance
+Description: Description of bimanual_panda_impedance
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

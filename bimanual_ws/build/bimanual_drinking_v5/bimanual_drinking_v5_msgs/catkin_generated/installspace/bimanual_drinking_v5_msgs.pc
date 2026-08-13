@@ -1,0 +1,8 @@
+prefix=/home/scstln/bimanual_ws/install
+
+Name: bimanual_drinking_v5_msgs
+Description: Description of bimanual_drinking_v5_msgs
+Version: 0.5.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime std_msgs

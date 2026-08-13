@@ -1,0 +1,8 @@
+prefix=/home/scstln/bimanual_ws/install
+
+Name: bimanual_drinking_v5_bringup
+Description: Description of bimanual_drinking_v5_bringup
+Version: 0.5.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

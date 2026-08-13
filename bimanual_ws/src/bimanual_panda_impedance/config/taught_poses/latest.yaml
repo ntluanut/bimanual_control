@@ -1,0 +1,27 @@
+controller: DualArmCartesianImpedanceExampleController
+left_arm_id: panda_left
+right_arm_id: panda_right
+poses:
+  dual_safe_home:
+    frame_id: panda_2_link0
+    position:
+      x: 0.6262328453827355
+      y: -0.44579156717111523
+      z: 0.3311295625488459
+    orientation:
+      x: 0.5348865073256271
+      y: 0.4648987996934864
+      z: -0.5537252830587611
+      w: 0.4372025013964726
+  dual_small_test:
+    frame_id: panda_2_link0
+    position:
+      x: 0.6262327372053369
+      y: -0.4457893433799376
+      z: 0.33112941893668846
+    orientation:
+      x: 0.5348871994483652
+      y: 0.4648987837931229
+      z: -0.5537254918583823
+      w: 0.43720140710972916
+last_updated: '2026-07-24T16:05:11'

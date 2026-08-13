@@ -1,0 +1,48 @@
+robot: panda_right
+description: Taught Cartesian poses for the right Panda
+poses:
+  bottle_approach:
+    frame_id: panda_right_link0
+    position:
+      x: 0.6255434235917908
+      y: 0.5170667604380392
+      z: 0.3511959610148493
+    orientation:
+      x: 0.3814138453142331
+      y: 0.7197551245916872
+      z: 0.5253713847621723
+      w: 0.24588807880760052
+  right_safe_home:
+    frame_id: panda_right_link0
+    position:
+      x: 0.6255434168832087
+      y: 0.5170666820505873
+      z: 0.3512031989241835
+    orientation:
+      x: 0.3814137736103288
+      y: 0.7197514760735506
+      z: 0.5253761754402085
+      w: 0.24588863387739787
+  bottle_preapproach:
+    frame_id: panda_right_link0
+    position:
+      x: 0.6255484985579661
+      y: 0.5170605948679841
+      z: 0.3512006048104078
+    orientation:
+      x: 0.3814165663165887
+      y: 0.7197517117881653
+      z: 0.5253721962017256
+      w: 0.24589211409771713
+  bottle_grasp:
+    frame_id: panda_right_link0
+    position:
+      x: 0.6255440440419207
+      y: 0.5170651733854918
+      z: 0.3512021395666833
+    orientation:
+      x: 0.38141361546775576
+      y: 0.719752689246421
+      z: 0.5253741596207948
+      w: 0.24588963512336906
+last_updated: '2026-07-24T10:40:31'

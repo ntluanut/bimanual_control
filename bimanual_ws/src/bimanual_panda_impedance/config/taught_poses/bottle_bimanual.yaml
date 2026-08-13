@@ -1,0 +1,58 @@
+format_version: 1
+formations:
+  bottle_ready:
+    recorded_at: '2026-08-07T12:33:50'
+    reference_frame: panda_2_link0
+    left:
+      arm_id: panda_2
+      base_frame: panda_2_link0
+      ee_frame: panda_2_EE
+      pose_in_reference:
+        position:
+          x: 0.5958319217379318
+          y: -0.4631671195154085
+          z: 0.22425726545966962
+        orientation:
+          x: -0.5144812695600978
+          y: -0.4456935183634115
+          z: 0.5673841963287738
+          w: -0.46340207672929634
+    right:
+      arm_id: panda_1
+      base_frame: panda_1_link0
+      ee_frame: panda_1_EE
+      pose_in_reference:
+        position:
+          x: 0.5874514144694833
+          y: -0.5013258351984713
+          z: 0.38500557387333334
+        orientation:
+          x: 0.39583661402091874
+          y: 0.8640679861490178
+          z: 0.26805115516415284
+          w: 0.15763397009527616
+    relative:
+      T_left_right_row_major:
+      - 0.03452902417079369
+      - -0.6473686946676371
+      - 0.7613944573308457
+      - -0.1573370230101931
+      - -0.7584274872215246
+      - 0.4791657494818861
+      - 0.44180078219748237
+      - -0.006291283863376407
+      - -0.6508421414726135
+      - -0.5927174349450014
+      - -0.47443708665697776
+      - 0.05071311546485863
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      straight_line_distance_m: 0.16542774598752075
+      nominal_expected_distance_m: 0.18
+      translation_in_left_frame_m:
+      - -0.1573370230101931
+      - -0.006291283863376407
+      - 0.05071311546485863
+      relative_rotation_deg: 118.70964563395991

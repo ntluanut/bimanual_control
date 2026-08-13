@@ -1,0 +1,8 @@
+prefix=/home/scstln/bimanual_ws/install
+
+Name: left_panda_fixed_pose_test
+Description: Description of left_panda_fixed_pose_test
+Version: 0.1.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lleft_panda_fixed_pose_test
+Requires: controller_interface eigen_conversions franka_hw franka_msgs geometry_msgs hardware_interface pluginlib roscpp std_srvs
