@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "right_panda_fixed_pose_test"
-PROJECT_SPACE_DIR = "/home/scstln/bimanual_ws/install"
+PROJECT_SPACE_DIR = "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install"
 PROJECT_VERSION = "0.0.1"

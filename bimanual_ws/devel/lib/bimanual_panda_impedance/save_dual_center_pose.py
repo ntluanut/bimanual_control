@@ -3,7 +3,7 @@
 # generated from catkin/cmake/template/script.py.in
 # creates a relay to a python script source file, acting as that file.
 # The purpose is that of a symlink
-python_script = '/home/scstln/bimanual_ws/src/bimanual_panda_impedance/scripts/save_dual_center_pose.py'
+python_script = '/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/bimanual_panda_impedance/scripts/save_dual_center_pose.py'
 with open(python_script, 'r') as fh:
     context = {
         '__builtins__': __builtins__,

@@ -1,8 +1,0 @@
-prefix=/home/scstln/bimanual_ws/devel
-
-Name: bimanual_drinking_v4_bringup
-Description: Description of bimanual_drinking_v4_bringup
-Version: 0.4.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

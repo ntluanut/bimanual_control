@@ -1,5 +1,5 @@
 # generated from catkin/cmake/template/order_packages.context.py.in
-source_root_dir = '/home/scstln/bimanual_ws/src'
+source_root_dir = '/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src'
 whitelisted_packages = ''.split(';') if '' != '' else []
 blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/home/scstln/bimanual_ws/devel;/home/scstln/franka_ws/devel;/opt/ros/noetic'.split(';') if '/home/scstln/bimanual_ws/devel;/home/scstln/franka_ws/devel;/opt/ros/noetic' != '' else []
+underlay_workspaces = '/opt/ros/noetic'.split(';') if '/opt/ros/noetic' != '' else []

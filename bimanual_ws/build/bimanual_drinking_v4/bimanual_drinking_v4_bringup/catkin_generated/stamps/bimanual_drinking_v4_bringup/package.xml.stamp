@@ -1,1 +1,0 @@
-<?xml version="1.0"?><package format="2"><name>bimanual_drinking_v4_bringup</name><version>0.4.0</version><description>Bringup for v4.</description><maintainer email="ntluan.ut@gmail.com">Thanh-Luan Nguyen</maintainer><license>MIT</license><buildtool_depend>catkin</buildtool_depend><exec_depend>bimanual_drinking_v4_control</exec_depend></package>
