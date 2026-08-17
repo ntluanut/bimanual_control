@@ -1,4 +1,4 @@
-prefix=/home/scstln/bimanual_ws/devel
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel
 
 Name: bimanual_panda_impedance
 Description: Description of bimanual_panda_impedance
