@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="pipeline" default="ompl" />
+
+    <arg name="load_gripper" default="true" />
+    <arg name="transmission" default="effort" />
+    <arg name="use_sim_time" doc="should mujoco publish its simulation time as ros time?"/>
+
+    <param name="/use_sim_time" value="$(arg use_sim_time)"/>
+
+    <include file="$(find franka_mujoco)/launch/panda.launch" pass_all_args="true">
+        <arg name="rviz" value="false" />
+        <arg name="controller" default="$(arg transmission)_joint_trajectory_controller" />
+    </include>
+
+    <!-- <include file="$(find panda_moveit_config)/launch/demo.launch" pass_all_args="true"> -->
+    <include file="$(find panda_moveit_config)/launch/demo.launch" pass_all_args="true">
+         <!-- Description is already loaded by the mujoco launchfile  -->
+        <arg name="load_robot_description" value="false" />
+         <!-- Simple controller manager provides ros_control's JointTrajectory controllers as well as GripperCommand actions  -->
+        <arg name="moveit_controller_manager" value="simple" />
+    </include>
+</launch>
