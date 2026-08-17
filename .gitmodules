@@ -1,0 +1,4 @@
+[submodule "bimanual_ws/src/src/ros_control"]
+	path = bimanual_ws/src/src/ros_control
+	url = https://github.com/ros-controls/ros_control.git
+	branch = noetic-devel
