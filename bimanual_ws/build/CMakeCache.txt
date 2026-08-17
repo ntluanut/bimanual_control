@@ -306,6 +306,9 @@ EMPY_EXECUTABLE:FILEPATH=EMPY_EXECUTABLE-NOTFOUND
 //Empy script
 EMPY_SCRIPT:STRING=/usr/lib/python3/dist-packages/em.py
 
+//The directory containing a CMake configuration file for Franka.
+Franka_DIR:PATH=Franka_DIR-NOTFOUND
+
 //Path to a library.
 GMOCK_LIBRARY:FILEPATH=GMOCK_LIBRARY-NOTFOUND
 
@@ -383,6 +386,9 @@ UBUNTU:BOOL=TRUE
 UBUNTU_FOCAL:BOOL=TRUE
 
 //Path to a file.
+_file_name:FILEPATH=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/combined_robot_hw_tests/test/cm_test.test
+
+//Path to a file.
 _gmock_INCLUDES:FILEPATH=/usr/src/googletest/googlemock/include/gmock/gmock.h
 
 //Path to a file.
@@ -394,6 +400,15 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 //Path to a file.
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
+//Path to a file.
+_path_name:FILEPATH=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/controller_manager_tests/test
+
+//The directory containing a CMake configuration file for actionlib.
+actionlib_DIR:PATH=/opt/ros/noetic/share/actionlib/cmake
+
+//The directory containing a CMake configuration file for actionlib_msgs.
+actionlib_msgs_DIR:PATH=/opt/ros/noetic/share/actionlib_msgs/cmake
+
 //Value Computed by CMake
 bimanual_panda_impedance_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/bimanual_panda_impedance
 
@@ -403,8 +418,116 @@ bimanual_panda_impedance_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 
+//The directory containing a CMake configuration file for class_loader.
+class_loader_DIR:PATH=/opt/ros/noetic/share/class_loader/cmake
+
+//Value Computed by CMake
+combined_robot_hw_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/combined_robot_hw
+
+//The directory containing a CMake configuration file for combined_robot_hw.
+combined_robot_hw_DIR:PATH=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/combined_robot_hw/cmake
+
+//Dependencies for the target
+combined_robot_hw_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+
+//Value Computed by CMake
+combined_robot_hw_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/combined_robot_hw
+
+//Value Computed by CMake
+combined_robot_hw_tests_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/combined_robot_hw_tests
+
+//Dependencies for the target
+combined_robot_hw_tests_LIB_DEPENDS:STATIC=general;combined_robot_hw;general;controller_manager;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+
+//Value Computed by CMake
+combined_robot_hw_tests_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/combined_robot_hw_tests
+
+//The directory containing a CMake configuration file for control_msgs.
+control_msgs_DIR:PATH=/opt/ros/noetic/share/control_msgs/cmake
+
+//Value Computed by CMake
+controller_interface_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/controller_interface
+
 //The directory containing a CMake configuration file for controller_interface.
-controller_interface_DIR:PATH=controller_interface_DIR-NOTFOUND
+controller_interface_DIR:PATH=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/controller_interface/cmake
+
+//Value Computed by CMake
+controller_interface_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/controller_interface
+
+//Value Computed by CMake
+controller_manager_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/controller_manager
+
+//The directory containing a CMake configuration file for controller_manager.
+controller_manager_DIR:PATH=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/controller_manager/cmake
+
+//Dependencies for the target
+controller_manager_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+
+//Value Computed by CMake
+controller_manager_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/controller_manager
+
+//Value Computed by CMake
+controller_manager_msgs_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/controller_manager_msgs
+
+//The directory containing a CMake configuration file for controller_manager_msgs.
+controller_manager_msgs_DIR:PATH=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/controller_manager_msgs/cmake
+
+//Value Computed by CMake
+controller_manager_msgs_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/controller_manager_msgs
+
+//Value Computed by CMake
+controller_manager_tests_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/controller_manager_tests
+
+//The directory containing a CMake configuration file for controller_manager_tests.
+controller_manager_tests_DIR:PATH=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/controller_manager_tests/cmake
+
+//Dependencies for the target
+controller_manager_tests_LIB_DEPENDS:STATIC=general;controller_manager;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+
+//Value Computed by CMake
+controller_manager_tests_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/controller_manager_tests
+
+//The directory containing a CMake configuration file for cpp_common.
+cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
+
+//Value Computed by CMake
+franka_description_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/franka_ros/franka_description
+
+//Value Computed by CMake
+franka_description_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_description
+
+//Value Computed by CMake
+franka_gripper_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/franka_ros/franka_gripper
+
+//Value Computed by CMake
+franka_gripper_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_gripper
+
+//Value Computed by CMake
+franka_ros_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/franka_ros/franka_ros
+
+//Value Computed by CMake
+franka_ros_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_ros
+
+//The directory containing a CMake configuration file for gencpp.
+gencpp_DIR:PATH=/opt/ros/noetic/share/gencpp/cmake
+
+//The directory containing a CMake configuration file for geneus.
+geneus_DIR:PATH=/opt/ros/noetic/share/geneus/cmake
+
+//The directory containing a CMake configuration file for genlisp.
+genlisp_DIR:PATH=/opt/ros/noetic/share/genlisp/cmake
+
+//The directory containing a CMake configuration file for genmsg.
+genmsg_DIR:PATH=/opt/ros/noetic/share/genmsg/cmake
+
+//The directory containing a CMake configuration file for gennodejs.
+gennodejs_DIR:PATH=/opt/ros/noetic/share/gennodejs/cmake
+
+//The directory containing a CMake configuration file for genpy.
+genpy_DIR:PATH=/opt/ros/noetic/share/genpy/cmake
+
+//The directory containing a CMake configuration file for geometry_msgs.
+geometry_msgs_DIR:PATH=/opt/ros/noetic/share/geometry_msgs/cmake
 
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/gtest/googlemock
@@ -453,16 +576,82 @@ gtest_hide_internal_symbols:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
 
 //Value Computed by CMake
-left_panda_bottle_pose_controller_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/left_panda_bottle_pose_controller
+hardware_interface_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/hardware_interface
+
+//The directory containing a CMake configuration file for hardware_interface.
+hardware_interface_DIR:PATH=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/hardware_interface/cmake
 
 //Value Computed by CMake
-left_panda_bottle_pose_controller_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/left_panda_bottle_pose_controller
+hardware_interface_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/hardware_interface
+
+//Path to a library.
+lib:FILEPATH=/opt/ros/noetic/lib/libactionlib.so
+
+//The directory containing a CMake configuration file for message_generation.
+message_generation_DIR:PATH=/opt/ros/noetic/share/message_generation/cmake
+
+//The directory containing a CMake configuration file for message_runtime.
+message_runtime_DIR:PATH=/opt/ros/noetic/share/message_runtime/cmake
+
+//The directory containing a CMake configuration file for pluginlib.
+pluginlib_DIR:PATH=/opt/ros/noetic/share/pluginlib/cmake
 
 //Value Computed by CMake
 right_panda_fixed_pose_test_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/right_panda_fixed_pose_test
 
 //Value Computed by CMake
 right_panda_fixed_pose_test_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/right_panda_fixed_pose_test
+
+//Value Computed by CMake
+ros_control_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/ros_control
+
+//Value Computed by CMake
+ros_control_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/ros_control
+
+//The directory containing a CMake configuration file for rosconsole.
+rosconsole_DIR:PATH=/opt/ros/noetic/share/rosconsole/cmake
+
+//The directory containing a CMake configuration file for roscpp.
+roscpp_DIR:PATH=/opt/ros/noetic/share/roscpp/cmake
+
+//The directory containing a CMake configuration file for roscpp_serialization.
+roscpp_serialization_DIR:PATH=/opt/ros/noetic/share/roscpp_serialization/cmake
+
+//The directory containing a CMake configuration file for roscpp_traits.
+roscpp_traits_DIR:PATH=/opt/ros/noetic/share/roscpp_traits/cmake
+
+//The directory containing a CMake configuration file for rosgraph_msgs.
+rosgraph_msgs_DIR:PATH=/opt/ros/noetic/share/rosgraph_msgs/cmake
+
+//The directory containing a CMake configuration file for roslib.
+roslib_DIR:PATH=/opt/ros/noetic/share/roslib/cmake
+
+//The directory containing a CMake configuration file for rospack.
+rospack_DIR:PATH=/opt/ros/noetic/share/rospack/cmake
+
+//The directory containing a CMake configuration file for rostest.
+rostest_DIR:PATH=/opt/ros/noetic/share/rostest/cmake
+
+//The directory containing a CMake configuration file for rostime.
+rostime_DIR:PATH=/opt/ros/noetic/share/rostime/cmake
+
+//Value Computed by CMake
+rqt_controller_manager_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/rqt_controller_manager
+
+//Value Computed by CMake
+rqt_controller_manager_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/rqt_controller_manager
+
+//The directory containing a CMake configuration file for sensor_msgs.
+sensor_msgs_DIR:PATH=/opt/ros/noetic/share/sensor_msgs/cmake
+
+//The directory containing a CMake configuration file for std_msgs.
+std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
+
+//The directory containing a CMake configuration file for trajectory_msgs.
+trajectory_msgs_DIR:PATH=/opt/ros/noetic/share/trajectory_msgs/cmake
+
+//The directory containing a CMake configuration file for xmlrpcpp.
+xmlrpcpp_DIR:PATH=/opt/ros/noetic/share/xmlrpcpp/cmake
 
 
 ########################
@@ -612,7 +801,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=18
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
