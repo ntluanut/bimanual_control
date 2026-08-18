@@ -1,0 +1,8 @@
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install
+
+Name: bimanual_robot_project_mujoco
+Description: Description of bimanual_robot_project_mujoco
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

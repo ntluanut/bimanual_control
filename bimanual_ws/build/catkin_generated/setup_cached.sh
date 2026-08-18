@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/scstln/bimanual_ws/build'
+export PATH='/uolstore/home/users/sc23j3k/.local/bin:/opt/ros/noetic/bin:/uolstore/home/users/sc23j3k/bin:/usr/lib64/qt6/bin:/uolstore/home/users/sc23j3k/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+export PKG_CONFIG_PATH="/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PWD='/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build'
+export PYTHONPATH="/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages:$PYTHONPATH"

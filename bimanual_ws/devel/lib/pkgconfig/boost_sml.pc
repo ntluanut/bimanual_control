@@ -1,0 +1,8 @@
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel
+
+Name: boost_sml
+Description: Description of boost_sml
+Version: 0.1.2
+Cflags: -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/boost_sml/include -I/usr/include
+Libs: -L${prefix}/lib -lboost_sml_example /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+Requires: roscpp

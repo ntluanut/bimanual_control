@@ -67,14 +67,14 @@ set(franka_gripper_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(franka_gripper_SOURCE_PREFIX /home/scstln/bimanual_ws/src/franka_ros/franka_gripper)
-  set(franka_gripper_DEVEL_PREFIX /home/scstln/bimanual_ws/devel)
+  set(franka_gripper_SOURCE_PREFIX /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_gripper)
+  set(franka_gripper_DEVEL_PREFIX /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel)
   set(franka_gripper_INSTALL_PREFIX "")
   set(franka_gripper_PREFIX ${franka_gripper_DEVEL_PREFIX})
 else()
   set(franka_gripper_SOURCE_PREFIX "")
   set(franka_gripper_DEVEL_PREFIX "")
-  set(franka_gripper_INSTALL_PREFIX /home/scstln/bimanual_ws/install)
+  set(franka_gripper_INSTALL_PREFIX /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install)
   set(franka_gripper_PREFIX ${franka_gripper_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(franka_gripper_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/scstln/bimanual_ws/devel/include;/home/scstln/bimanual_ws/src/franka_ros/franka_gripper/include;/usr/local/include " STREQUAL " ")
+if(NOT "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_gripper/include;/uolstore/home/users/sc23j3k/.local/include " STREQUAL " ")
   set(franka_gripper_INCLUDE_DIRS "")
-  set(_include_dirs "/home/scstln/bimanual_ws/devel/include;/home/scstln/bimanual_ws/src/franka_ros/franka_gripper/include;/usr/local/include")
+  set(_include_dirs "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_gripper/include;/uolstore/home/users/sc23j3k/.local/include")
   if(NOT "https://github.com/frankaemika/franka_ros/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/frankaemika/franka_ros/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://wiki.ros.org/franka_gripper " STREQUAL " ")
@@ -110,13 +110,13 @@ if(NOT "/home/scstln/bimanual_ws/devel/include;/home/scstln/bimanual_ws/src/fran
         message(FATAL_ERROR "Project 'franka_gripper' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'franka_gripper' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/scstln/bimanual_ws/src/franka_ros/franka_gripper/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'franka_gripper' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_gripper/${idir}'.  ${_report}")
     endif()
     _list_append_unique(franka_gripper_INCLUDE_DIRS ${include})
   endforeach()
 endif()
 
-set(libraries "franka_gripper;/usr/local/lib/libfranka.so.0.9.2")
+set(libraries "franka_gripper;/uolstore/home/users/sc23j3k/.local/lib/libfranka.so.0.8.0")
 foreach(library ${libraries})
   # keep build configuration keywords, generator expressions, target names, and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/scstln/bimanual_ws/devel/lib;/home/scstln/bimanual_ws/devel/lib;/home/scstln/franka_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib;/uolstore/home/users/sc23j3k/.local/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

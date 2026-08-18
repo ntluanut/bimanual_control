@@ -1,0 +1,8 @@
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel
+
+Name: panda_bottle_pose_controller
+Description: Description of panda_bottle_pose_controller
+Version: 0.1.0
+Cflags: -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/panda_bottle_pose_controller/include
+Libs: -L${prefix}/lib -lpanda_bottle_pose_controller
+Requires: controller_interface franka_hw franka_msgs geometry_msgs hardware_interface pluginlib realtime_tools roscpp std_srvs

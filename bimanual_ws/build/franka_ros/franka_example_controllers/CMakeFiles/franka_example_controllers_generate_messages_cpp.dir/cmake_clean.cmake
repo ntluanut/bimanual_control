@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/scstln/bimanual_ws/devel/include/franka_example_controllers/JointTorqueComparison.h"
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/franka_example_controllers/JointTorqueComparison.h"
   "CMakeFiles/franka_example_controllers_generate_messages_cpp"
 )
 

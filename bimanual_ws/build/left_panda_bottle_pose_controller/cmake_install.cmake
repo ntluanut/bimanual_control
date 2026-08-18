@@ -1,8 +1,8 @@
-# Install script for directory: /home/scstln/bimanual_ws/src/left_panda_bottle_pose_controller
+# Install script for directory: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/left_panda_bottle_pose_controller
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/scstln/bimanual_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Release")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -37,19 +37,24 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/scstln/bimanual_ws/build/left_panda_bottle_pose_controller/catkin_generated/installspace/left_panda_bottle_pose_controller.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/left_panda_bottle_pose_controller/catkin_generated/installspace/left_panda_bottle_pose_controller.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/left_panda_bottle_pose_controller/cmake" TYPE FILE FILES
-    "/home/scstln/bimanual_ws/build/left_panda_bottle_pose_controller/catkin_generated/installspace/left_panda_bottle_pose_controllerConfig.cmake"
-    "/home/scstln/bimanual_ws/build/left_panda_bottle_pose_controller/catkin_generated/installspace/left_panda_bottle_pose_controllerConfig-version.cmake"
+    "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/left_panda_bottle_pose_controller/catkin_generated/installspace/left_panda_bottle_pose_controllerConfig.cmake"
+    "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/left_panda_bottle_pose_controller/catkin_generated/installspace/left_panda_bottle_pose_controllerConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/left_panda_bottle_pose_controller" TYPE FILE FILES "/home/scstln/bimanual_ws/src/left_panda_bottle_pose_controller/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/left_panda_bottle_pose_controller" TYPE FILE FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/left_panda_bottle_pose_controller/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -59,12 +64,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libleft_panda_bottle_pose_controller.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/scstln/bimanual_ws/devel/lib/libleft_panda_bottle_pose_controller.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libleft_panda_bottle_pose_controller.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libleft_panda_bottle_pose_controller.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libleft_panda_bottle_pose_controller.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libleft_panda_bottle_pose_controller.so"
-         OLD_RPATH "/home/scstln/bimanual_ws/devel/lib:/usr/local/lib:/opt/ros/noetic/lib:"
+         OLD_RPATH "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib:/uolstore/home/users/sc23j3k/.local/lib:/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libleft_panda_bottle_pose_controller.so")
@@ -76,17 +81,17 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/left_panda_bottle_pose_controller" TYPE DIRECTORY FILES "/home/scstln/bimanual_ws/src/left_panda_bottle_pose_controller/include/left_panda_bottle_pose_controller/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/left_panda_bottle_pose_controller" TYPE DIRECTORY FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/left_panda_bottle_pose_controller/include/left_panda_bottle_pose_controller/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/left_panda_bottle_pose_controller" TYPE FILE FILES "/home/scstln/bimanual_ws/src/left_panda_bottle_pose_controller/left_panda_bottle_pose_controller_plugin.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/left_panda_bottle_pose_controller" TYPE FILE FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/left_panda_bottle_pose_controller/left_panda_bottle_pose_controller_plugin.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/left_panda_bottle_pose_controller" TYPE DIRECTORY FILES
-    "/home/scstln/bimanual_ws/src/left_panda_bottle_pose_controller/config"
-    "/home/scstln/bimanual_ws/src/left_panda_bottle_pose_controller/launch"
+    "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/left_panda_bottle_pose_controller/config"
+    "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/left_panda_bottle_pose_controller/launch"
     )
 endif()
 

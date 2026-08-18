@@ -1,0 +1,8 @@
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install
+
+Name: mujoco_ros_mocap
+Description: Description of mujoco_ros_mocap
+Version: 0.10.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lmujoco_ros_mocap
+Requires: mujoco_ros mujoco_ros_msgs

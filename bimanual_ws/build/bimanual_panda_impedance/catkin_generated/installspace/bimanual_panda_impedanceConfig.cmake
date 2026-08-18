@@ -67,14 +67,14 @@ set(bimanual_panda_impedance_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(bimanual_panda_impedance_SOURCE_PREFIX /home/scstln/bimanual_ws/src/bimanual_panda_impedance)
-  set(bimanual_panda_impedance_DEVEL_PREFIX /home/scstln/bimanual_ws/devel)
+  set(bimanual_panda_impedance_SOURCE_PREFIX /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/bimanual_panda_impedance)
+  set(bimanual_panda_impedance_DEVEL_PREFIX /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel)
   set(bimanual_panda_impedance_INSTALL_PREFIX "")
   set(bimanual_panda_impedance_PREFIX ${bimanual_panda_impedance_DEVEL_PREFIX})
 else()
   set(bimanual_panda_impedance_SOURCE_PREFIX "")
   set(bimanual_panda_impedance_DEVEL_PREFIX "")
-  set(bimanual_panda_impedance_INSTALL_PREFIX /home/scstln/bimanual_ws/install)
+  set(bimanual_panda_impedance_INSTALL_PREFIX /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install)
   set(bimanual_panda_impedance_PREFIX ${bimanual_panda_impedance_INSTALL_PREFIX})
 endif()
 
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/scstln/bimanual_ws/install/lib;/home/scstln/bimanual_ws/devel/lib;/home/scstln/franka_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install/lib;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib;/uolstore/home/users/sc23j3k/.local/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -1,11 +1,11 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/scstln/bimanual_ws/src/franka_ros/franka_example_controllers/msg/JointTorqueComparison.msg"
+messages_str = "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_example_controllers/msg/JointTorqueComparison.msg"
 services_str = ""
 pkg_name = "franka_example_controllers"
 dependencies_str = ""
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"
-dep_include_paths_str = "franka_example_controllers;/home/scstln/bimanual_ws/src/franka_ros/franka_example_controllers/msg"
+dep_include_paths_str = "franka_example_controllers;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_example_controllers/msg"
 PYTHON_EXECUTABLE = "/usr/bin/python3"
 package_has_static_sources = '' == 'TRUE'
 genmsg_check_deps_script = "/opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py"

@@ -1,8 +1,8 @@
-# Install script for directory: /home/scstln/bimanual_ws/src/bimanual_panda_impedance
+# Install script for directory: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/bimanual_panda_impedance
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/scstln/bimanual_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Release")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -37,37 +37,42 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/scstln/bimanual_ws/build/bimanual_panda_impedance/catkin_generated/installspace/bimanual_panda_impedance.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/bimanual_panda_impedance/catkin_generated/installspace/bimanual_panda_impedance.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bimanual_panda_impedance/cmake" TYPE FILE FILES
-    "/home/scstln/bimanual_ws/build/bimanual_panda_impedance/catkin_generated/installspace/bimanual_panda_impedanceConfig.cmake"
-    "/home/scstln/bimanual_ws/build/bimanual_panda_impedance/catkin_generated/installspace/bimanual_panda_impedanceConfig-version.cmake"
+    "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/bimanual_panda_impedance/catkin_generated/installspace/bimanual_panda_impedanceConfig.cmake"
+    "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/bimanual_panda_impedance/catkin_generated/installspace/bimanual_panda_impedanceConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bimanual_panda_impedance" TYPE FILE FILES "/home/scstln/bimanual_ws/src/bimanual_panda_impedance/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bimanual_panda_impedance" TYPE FILE FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/bimanual_panda_impedance/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/bimanual_panda_impedance" TYPE PROGRAM FILES "/home/scstln/bimanual_ws/build/bimanual_panda_impedance/catkin_generated/installspace/save_dual_center_pose.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/bimanual_panda_impedance" TYPE PROGRAM FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/bimanual_panda_impedance/catkin_generated/installspace/save_dual_center_pose.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/bimanual_panda_impedance" TYPE PROGRAM FILES "/home/scstln/bimanual_ws/build/bimanual_panda_impedance/catkin_generated/installspace/move_dual_center_pose.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/bimanual_panda_impedance" TYPE PROGRAM FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/bimanual_panda_impedance/catkin_generated/installspace/move_dual_center_pose.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/bimanual_panda_impedance" TYPE PROGRAM FILES "/home/scstln/bimanual_ws/build/bimanual_panda_impedance/catkin_generated/installspace/check_dual_setup.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/bimanual_panda_impedance" TYPE PROGRAM FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/bimanual_panda_impedance/catkin_generated/installspace/check_dual_setup.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bimanual_panda_impedance" TYPE DIRECTORY FILES
-    "/home/scstln/bimanual_ws/src/bimanual_panda_impedance/launch"
-    "/home/scstln/bimanual_ws/src/bimanual_panda_impedance/config"
+    "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/bimanual_panda_impedance/launch"
+    "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/bimanual_panda_impedance/config"
     )
 endif()
 
