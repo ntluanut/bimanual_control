@@ -1,8 +1,0 @@
-prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel
-
-Name: right_panda_fixed_pose_test
-Description: Description of right_panda_fixed_pose_test
-Version: 0.0.1
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
