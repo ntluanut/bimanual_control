@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+
+  <name>right_panda_fixed_pose_test</name>
+  <version>0.0.1</version>
+
+  <description>
+    Right Panda Cartesian impedance pose tests.
+  </description>
+
+  <maintainer email="ntluan.ut@gmail.com">
+    Nguyen Thanh Luan
+  </maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>rospy</exec_depend>
+
+</package>

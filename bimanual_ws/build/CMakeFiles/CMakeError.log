@@ -1,22 +1,22 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_19325/fast && /usr/bin/make  -f CMakeFiles/cmTC_19325.dir/build.make CMakeFiles/cmTC_19325.dir/build
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_b137d/fast && /usr/bin/make  -f CMakeFiles/cmTC_b137d.dir/build.make CMakeFiles/cmTC_b137d.dir/build
 make[1]: Entering directory '/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_19325.dir/src.c.o
-/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_19325.dir/src.c.o -c /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_19325
-/uolstore/home/users/sc23j3k/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19325.dir/link.txt --verbose=1
-/usr/bin/cc -rdynamic CMakeFiles/cmTC_19325.dir/src.c.o -o cmTC_19325 
-/usr/bin/ld: CMakeFiles/cmTC_19325.dir/src.c.o: in function `main':
+Building C object CMakeFiles/cmTC_b137d.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_b137d.dir/src.c.o -c /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_b137d
+/uolstore/home/users/sc23j3k/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b137d.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_b137d.dir/src.c.o -o cmTC_b137d 
+/usr/bin/ld: CMakeFiles/cmTC_b137d.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
 /usr/bin/ld: src.c:(.text+0x6f): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_19325.dir/build.make:99: cmTC_19325] Error 1
+make[1]: *** [CMakeFiles/cmTC_b137d.dir/build.make:99: cmTC_b137d] Error 1
 make[1]: Leaving directory '/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:127: cmTC_19325/fast] Error 2
+make: *** [Makefile:127: cmTC_b137d/fast] Error 2
 
 
 Source file was:
@@ -43,18 +43,37 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_d5e55/fast && /usr/bin/make  -f CMakeFiles/cmTC_d5e55.dir/build.make CMakeFiles/cmTC_d5e55.dir/build
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_283f0/fast && /usr/bin/make  -f CMakeFiles/cmTC_283f0.dir/build.make CMakeFiles/cmTC_283f0.dir/build
 make[1]: Entering directory '/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d5e55.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_d5e55.dir/CheckFunctionExists.c.o -c /uolstore/home/users/sc23j3k/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.22/Modules/CheckFunctionExists.c
-Linking C executable cmTC_d5e55
-/uolstore/home/users/sc23j3k/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d5e55.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_d5e55.dir/CheckFunctionExists.c.o -o cmTC_d5e55  -lpthreads 
+Building C object CMakeFiles/cmTC_283f0.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_283f0.dir/CheckFunctionExists.c.o -c /uolstore/home/users/sc23j3k/.local/lib/python3.8/site-packages/cmake/data/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_283f0
+/uolstore/home/users/sc23j3k/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_283f0.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_283f0.dir/CheckFunctionExists.c.o -o cmTC_283f0  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_d5e55.dir/build.make:99: cmTC_d5e55] Error 1
+make[1]: *** [CMakeFiles/cmTC_283f0.dir/build.make:99: cmTC_283f0] Error 1
 make[1]: Leaving directory '/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:127: cmTC_d5e55/fast] Error 2
+make: *** [Makefile:127: cmTC_283f0/fast] Error 2
 
 
 
+Performing C SOURCE FILE Test SUPPORTS_LLD failed with the following output:
+Change Dir: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_3ae6d/fast && /usr/bin/make  -f CMakeFiles/cmTC_3ae6d.dir/build.make CMakeFiles/cmTC_3ae6d.dir/build
+make[1]: Entering directory '/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3ae6d.dir/src.c.o
+/usr/bin/cc -DSUPPORTS_LLD  -fuse-ld=lld -fPIE -o CMakeFiles/cmTC_3ae6d.dir/src.c.o -c /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_3ae6d
+/uolstore/home/users/sc23j3k/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ae6d.dir/link.txt --verbose=1
+/usr/bin/cc  -fuse-ld=lld -rdynamic CMakeFiles/cmTC_3ae6d.dir/src.c.o -o cmTC_3ae6d 
+collect2: fatal error: cannot find ‘ld’
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_3ae6d.dir/build.make:99: cmTC_3ae6d] Error 1
+make[1]: Leaving directory '/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_3ae6d/fast] Error 2
+
+
+Source file was:
+int main() {}

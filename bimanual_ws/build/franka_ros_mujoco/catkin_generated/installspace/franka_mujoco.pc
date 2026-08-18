@@ -1,0 +1,8 @@
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install
+
+Name: franka_mujoco
+Description: Description of franka_mujoco
+Version: 1.2.1
+Cflags: -I${prefix}/include -I/uolstore/home/users/sc23j3k/.local/include
+Libs: -L${prefix}/lib -lfranka_gripper_sim_mujoco -lfranka_hw_sim_mujoco /uolstore/home/users/sc23j3k/.local/lib/libfranka.so.0.8.0
+Requires: roscpp angles controller_interface control_toolbox hardware_interface transmission_interface joint_limits_interface eigen_conversions urdf kdl_parser boost_sml franka_hw franka_msgs control_msgs std_msgs franka_gripper franka_example_controllers mujoco_ros mujoco_ros_control
