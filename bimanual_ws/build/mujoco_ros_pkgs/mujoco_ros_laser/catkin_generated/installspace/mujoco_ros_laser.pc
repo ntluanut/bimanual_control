@@ -1,0 +1,8 @@
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install
+
+Name: mujoco_ros_laser
+Description: Description of mujoco_ros_laser
+Version: 0.10.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lmujoco_ros_laser
+Requires: roscpp pluginlib mujoco_ros mujoco_ros_sensors sensor_msgs

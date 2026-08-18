@@ -1,0 +1,8 @@
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install
+
+Name: bimanual_panda_impedance
+Description: Description of bimanual_panda_impedance
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel
+
+Name: left_panda_fixed_pose_test
+Description: Description of left_panda_fixed_pose_test
+Version: 0.1.0
+Cflags: -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/left_panda_fixed_pose_test/include
+Libs: -L${prefix}/lib -lleft_panda_fixed_pose_test
+Requires: controller_interface eigen_conversions franka_hw franka_msgs geometry_msgs hardware_interface pluginlib roscpp std_srvs

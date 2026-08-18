@@ -1,0 +1,8 @@
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel
+
+Name: mujoco_ros_sensors
+Description: Description of mujoco_ros_sensors
+Version: 0.10.0
+Cflags: -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/mujoco_ros_pkgs/mujoco_ros_sensors/include
+Libs: -L${prefix}/lib -lmujoco_ros_sensors
+Requires: mujoco_ros mujoco_ros_msgs tf2 tf2_geometry_msgs tf2_ros
