@@ -1,0 +1,8 @@
+[35m[1mConsolidate compiler generated dependencies of target mujoco_ros_control[0m
+[35m[1mConsolidate compiler generated dependencies of target default_mujoco_ros_robot_hw_sim[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/mujoco_ros_control.dir/src/mujoco_ros_control_plugin.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/default_mujoco_ros_robot_hw_sim.dir/src/default_robot_hw_sim.cpp.o[0m
+[ 75%] [32m[1mLinking CXX shared library /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libmujoco_ros_control.so[0m
+[100%] [32m[1mLinking CXX shared library /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libdefault_mujoco_ros_robot_hw_sim.so[0m
+[100%] Built target mujoco_ros_control
+[100%] Built target default_mujoco_ros_robot_hw_sim

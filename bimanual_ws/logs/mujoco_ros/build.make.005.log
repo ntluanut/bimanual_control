@@ -1,0 +1,22 @@
+[35m[1mConsolidate compiler generated dependencies of target lodepng[0m
+[ 13%] [34m[1mGenerating /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/mujoco_ros/render_backend.h, always_rebuild[0m
+[ 13%] Built target mujoco_ros_gencfg
+[ 20%] Built target lodepng
+[ 20%] Built target render_backend_h
+[35m[1mConsolidate compiler generated dependencies of target mujoco_ros[0m
+[ 33%] [32mBuilding CXX object src/CMakeFiles/mujoco_ros.dir/mujoco_env.cpp.o[0m
+[ 40%] [32mBuilding CXX object src/CMakeFiles/mujoco_ros.dir/viewer.cpp.o[0m
+[ 40%] [32mBuilding CXX object src/CMakeFiles/mujoco_ros.dir/offscreen_camera.cpp.o[0m
+[ 46%] [32mBuilding CXX object src/CMakeFiles/mujoco_ros.dir/callbacks.cpp.o[0m
+[ 53%] [32mBuilding CXX object src/CMakeFiles/mujoco_ros.dir/physics.cpp.o[0m
+[ 60%] [32mBuilding CXX object src/CMakeFiles/mujoco_ros.dir/offscreen_rendering.cpp.o[0m
+[ 66%] [32m[1mLinking CXX shared library /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libmujoco_ros.so[0m
+[ 73%] Built target mujoco_ros
+[35m[1mConsolidate compiler generated dependencies of target mujoco_node[0m
+[35m[1mConsolidate compiler generated dependencies of target mujoco_testplugin[0m
+[ 86%] [32mBuilding CXX object test/test_plugin/CMakeFiles/mujoco_testplugin.dir/test_plugin.cpp.o[0m
+[ 86%] [32mBuilding CXX object src/CMakeFiles/mujoco_node.dir/main.cpp.o[0m
+[ 93%] [32m[1mLinking CXX shared library /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libmujoco_testplugin.so[0m
+[100%] [32m[1mLinking CXX executable /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/mujoco_ros/mujoco_node[0m
+[100%] Built target mujoco_testplugin
+[100%] Built target mujoco_node

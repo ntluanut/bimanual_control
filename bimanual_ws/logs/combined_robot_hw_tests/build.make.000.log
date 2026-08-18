@@ -1,0 +1,6 @@
+[ 60%] [32mBuilding CXX object CMakeFiles/combined_robot_hw_tests.dir/src/my_robot_hw_3.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/combined_robot_hw_tests.dir/src/my_robot_hw_2.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/combined_robot_hw_tests.dir/src/my_robot_hw_4.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/combined_robot_hw_tests.dir/src/my_robot_hw_1.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libcombined_robot_hw_tests.so[0m
+[100%] Built target combined_robot_hw_tests

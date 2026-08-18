@@ -1,0 +1,3 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/panda_bottle_pose_controller.dir/src/bottle_pose_controller.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libpanda_bottle_pose_controller.so[0m
+[100%] Built target panda_bottle_pose_controller

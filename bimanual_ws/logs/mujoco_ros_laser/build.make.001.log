@@ -1,0 +1,4 @@
+[35m[1mConsolidate compiler generated dependencies of target mujoco_ros_laser[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/mujoco_ros_laser.dir/src/laser.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libmujoco_ros_laser.so[0m
+[100%] Built target mujoco_ros_laser
