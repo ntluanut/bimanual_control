@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(franka_example_controllers_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_example_controllers/include;/uolstore/home/users/sc23j3k/.local/include " STREQUAL " ")
+if(NOT "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_example_controllers/include;/uolstore/home/users/sc23j3k/libfranka/include " STREQUAL " ")
   set(franka_example_controllers_INCLUDE_DIRS "")
-  set(_include_dirs "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_example_controllers/include;/uolstore/home/users/sc23j3k/.local/include")
+  set(_include_dirs "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_example_controllers/include;/uolstore/home/users/sc23j3k/libfranka/include")
   if(NOT "https://github.com/frankaemika/franka_ros/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/frankaemika/franka_ros/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://wiki.ros.org/franka_example_controllers " STREQUAL " ")
@@ -116,7 +116,7 @@ if(NOT "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include;
   endforeach()
 endif()
 
-set(libraries "franka_example_controllers;/uolstore/home/users/sc23j3k/.local/lib/libfranka.so.0.8.0")
+set(libraries "franka_example_controllers;/uolstore/home/users/sc23j3k/libfranka/build/libfranka.so.0.9.2")
 foreach(library ${libraries})
   # keep build configuration keywords, generator expressions, target names, and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib;/uolstore/home/users/sc23j3k/.local/lib;/opt/ros/noetic/lib)
+    foreach(path /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib;/uolstore/home/users/sc23j3k/.local/lib;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

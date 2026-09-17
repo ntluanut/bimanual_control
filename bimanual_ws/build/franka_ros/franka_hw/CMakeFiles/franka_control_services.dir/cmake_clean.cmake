@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libfranka_control_services.pdb"
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libfranka_control_services.so"
   "CMakeFiles/franka_control_services.dir/src/services.cpp.o"
-  "CMakeFiles/franka_control_services.dir/src/services.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

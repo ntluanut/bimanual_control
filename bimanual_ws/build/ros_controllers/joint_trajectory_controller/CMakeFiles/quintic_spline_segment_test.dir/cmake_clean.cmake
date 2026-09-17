@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/joint_trajectory_controller/quintic_spline_segment_test"
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/joint_trajectory_controller/quintic_spline_segment_test.pdb"
   "CMakeFiles/quintic_spline_segment_test.dir/test/quintic_spline_segment_test.cpp.o"
-  "CMakeFiles/quintic_spline_segment_test.dir/test/quintic_spline_segment_test.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -7,7 +7,8 @@
 # new environment variables
 
 # modified environment variables
-export PATH='/uolstore/home/users/sc23j3k/.local/bin:/opt/ros/noetic/bin:/uolstore/home/users/sc23j3k/bin:/usr/lib64/qt6/bin:/uolstore/home/users/sc23j3k/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
-export PKG_CONFIG_PATH="/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export LD_LIBRARY_PATH='/uolstore/home/users/sc23j3k/.local/lib:/uolstore/home/users/sc23j3k/.local/lib/x86_64-linux-gnu:/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib:/opt/ros/noetic/lib:/uolstore/home/users/sc23j3k/.mujoco/mujoco-3.3.5/lib:/usr/local/lib:/lib/x86_64-linux-gnu:/lib:/.singularity.d/libs'
+export PATH="/uolstore/home/users/sc23j3k/.local/bin:$PATH"
+export PKG_CONFIG_PATH="/uolstore/home/users/sc23j3k/.local/lib/pkgconfig:/uolstore/home/users/sc23j3k/.local/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build'
-export PYTHONPATH="/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages:$PYTHONPATH"
+export ROS_PACKAGE_PATH="/uolstore/home/users/sc23j3k/.local/share:$ROS_PACKAGE_PATH"
