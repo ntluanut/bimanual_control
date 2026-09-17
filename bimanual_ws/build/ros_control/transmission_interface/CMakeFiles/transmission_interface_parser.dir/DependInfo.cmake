@@ -1,14 +1,27 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/transmission_interface/src/transmission_parser.cpp" "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/transmission_interface/CMakeFiles/transmission_interface_parser.dir/src/transmission_parser.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "ROSCONSOLE_BACKEND_LOG4CXX"
+  "ROS_BUILD_SHARED_LIBS=1"
+  "ROS_PACKAGE_NAME=\"transmission_interface\""
+  "transmission_interface_parser_EXPORTS"
   )
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/transmission_interface/src/transmission_parser.cpp" "ros_control/transmission_interface/CMakeFiles/transmission_interface_parser.dir/src/transmission_parser.cpp.o" "gcc" "ros_control/transmission_interface/CMakeFiles/transmission_interface_parser.dir/src/transmission_parser.cpp.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/transmission_interface/include"
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/hardware_interface/include"
+  "/opt/ros/noetic/include"
+  "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )
 
 # Targets to which this target links.

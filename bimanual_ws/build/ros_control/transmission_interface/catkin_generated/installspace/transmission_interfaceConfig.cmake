@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(transmission_interface_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "include;/uolstore/home/users/sc23j3k/.local/include " STREQUAL " ")
+if(NOT "include;/usr/include " STREQUAL " ")
   set(transmission_interface_INCLUDE_DIRS "")
-  set(_include_dirs "include;/uolstore/home/users/sc23j3k/.local/include")
+  set(_include_dirs "include;/usr/include")
   if(NOT "https://github.com/ros-controls/ros_control/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/ros-controls/ros_control/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "https://github.com/ros-controls/ros_control/wiki " STREQUAL " ")
@@ -116,7 +116,7 @@ if(NOT "include;/uolstore/home/users/sc23j3k/.local/include " STREQUAL " ")
   endforeach()
 endif()
 
-set(libraries "transmission_interface_parser;transmission_interface_loader;transmission_interface_loader_plugins;/uolstore/home/users/sc23j3k/.local/lib/libtinyxml.so")
+set(libraries "transmission_interface_parser;transmission_interface_loader;transmission_interface_loader_plugins;/usr/lib/x86_64-linux-gnu/libtinyxml.so")
 foreach(library ${libraries})
   # keep build configuration keywords, generator expressions, target names, and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install/lib;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib;/uolstore/home/users/sc23j3k/.local/lib;/opt/ros/noetic/lib)
+    foreach(path /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install/lib;/uolstore/home/users/sc23j3k/.local/lib;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

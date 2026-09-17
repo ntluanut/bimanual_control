@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/mujoco_ros_sensors/mujoco_sensors_test"
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/mujoco_ros_sensors/mujoco_sensors_test.pdb"
   "CMakeFiles/mujoco_sensors_test.dir/mujoco_sensors_test.cpp.o"
-  "CMakeFiles/mujoco_sensors_test.dir/mujoco_sensors_test.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

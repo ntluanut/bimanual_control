@@ -2,14 +2,7 @@ authors: []
 blacklist: []
 build_space: build
 catkin_make_args: []
-cmake_args:
-- -DPYTHON_EXECUTABLE=/usr/bin/python3
-- -DCMAKE_EXE_LINKER_FLAGS=-L/uolstore/home/users/sc23j3k/.local/lib/x86_64-linux-gnu
-  -L/uolstore/home/users/sc23j3k/.local/lib
-- -DCMAKE_SHARED_LINKER_FLAGS=-L/uolstore/home/users/sc23j3k/.local/lib/x86_64-linux-gnu
-  -L/uolstore/home/users/sc23j3k/.local/lib
-- -DRENDER_BACKEND=DISABLE
-- -DCMAKE_PREFIX_PATH=/uolstore/home/users/sc23j3k/.local;/opt/ros/noetic
+cmake_args: []
 devel_layout: merged
 devel_space: devel
 extend_path: /opt/ros/noetic

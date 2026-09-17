@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/lodepng.dir/lodepng.cpp.o"
-  "CMakeFiles/lodepng.dir/lodepng.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.
