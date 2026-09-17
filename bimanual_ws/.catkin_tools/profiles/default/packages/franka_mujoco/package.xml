@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>franka_mujoco</name>
+  <version>1.2.1</version>
+  <description>The franka_mujoco package</description>
+
+  <maintainer email="dleins@techfak.uni-bielefeld.de">David P. Leins</maintainer>
+  <license>BSD</license>
+
+  <author email="dleins@techfak.de">David P. Leins</author>
+
+  <url type="repository">https://github.com/DavidPL1/franka_mujoco</url>
+  <url type="bugtracker">https://github.com/DavidPL1/franka_mujoco/issues</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>angles</depend>
+  <depend>tf2_ros</depend>
+  <depend>tinyxml</depend>
+  <build_depend>pluginlib</build_depend>
+  <depend>urdf</depend>
+  <depend>control_msgs</depend>
+  <depend>control_toolbox</depend>
+  <depend>controller_manager</depend>
+  <depend>controller_interface</depend>
+  <depend>hardware_interface</depend>
+  <depend>joint_limits_interface</depend>
+  <depend>transmission_interface</depend>
+  <depend>eigen_conversions</depend>
+  <depend>franka_hw</depend>
+  <depend>franka_msgs</depend>
+  <depend>franka_gripper</depend>
+  <depend>franka_example_controllers</depend>
+  <depend>kdl_parser</depend>
+  <depend version_gte="0.7.0">mujoco_ros</depend>
+  <depend>mujoco_ros_control</depend>
+  <depend>std_msgs</depend>
+  <depend>boost_sml</depend>
+  <depend>mujoco_ros_msgs</depend>
+  <test_depend>rostest</test_depend>
+
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>roslaunch</exec_depend>
+  <exec_depend>panda_moveit_config</exec_depend>
+
+  <exec_depend version_gte="0.10.0">franka_description</exec_depend>
+
+  <export>
+    <controller_interface plugin="${prefix}/franka_gripper_sim_mujoco_plugin.xml" />
+    <mujoco_ros_control plugin="${prefix}/franka_hw_sim_mujoco_plugin.xml" />
+  </export>
+</package>

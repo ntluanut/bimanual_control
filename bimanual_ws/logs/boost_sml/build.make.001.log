@@ -1,0 +1,8 @@
+[35m[1mConsolidate compiler generated dependencies of target boost_sml_example[0m
+[35m[1mConsolidate compiler generated dependencies of target sml_graph_demo[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/boost_sml_example.dir/src/example_library.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/sml_graph_demo.dir/src/sml_graph_demo.cpp.o[0m
+[ 75%] [32m[1mLinking CXX shared library /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libboost_sml_example.so[0m
+[ 75%] Built target boost_sml_example
+[100%] [32m[1mLinking CXX executable /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/boost_sml/sml_graph_demo[0m
+[100%] Built target sml_graph_demo

@@ -1,4 +1,4 @@
-prefix=/home/scstln/bimanual_ws/devel
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel
 
 Name: right_panda_fixed_pose_test
 Description: Description of right_panda_fixed_pose_test

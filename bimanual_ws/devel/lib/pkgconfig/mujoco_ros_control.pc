@@ -1,0 +1,8 @@
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel
+
+Name: mujoco_ros_control
+Description: Description of mujoco_ros_control
+Version: 0.10.0
+Cflags: -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/mujoco_ros_pkgs/mujoco_ros_control/include
+Libs: -L${prefix}/lib -lmujoco_ros_control -ldefault_mujoco_ros_robot_hw_sim
+Requires: roscpp pluginlib controller_manager controller_interface control_toolbox hardware_interface transmission_interface joint_limits_interface angles urdf mujoco_ros

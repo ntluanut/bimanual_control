@@ -1,64 +1,64 @@
 
 "use strict";
 
-let StopActionFeedback = require('./StopActionFeedback.js');
-let StopAction = require('./StopAction.js');
-let StopActionResult = require('./StopActionResult.js');
-let MoveActionFeedback = require('./MoveActionFeedback.js');
-let HomingResult = require('./HomingResult.js');
-let GraspFeedback = require('./GraspFeedback.js');
-let GraspActionResult = require('./GraspActionResult.js');
-let HomingAction = require('./HomingAction.js');
-let HomingActionGoal = require('./HomingActionGoal.js');
-let HomingActionFeedback = require('./HomingActionFeedback.js');
-let StopFeedback = require('./StopFeedback.js');
-let StopActionGoal = require('./StopActionGoal.js');
-let HomingGoal = require('./HomingGoal.js');
 let GraspAction = require('./GraspAction.js');
-let GraspActionFeedback = require('./GraspActionFeedback.js');
-let HomingActionResult = require('./HomingActionResult.js');
 let GraspGoal = require('./GraspGoal.js');
-let HomingFeedback = require('./HomingFeedback.js');
-let StopGoal = require('./StopGoal.js');
-let MoveActionResult = require('./MoveActionResult.js');
-let StopResult = require('./StopResult.js');
 let GraspActionGoal = require('./GraspActionGoal.js');
-let MoveResult = require('./MoveResult.js');
-let MoveGoal = require('./MoveGoal.js');
-let MoveFeedback = require('./MoveFeedback.js');
 let GraspResult = require('./GraspResult.js');
+let GraspActionResult = require('./GraspActionResult.js');
+let GraspFeedback = require('./GraspFeedback.js');
+let GraspActionFeedback = require('./GraspActionFeedback.js');
+let HomingAction = require('./HomingAction.js');
+let HomingGoal = require('./HomingGoal.js');
+let HomingActionGoal = require('./HomingActionGoal.js');
+let HomingResult = require('./HomingResult.js');
+let HomingActionResult = require('./HomingActionResult.js');
+let HomingFeedback = require('./HomingFeedback.js');
+let HomingActionFeedback = require('./HomingActionFeedback.js');
+let StopAction = require('./StopAction.js');
+let StopGoal = require('./StopGoal.js');
+let StopActionGoal = require('./StopActionGoal.js');
+let StopResult = require('./StopResult.js');
+let StopActionResult = require('./StopActionResult.js');
+let StopFeedback = require('./StopFeedback.js');
+let StopActionFeedback = require('./StopActionFeedback.js');
 let MoveAction = require('./MoveAction.js');
+let MoveGoal = require('./MoveGoal.js');
 let MoveActionGoal = require('./MoveActionGoal.js');
+let MoveResult = require('./MoveResult.js');
+let MoveActionResult = require('./MoveActionResult.js');
+let MoveFeedback = require('./MoveFeedback.js');
+let MoveActionFeedback = require('./MoveActionFeedback.js');
 let GraspEpsilon = require('./GraspEpsilon.js');
 
 module.exports = {
-  StopActionFeedback: StopActionFeedback,
-  StopAction: StopAction,
-  StopActionResult: StopActionResult,
-  MoveActionFeedback: MoveActionFeedback,
-  HomingResult: HomingResult,
-  GraspFeedback: GraspFeedback,
-  GraspActionResult: GraspActionResult,
-  HomingAction: HomingAction,
-  HomingActionGoal: HomingActionGoal,
-  HomingActionFeedback: HomingActionFeedback,
-  StopFeedback: StopFeedback,
-  StopActionGoal: StopActionGoal,
-  HomingGoal: HomingGoal,
   GraspAction: GraspAction,
-  GraspActionFeedback: GraspActionFeedback,
-  HomingActionResult: HomingActionResult,
   GraspGoal: GraspGoal,
-  HomingFeedback: HomingFeedback,
-  StopGoal: StopGoal,
-  MoveActionResult: MoveActionResult,
-  StopResult: StopResult,
   GraspActionGoal: GraspActionGoal,
-  MoveResult: MoveResult,
-  MoveGoal: MoveGoal,
-  MoveFeedback: MoveFeedback,
   GraspResult: GraspResult,
+  GraspActionResult: GraspActionResult,
+  GraspFeedback: GraspFeedback,
+  GraspActionFeedback: GraspActionFeedback,
+  HomingAction: HomingAction,
+  HomingGoal: HomingGoal,
+  HomingActionGoal: HomingActionGoal,
+  HomingResult: HomingResult,
+  HomingActionResult: HomingActionResult,
+  HomingFeedback: HomingFeedback,
+  HomingActionFeedback: HomingActionFeedback,
+  StopAction: StopAction,
+  StopGoal: StopGoal,
+  StopActionGoal: StopActionGoal,
+  StopResult: StopResult,
+  StopActionResult: StopActionResult,
+  StopFeedback: StopFeedback,
+  StopActionFeedback: StopActionFeedback,
   MoveAction: MoveAction,
+  MoveGoal: MoveGoal,
   MoveActionGoal: MoveActionGoal,
+  MoveResult: MoveResult,
+  MoveActionResult: MoveActionResult,
+  MoveFeedback: MoveFeedback,
+  MoveActionFeedback: MoveActionFeedback,
   GraspEpsilon: GraspEpsilon,
 };

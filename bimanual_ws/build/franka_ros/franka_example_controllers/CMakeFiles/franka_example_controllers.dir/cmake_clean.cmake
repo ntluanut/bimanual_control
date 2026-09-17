@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/scstln/bimanual_ws/devel/lib/libfranka_example_controllers.pdb"
-  "/home/scstln/bimanual_ws/devel/lib/libfranka_example_controllers.so"
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libfranka_example_controllers.pdb"
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libfranka_example_controllers.so"
   "CMakeFiles/franka_example_controllers.dir/src/cartesian_impedance_example_controller.cpp.o"
   "CMakeFiles/franka_example_controllers.dir/src/cartesian_pose_example_controller.cpp.o"
   "CMakeFiles/franka_example_controllers.dir/src/cartesian_velocity_example_controller.cpp.o"

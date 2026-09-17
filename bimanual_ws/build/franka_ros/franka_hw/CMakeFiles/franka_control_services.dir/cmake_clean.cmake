@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/scstln/bimanual_ws/devel/lib/libfranka_control_services.pdb"
-  "/home/scstln/bimanual_ws/devel/lib/libfranka_control_services.so"
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libfranka_control_services.pdb"
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/libfranka_control_services.so"
   "CMakeFiles/franka_control_services.dir/src/services.cpp.o"
 )
 

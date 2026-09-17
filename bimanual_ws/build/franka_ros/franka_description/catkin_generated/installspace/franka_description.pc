@@ -1,4 +1,4 @@
-prefix=/home/scstln/bimanual_ws/install
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install
 
 Name: franka_description
 Description: Description of franka_description

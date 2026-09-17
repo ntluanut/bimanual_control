@@ -1,0 +1,6 @@
+[35m[1mConsolidate compiler generated dependencies of target rrbot_wrapping[0m
+[35m[1mConsolidate compiler generated dependencies of target joint_trajectory_controller[0m
+[35m[1mConsolidate compiler generated dependencies of target rrbot[0m
+[ 66%] Built target rrbot_wrapping
+[ 66%] Built target joint_trajectory_controller
+[100%] Built target rrbot

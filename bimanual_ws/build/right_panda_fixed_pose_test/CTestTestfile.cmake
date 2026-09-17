@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/scstln/bimanual_ws/src/right_panda_fixed_pose_test
-# Build directory: /home/scstln/bimanual_ws/build/right_panda_fixed_pose_test
+# Source directory: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/right_panda_fixed_pose_test
+# Build directory: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/right_panda_fixed_pose_test
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/scstln/bimanual_ws/src
+CMAKE_SOURCE_DIR = /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/scstln/bimanual_ws/build
+CMAKE_BINARY_DIR = /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build
 
 # Utility rule file for run_tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/scstln/bimanual_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/scstln/bimanual_ws/src /home/scstln/bimanual_ws/src /home/scstln/bimanual_ws/build /home/scstln/bimanual_ws/build /home/scstln/bimanual_ws/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

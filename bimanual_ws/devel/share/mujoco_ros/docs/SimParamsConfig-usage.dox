@@ -1,0 +1,54 @@
+\subsubsection usage Usage
+\verbatim
+<node name="mujoco_server" pkg="mujoco_ros" type="mujoco_server">
+  <param name="running" type="bool" value="True" />
+  <param name="admin_hash" type="str" value="" />
+  <param name="integrator" type="int" value="0" />
+  <param name="cone" type="int" value="1" />
+  <param name="jacobian" type="int" value="2" />
+  <param name="solver" type="int" value="2" />
+  <param name="timestep" type="double" value="0.001" />
+  <param name="iterations" type="int" value="100" />
+  <param name="tolerance" type="double" value="1e-08" />
+  <param name="ls_iter" type="int" value="50" />
+  <param name="ls_tol" type="double" value="0.01" />
+  <param name="noslip_iter" type="int" value="0" />
+  <param name="noslip_tol" type="double" value="1e-06" />
+  <param name="ccd_iter" type="int" value="50" />
+  <param name="ccd_tol" type="double" value="1e-06" />
+  <param name="sdf_iter" type="int" value="10" />
+  <param name="sdf_init" type="int" value="40" />
+  <param name="gravity" type="str" value="0 0 -9.81" />
+  <param name="wind" type="str" value="0 0 0" />
+  <param name="magnetic" type="str" value="0 -0.5 0" />
+  <param name="density" type="double" value="0.0" />
+  <param name="viscosity" type="double" value="0.0" />
+  <param name="impratio" type="double" value="1.0" />
+  <param name="constraint_disabled" type="bool" value="False" />
+  <param name="equality_disabled" type="bool" value="False" />
+  <param name="frictionloss_disabled" type="bool" value="False" />
+  <param name="limit_disabled" type="bool" value="False" />
+  <param name="contact_disabled" type="bool" value="False" />
+  <param name="passive_disabled" type="bool" value="False" />
+  <param name="gravity_disabled" type="bool" value="False" />
+  <param name="clampctrl_disabled" type="bool" value="False" />
+  <param name="warmstart_disabled" type="bool" value="False" />
+  <param name="filterparent_disabled" type="bool" value="False" />
+  <param name="actuation_disabled" type="bool" value="False" />
+  <param name="refsafe_disabled" type="bool" value="False" />
+  <param name="sensor_disabled" type="bool" value="False" />
+  <param name="midphase_disabled" type="bool" value="False" />
+  <param name="eulerdamp_disabled" type="bool" value="False" />
+  <param name="override_contacts" type="bool" value="False" />
+  <param name="energy" type="bool" value="False" />
+  <param name="fwd_inv" type="bool" value="False" />
+  <param name="inv_discrete" type="bool" value="False" />
+  <param name="multiccd" type="bool" value="False" />
+  <param name="island" type="bool" value="False" />
+  <param name="margin" type="double" value="0.0" />
+  <param name="solimp" type="str" value="0.9 0.95 0.00" />
+  <param name="solref" type="str" value="0.02 1.0" />
+  <param name="friction" type="str" value="1 1 0.05 0." />
+</node>
+\endverbatim
+

@@ -1,0 +1,8 @@
+prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel
+
+Name: mujoco_ros
+Description: Description of mujoco_ros
+Version: 0.10.0
+Cflags: -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/mujoco_ros_pkgs/mujoco_ros/include -I/uolstore/home/users/sc23j3k/.mujoco/mujoco-3.3.5/include
+Libs: -L${prefix}/lib -lmujoco_ros /uolstore/home/users/sc23j3k/.mujoco/mujoco-3.3.5/lib/libmujoco.so
+Requires: roscpp actionlib pluginlib mujoco_ros_msgs urdf tf2 tf2_ros tf2_geometry_msgs image_transport camera_info_manager sensor_msgs dynamic_reconfigure
