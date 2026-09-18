@@ -1,27 +1,4 @@
-[{
-  "type": "function",
-  "name": "detect_object",
-  "description": "return coordinates of object",
-  "parameters": {
-    "type": "object",
-    "properties": {
-      "camera": {
-        "type": "string",
-        "description": "camera to detects object and get coordinates",
-        "enum": ["front"]
-      },
-      "position": {
-        "type": "array",
-        "items": {"type": "number"},
-        "description": "target object coordinates[x, y, z]",
-        "minItems": 3,
-        "maxItems": 3
-      }
-    },
-    "required": ["camera"]
-  }
-},
-
+[
 {
   "type": "function",
   "name": "arm_control",
@@ -48,29 +25,6 @@
       }
     },
     "required": ["arm", "position", "orientation"]
-  }
-},
-
-{
-  "type": "function",
-  "name": "gripper_control",
-  "description": "move arm to target coordinates",
-  "parameters": {
-    "type": "object",
-    "properties": {
-      "gripper": {
-        "type": "string",
-        "enum": ["left", "right"],
-        "description": "choose gripper to control"
-      },
-      "grab": {
-        "type": "string",
-        "enum": ["opened", "closed"],
-        "description": "control gripper"
-      }
-
-    },
-    "required": ["grab"]
   }
 }
 ]
