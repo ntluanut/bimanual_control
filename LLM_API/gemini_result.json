@@ -1,1 +1,1 @@
-{"orientation": [1, 0, 0, 0], "position": [0.55, 0.35, 0.35], "arm": "left"}
+{"arm": "left", "object": "cylinder", "orientation": [1, 0, 0, 0], "color": "orange"}
