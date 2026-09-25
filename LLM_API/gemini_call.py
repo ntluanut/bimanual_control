@@ -5,7 +5,7 @@ import os
 print("start")
 
 API_KEY = os.environ.get("GEMINI_API_KEY")
-print("recieve key")
+print("recieved key")
 client = genai.Client(api_key=API_KEY)
 print("client created")
 
@@ -14,10 +14,10 @@ with open("tools.json") as f:
 print("call gemini")
 interaction = client.interactions.create(
     model="gemini-3.6-flash",
-    input="pick up the orange cylinder in front of left robot and 1 0 0 0 orientation",
+    input="pick up the black cylinder in front of left robot",
     tools=TOOLS
 )
-print("receive")
+print("received")
 fc_step = None
 for step in interaction.steps:
     if step.type == "function_call":
@@ -27,5 +27,4 @@ for step in interaction.steps:
 if fc_step:
     with open("gemini_result.json", "w") as out:
         json.dump(fc_step.arguments, out)
-else:
-    print("error!")
+

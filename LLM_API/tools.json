@@ -30,7 +30,7 @@
         "maxItems": 4
       }
     },
-    "required": ["arm", "color", "object", "orientation"]
+    "required": ["arm", "color", "object"]
   }
 }
 ]
