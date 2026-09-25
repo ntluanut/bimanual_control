@@ -36,6 +36,14 @@
       <camera name = "cam1" pos = "0 0 0" euler="0 0 0" fovy="60"/>
     </body>
 
+    <body name="orange_cylinder" pos="0.6 0.8 0.9">
+      <geom type="cylinder" size="0.05 0.2" rgba="0.8 0.4 0 1"/>
+    </body>
+
+    <body name="black_cylinder" pos="0.6 1.1 0.9">
+      <geom type="cylinder" size="0.05 0.2" rgba="0 0 0 1"/>
+    </body>
+
 
   </worldbody>
 

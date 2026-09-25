@@ -11,11 +11,17 @@
         "enum": ["left", "right"],
         "description": "choose arm to move"
       },
-      "position": {
-        "type": "array",
-        "items": {"type": "number"},
-        "minItems": 3,
-        "maxItems": 3
+      "color": {
+        "type": "string",
+        "enum": ["orange", "black"],
+        "minItems": 0,
+        "maxItems": 1
+      },
+      "object": {
+        "type": "string",
+        "enum": ["cylinder", "box"],
+        "minItems": 1,
+        "maxItems": 1
       },
       "orientation": {
         "type": "array",
@@ -24,7 +30,7 @@
         "maxItems": 4
       }
     },
-    "required": ["arm", "position", "orientation"]
+    "required": ["arm", "color", "object", "orientation"]
   }
 }
 ]

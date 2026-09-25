@@ -14,7 +14,7 @@ with open("tools.json") as f:
 print("call gemini")
 interaction = client.interactions.create(
     model="gemini-3.6-flash",
-    input="pick up the bottle in front of left robot the coordinates is 0.55 0.35 0.35 and 1 0 0 0 orientation",
+    input="pick up the orange cylinder in front of left robot and 1 0 0 0 orientation",
     tools=TOOLS
 )
 print("receive")
@@ -27,3 +27,5 @@ for step in interaction.steps:
 if fc_step:
     with open("gemini_result.json", "w") as out:
         json.dump(fc_step.arguments, out)
+else:
+    print("error!")
