@@ -1,0 +1,36 @@
+[
+{
+  "type": "function",
+  "name": "arm_control",
+  "description": "move arm to target coordinates",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "arm": {
+        "type": "string",
+        "enum": ["left", "right"],
+        "description": "choose arm to move"
+      },
+      "color": {
+        "type": "string",
+        "enum": ["orange", "black"],
+        "minItems": 0,
+        "maxItems": 1
+      },
+      "object": {
+        "type": "string",
+        "enum": ["cylinder", "box"],
+        "minItems": 1,
+        "maxItems": 1
+      },
+      "orientation": {
+        "type": "array",
+        "items": {"type": "number"},
+        "minItems": 4,
+        "maxItems": 4
+      }
+    },
+    "required": ["arm", "color", "object"]
+  }
+}
+]

@@ -1,0 +1,33 @@
+.btn{
+    background-color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    color: red;
+    margin-right: 10px;
+}
+
+.card {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color:  rgb(211, 211, 211);
+    width: 600px;
+    height: 120px;
+    border-radius: 15px;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-family: sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    size: 30pt;
+}
+
