@@ -13,12 +13,11 @@
   <!-- ========================= LIMITS ========================= -->
   <!-- ============================================================================= -->
   <!-- PALM -->
- <link name="world"/>
   <joint name="global" type="fixed">
-        <parent link="world"/>
+        <parent link="left_link8"/>
         <child link="palm_link"/>
         <!--<origin xyz="0 0 0.095" rpy="0 0 0"/>-->
-        <origin xyz="0 0 0.0" rpy="0 0 0"/>
+        <origin xyz="0 0 0.093" rpy="0 0 ${3*pi/4}"/>
   </joint>
   <link name="palm_link">
     <visual>
