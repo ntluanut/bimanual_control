@@ -40,6 +40,8 @@ left:
       left_joint6: {p: 50.0, i: 0.0, d: 5.0}
       left_joint7: {p: 20.0, i: 0.0, d: 2.0}
 
+
+
   motion_generators:
     position:
       gains:
@@ -50,6 +52,15 @@ left:
         left_joint5: {p: 250.0, d: 10.0}
         left_joint6: {p: 150.0, d: 10.0}
         left_joint7: {p: 50.0, d: 5.0}
+        joint_0_0: {p: 10.0, d: 0.5}
+        joint_1_0: {p: 10.0, d: 0.5}
+        joint_2_0: {p: 10.0, d: 0.5}
+        joint_3_0: {p: 10.0, d: 0.5}
+        joint_4_0: {p: 10.0, d: 0.5}
+        joint_5_0: {p: 10.0, d: 0.5}
+        joint_6_0: {p: 10.0, d: 0.5}
+        joint_7_0: {p: 10.0, d: 0.5}
+        joint_8_0: {p: 10.0, d: 0.5}
     velocity:
       gains:
         left_joint1: {p: 10.0, d: 0.0}

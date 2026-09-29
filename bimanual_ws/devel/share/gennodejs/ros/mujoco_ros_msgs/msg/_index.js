@@ -14,12 +14,12 @@ let SimInfo = require('./SimInfo.js');
 let SolverParameters = require('./SolverParameters.js');
 let StateUint = require('./StateUint.js');
 let StepAction = require('./StepAction.js');
-let StepGoal = require('./StepGoal.js');
+let StepActionFeedback = require('./StepActionFeedback.js');
 let StepActionGoal = require('./StepActionGoal.js');
-let StepResult = require('./StepResult.js');
 let StepActionResult = require('./StepActionResult.js');
 let StepFeedback = require('./StepFeedback.js');
-let StepActionFeedback = require('./StepActionFeedback.js');
+let StepGoal = require('./StepGoal.js');
+let StepResult = require('./StepResult.js');
 
 module.exports = {
   BodyState: BodyState,
@@ -35,10 +35,10 @@ module.exports = {
   SolverParameters: SolverParameters,
   StateUint: StateUint,
   StepAction: StepAction,
-  StepGoal: StepGoal,
+  StepActionFeedback: StepActionFeedback,
   StepActionGoal: StepActionGoal,
-  StepResult: StepResult,
   StepActionResult: StepActionResult,
   StepFeedback: StepFeedback,
-  StepActionFeedback: StepActionFeedback,
+  StepGoal: StepGoal,
+  StepResult: StepResult,
 };

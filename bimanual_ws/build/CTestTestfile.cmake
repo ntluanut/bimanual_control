@@ -5,6 +5,7 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("allegro_hand_description")
 subdirs("bimanual_panda_impedance")
 subdirs("Bimanual_Robot_Project_MuJoCo")
 subdirs("franka_ros/franka_ros")
