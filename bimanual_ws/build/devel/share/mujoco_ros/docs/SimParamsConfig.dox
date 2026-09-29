@@ -1,0 +1,53 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~running" : \b [bool] Pause/Resume simulation min: False, default: True, max: True
+- \b "~admin_hash" : \b [str] Admin hash for evaluation mode min: , default: , max: 
+- \b "~integrator" : \b [int] Numerical integrator for forward dynamics in continuous time. min: 0, default: 0, max: 3
+- \b "~cone" : \b [int] Type of contact friction cone. min: 0, default: 1, max: 1
+- \b "~jacobian" : \b [int] Type Jacobian and matrices computed from it. min: 0, default: 2, max: 2
+- \b "~solver" : \b [int] Type of solver to use for constraint forces. min: 0, default: 2, max: 2
+- \b "~timestep" : \b [double] Simulation step in seconds min: 1e-10, default: 0.001, max: std::numeric_limits<double>::infinity()
+- \b "~iterations" : \b [int] Maximum number of iterations of the constraint solver. When the warmstart attribute of flag is enabled (which is the default), accurate results are obtained with fewer iterations. Larger and more complex systems with many interacting constraints require more iterations. Note that mjData.solver contains statistics about solver convergence, also shown in the profiler. min: 1, default: 100, max: 2147483647
+- \b "~tolerance" : \b [double] Tolerance threshold used for early termination of the iterative solver. For PGS, the threshold is applied to the cost improvement between two iterations. For CG and Newton, it is applied to the smaller of the cost improvement and the gradient norm. Set the tolerance to 0 to disable early termination. min: 0.0, default: 1e-08, max: std::numeric_limits<double>::infinity()
+- \b "~ls_iter" : \b [int] Maximum number of linesearch iterations performed by CG/Newton constraint solvers. Ensures that at most iterations times ls_iterations linesearch iterations are performed during each constraint solve. min: 1, default: 50, max: 2147483647
+- \b "~ls_tol" : \b [double] Tolerance threshold used for early termination of the linesearch algorithm. min: 0.0, default: 0.01, max: std::numeric_limits<double>::infinity()
+- \b "~noslip_iter" : \b [int] Maximum number of iterations of the Noslip solver. This is a post-processing step executed after the main solver. It uses a modified PGS method to suppress slip/drift in friction dimensions resulting from the soft-constraint model. The default setting 0 disables this post-processing step. min: 0, default: 0, max: 2147483647
+- \b "~noslip_tol" : \b [double] Tolerance threshold used for early termination of the Noslip solver. min: 0.0, default: 1e-06, max: std::numeric_limits<double>::infinity()
+- \b "~ccd_iter" : \b [int] Maximum number of iterations of the algorithm used for convex collisions (CCD). This rarely needs to be adjusted, except in situations where some geoms have very large aspect ratios. min: 1, default: 50, max: 2147483647
+- \b "~ccd_tol" : \b [double] Tolerance threshold used for early termination of the convex collision algorithm. min: 0.0, default: 1e-06, max: std::numeric_limits<double>::infinity()
+- \b "~sdf_iter" : \b [int] Number of iterations used for Signed Distance Field collisions (per initial point). min: 1, default: 10, max: 2147483647
+- \b "~sdf_init" : \b [int] Number of starting points used for finding contacts with Signed Distance Field collisions. min: 1, default: 40, max: 2147483647
+- \b "~gravity" : \b [str] Gravitational acceleration vector. In the default world orientation the Z-axis points up. min: , default: 0 0 -9.81, max: 
+- \b "~wind" : \b [str] Velocity vector of the medium (i.e., wind). This vector is subtracted from the 3D translational velocity of each body, and the result is used to compute viscous, lift and drag forces acting on the body. min: , default: 0 0 0, max: 
+- \b "~magnetic" : \b [str] Global magnetic flux. This vector is used by magnetometer sensors, which return the magnetic flux at their pose expressed in their frame. min: , default: 0 -0.5 0, max: 
+- \b "~density" : \b [double] Density of the medium, not to be confused with the geom density used to infer masses and inertias. This parameter is used to simulate lift and drag forces, which scale quadratically with velocity. In SI units the density of air is around 1.2 while the density of water is around 1000 depending on temperature. Setting  density to 0 disables lift and drag forces. min: -std::numeric_limits<double>::infinity(), default: 0.0, max: std::numeric_limits<double>::infinity()
+- \b "~viscosity" : \b [double] Viscosity of the medium. This parameter is used to simulate viscous forces, which scale linearly with velocity. In SI units the visocsity of air is around 0.00002 while the viscosity of water is around 0.00009 depending on temperature. Setting viscosity to 0 disables viscous forces. Note that the default Euler integrator handles damping in the joints implicitly - which improves stability and accuracy. It does not presently do this with body viscosity. Therefore, if the goal is merely to create a damped simulation (as opposed to modeling the specific effects of viscosity), we revommend using joint damping rather thad body viscosity, or switching to the implicit or implicitfast integrators. min: -std::numeric_limits<double>::infinity(), default: 0.0, max: std::numeric_limits<double>::infinity()
+- \b "~impratio" : \b [double] This attribute determines the ratio of frictional-to-normal constraint impedance for elliptic  min: -std::numeric_limits<double>::infinity(), default: 1.0, max: std::numeric_limits<double>::infinity()
+- \b "~constraint_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~equality_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~frictionloss_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~limit_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~contact_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~passive_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~gravity_disabled" : \b [bool] This flag causes the gravitational acceleration vector in mjOption to be replaced with (0 0 0) at runtime, without changing the value in mjOption. Once the flag is re-enabled, the value in mjOption is used. min: False, default: False, max: True
+- \b "~clampctrl_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~warmstart_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~filterparent_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~actuation_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~refsafe_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~sensor_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~midphase_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~eulerdamp_disabled" : \b [bool]  min: False, default: False, max: True
+- \b "~override_contacts" : \b [bool]  min: False, default: False, max: True
+- \b "~energy" : \b [bool]  min: False, default: False, max: True
+- \b "~fwd_inv" : \b [bool]  min: False, default: False, max: True
+- \b "~inv_discrete" : \b [bool]  min: False, default: False, max: True
+- \b "~multiccd" : \b [bool]  min: False, default: False, max: True
+- \b "~island" : \b [bool]  min: False, default: False, max: True
+- \b "~margin" : \b [double]  min: -std::numeric_limits<double>::infinity(), default: 0.0, max: std::numeric_limits<double>::infinity()
+- \b "~solimp" : \b [str]  min: , default: 0.9 0.95 0.00, max: 
+- \b "~solref" : \b [str]  min: , default: 0.02 1.0, max: 
+- \b "~friction" : \b [str]  min: , default: 1 1 0.05 0., max: 
+

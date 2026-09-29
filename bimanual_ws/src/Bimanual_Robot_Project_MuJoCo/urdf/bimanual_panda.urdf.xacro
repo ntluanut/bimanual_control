@@ -61,7 +61,7 @@
 <xacro:gazebo-joint joint="joint_7_0" transmission="hardware_interface/PositionJointInterface"/>
 <xacro:gazebo-joint joint="joint_8_0" transmission="hardware_interface/PositionJointInterface"/>
 
-<!--Right Hand-->
+<!--Right Arm-->
 
 <xacro:panda_arm arm_id="right" connected_to="base" xyz="0 -0.5 1" safety_distance="0.03" gazebo="true"/>
 

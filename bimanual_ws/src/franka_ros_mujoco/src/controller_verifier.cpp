@@ -18,7 +18,8 @@
  *********************************************************************/
 
 #include <franka_mujoco/controller_verifier.hpp>
-
+#include <string>
+#include <vector>
 #include <algorithm>
 
 namespace franka_mujoco {
@@ -57,17 +58,29 @@ bool ControllerVerifier::isClaimingArmController(const hardware_interface::Contr
 
 bool ControllerVerifier::isClaimingGripperController(const hardware_interface::ControllerInfo &info) const
 {
+	static const std::vector<std::string> kHandJointNames = {
+                "joint_0_0", "joint_1_0", "joint_2_0", "joint_3_0", "joint_4_0",
+                "joint_5_0", "joint_6_0", "joint_7_0", "joint_8_0"
+        };
+
 	for (const auto &claimed_resource : info.claimed_resources) {
-		if (not areFingerJoints(claimed_resource.resources) or claimed_resource.resources.size() != 2) {
+		if (claimed_resource.resources.size() != 9) {
 			continue;
 		}
 		auto control_method = ControllerVerifier::determineControlMethod(claimed_resource.hardware_interface);
-		if (not control_method) {
+		if (not control_method or control_method.value() != POSITION) {
 			continue;
 		}
-		if (control_method.value() == EFFORT) {
-			return true;
-		}
+		
+		bool all_hand = std::all_of(claimed_resource.resources.begin(), claimed_resource.resources.end(),
+                        [&](const std::string &name) {
+                                return std::find(kHandJointNames.begin(), kHandJointNames.end(), name) != kHandJointNames.end();
+                        });
+
+		if (all_hand) {
+                        return true;
+                }
+				
 	}
 	return false;
 }
@@ -94,12 +107,6 @@ bool ControllerVerifier::areArmJoints(const std::set<std::string> &resources) co
 	});
 }
 
-bool ControllerVerifier::areFingerJoints(const std::set<std::string> &resources) const
-{
-	return std::all_of(resources.begin(), resources.end(), [this](const std::string &joint_name) {
-		return joint_name.find(arm_id_ + "_finger_joint") != std::string::npos;
-	});
-}
 
 boost::optional<ControlMethod> ControllerVerifier::determineControlMethod(const std::string &hardware_interface)
 {

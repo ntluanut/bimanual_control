@@ -2,40 +2,40 @@
 "use strict";
 
 let FollowJointTrajectoryAction = require('./FollowJointTrajectoryAction.js');
-let FollowJointTrajectoryGoal = require('./FollowJointTrajectoryGoal.js');
+let FollowJointTrajectoryActionFeedback = require('./FollowJointTrajectoryActionFeedback.js');
 let FollowJointTrajectoryActionGoal = require('./FollowJointTrajectoryActionGoal.js');
-let FollowJointTrajectoryResult = require('./FollowJointTrajectoryResult.js');
 let FollowJointTrajectoryActionResult = require('./FollowJointTrajectoryActionResult.js');
 let FollowJointTrajectoryFeedback = require('./FollowJointTrajectoryFeedback.js');
-let FollowJointTrajectoryActionFeedback = require('./FollowJointTrajectoryActionFeedback.js');
+let FollowJointTrajectoryGoal = require('./FollowJointTrajectoryGoal.js');
+let FollowJointTrajectoryResult = require('./FollowJointTrajectoryResult.js');
 let GripperCommandAction = require('./GripperCommandAction.js');
-let GripperCommandGoal = require('./GripperCommandGoal.js');
+let GripperCommandActionFeedback = require('./GripperCommandActionFeedback.js');
 let GripperCommandActionGoal = require('./GripperCommandActionGoal.js');
-let GripperCommandResult = require('./GripperCommandResult.js');
 let GripperCommandActionResult = require('./GripperCommandActionResult.js');
 let GripperCommandFeedback = require('./GripperCommandFeedback.js');
-let GripperCommandActionFeedback = require('./GripperCommandActionFeedback.js');
+let GripperCommandGoal = require('./GripperCommandGoal.js');
+let GripperCommandResult = require('./GripperCommandResult.js');
 let JointTrajectoryAction = require('./JointTrajectoryAction.js');
-let JointTrajectoryGoal = require('./JointTrajectoryGoal.js');
+let JointTrajectoryActionFeedback = require('./JointTrajectoryActionFeedback.js');
 let JointTrajectoryActionGoal = require('./JointTrajectoryActionGoal.js');
-let JointTrajectoryResult = require('./JointTrajectoryResult.js');
 let JointTrajectoryActionResult = require('./JointTrajectoryActionResult.js');
 let JointTrajectoryFeedback = require('./JointTrajectoryFeedback.js');
-let JointTrajectoryActionFeedback = require('./JointTrajectoryActionFeedback.js');
+let JointTrajectoryGoal = require('./JointTrajectoryGoal.js');
+let JointTrajectoryResult = require('./JointTrajectoryResult.js');
 let PointHeadAction = require('./PointHeadAction.js');
-let PointHeadGoal = require('./PointHeadGoal.js');
+let PointHeadActionFeedback = require('./PointHeadActionFeedback.js');
 let PointHeadActionGoal = require('./PointHeadActionGoal.js');
-let PointHeadResult = require('./PointHeadResult.js');
 let PointHeadActionResult = require('./PointHeadActionResult.js');
 let PointHeadFeedback = require('./PointHeadFeedback.js');
-let PointHeadActionFeedback = require('./PointHeadActionFeedback.js');
+let PointHeadGoal = require('./PointHeadGoal.js');
+let PointHeadResult = require('./PointHeadResult.js');
 let SingleJointPositionAction = require('./SingleJointPositionAction.js');
-let SingleJointPositionGoal = require('./SingleJointPositionGoal.js');
+let SingleJointPositionActionFeedback = require('./SingleJointPositionActionFeedback.js');
 let SingleJointPositionActionGoal = require('./SingleJointPositionActionGoal.js');
-let SingleJointPositionResult = require('./SingleJointPositionResult.js');
 let SingleJointPositionActionResult = require('./SingleJointPositionActionResult.js');
 let SingleJointPositionFeedback = require('./SingleJointPositionFeedback.js');
-let SingleJointPositionActionFeedback = require('./SingleJointPositionActionFeedback.js');
+let SingleJointPositionGoal = require('./SingleJointPositionGoal.js');
+let SingleJointPositionResult = require('./SingleJointPositionResult.js');
 let GripperCommand = require('./GripperCommand.js');
 let JointControllerState = require('./JointControllerState.js');
 let JointJog = require('./JointJog.js');
@@ -45,40 +45,40 @@ let PidState = require('./PidState.js');
 
 module.exports = {
   FollowJointTrajectoryAction: FollowJointTrajectoryAction,
-  FollowJointTrajectoryGoal: FollowJointTrajectoryGoal,
+  FollowJointTrajectoryActionFeedback: FollowJointTrajectoryActionFeedback,
   FollowJointTrajectoryActionGoal: FollowJointTrajectoryActionGoal,
-  FollowJointTrajectoryResult: FollowJointTrajectoryResult,
   FollowJointTrajectoryActionResult: FollowJointTrajectoryActionResult,
   FollowJointTrajectoryFeedback: FollowJointTrajectoryFeedback,
-  FollowJointTrajectoryActionFeedback: FollowJointTrajectoryActionFeedback,
+  FollowJointTrajectoryGoal: FollowJointTrajectoryGoal,
+  FollowJointTrajectoryResult: FollowJointTrajectoryResult,
   GripperCommandAction: GripperCommandAction,
-  GripperCommandGoal: GripperCommandGoal,
+  GripperCommandActionFeedback: GripperCommandActionFeedback,
   GripperCommandActionGoal: GripperCommandActionGoal,
-  GripperCommandResult: GripperCommandResult,
   GripperCommandActionResult: GripperCommandActionResult,
   GripperCommandFeedback: GripperCommandFeedback,
-  GripperCommandActionFeedback: GripperCommandActionFeedback,
+  GripperCommandGoal: GripperCommandGoal,
+  GripperCommandResult: GripperCommandResult,
   JointTrajectoryAction: JointTrajectoryAction,
-  JointTrajectoryGoal: JointTrajectoryGoal,
+  JointTrajectoryActionFeedback: JointTrajectoryActionFeedback,
   JointTrajectoryActionGoal: JointTrajectoryActionGoal,
-  JointTrajectoryResult: JointTrajectoryResult,
   JointTrajectoryActionResult: JointTrajectoryActionResult,
   JointTrajectoryFeedback: JointTrajectoryFeedback,
-  JointTrajectoryActionFeedback: JointTrajectoryActionFeedback,
+  JointTrajectoryGoal: JointTrajectoryGoal,
+  JointTrajectoryResult: JointTrajectoryResult,
   PointHeadAction: PointHeadAction,
-  PointHeadGoal: PointHeadGoal,
+  PointHeadActionFeedback: PointHeadActionFeedback,
   PointHeadActionGoal: PointHeadActionGoal,
-  PointHeadResult: PointHeadResult,
   PointHeadActionResult: PointHeadActionResult,
   PointHeadFeedback: PointHeadFeedback,
-  PointHeadActionFeedback: PointHeadActionFeedback,
+  PointHeadGoal: PointHeadGoal,
+  PointHeadResult: PointHeadResult,
   SingleJointPositionAction: SingleJointPositionAction,
-  SingleJointPositionGoal: SingleJointPositionGoal,
+  SingleJointPositionActionFeedback: SingleJointPositionActionFeedback,
   SingleJointPositionActionGoal: SingleJointPositionActionGoal,
-  SingleJointPositionResult: SingleJointPositionResult,
   SingleJointPositionActionResult: SingleJointPositionActionResult,
   SingleJointPositionFeedback: SingleJointPositionFeedback,
-  SingleJointPositionActionFeedback: SingleJointPositionActionFeedback,
+  SingleJointPositionGoal: SingleJointPositionGoal,
+  SingleJointPositionResult: SingleJointPositionResult,
   GripperCommand: GripperCommand,
   JointControllerState: JointControllerState,
   JointJog: JointJog,
