@@ -79,11 +79,13 @@ all: ros_controllers/rqt_joint_trajectory_controller/all
 all: ros_control/controller_manager_msgs/all
 all: franka_ros/franka_msgs/all
 all: mujoco_ros_pkgs/mujoco_ros_msgs/all
+all: task_control/all
 all: control_msgs/control_msgs/all
 all: ros_control/hardware_interface/all
 all: ros_control/combined_robot_hw/all
 all: ros_control/controller_interface/all
 all: boost_sml/all
+all: arm_control/all
 all: ros_control/controller_manager/all
 all: ros_control/controller_manager_tests/all
 all: ros_control/combined_robot_hw_tests/all
@@ -92,6 +94,7 @@ all: ros_controllers/force_torque_sensor_controller/all
 all: ros_controllers/forward_command_controller/all
 all: ros_controllers/position_controllers/all
 all: franka_ros/franka_gripper/all
+all: gripper_control/all
 all: ros_controllers/imu_sensor_controller/all
 all: ros_controllers/joint_state_controller/all
 all: ros_control/transmission_interface/all
@@ -131,11 +134,13 @@ preinstall: ros_controllers/rqt_joint_trajectory_controller/preinstall
 preinstall: ros_control/controller_manager_msgs/preinstall
 preinstall: franka_ros/franka_msgs/preinstall
 preinstall: mujoco_ros_pkgs/mujoco_ros_msgs/preinstall
+preinstall: task_control/preinstall
 preinstall: control_msgs/control_msgs/preinstall
 preinstall: ros_control/hardware_interface/preinstall
 preinstall: ros_control/combined_robot_hw/preinstall
 preinstall: ros_control/controller_interface/preinstall
 preinstall: boost_sml/preinstall
+preinstall: arm_control/preinstall
 preinstall: ros_control/controller_manager/preinstall
 preinstall: ros_control/controller_manager_tests/preinstall
 preinstall: ros_control/combined_robot_hw_tests/preinstall
@@ -144,6 +149,7 @@ preinstall: ros_controllers/force_torque_sensor_controller/preinstall
 preinstall: ros_controllers/forward_command_controller/preinstall
 preinstall: ros_controllers/position_controllers/preinstall
 preinstall: franka_ros/franka_gripper/preinstall
+preinstall: gripper_control/preinstall
 preinstall: ros_controllers/imu_sensor_controller/preinstall
 preinstall: ros_controllers/joint_state_controller/preinstall
 preinstall: ros_control/transmission_interface/preinstall
@@ -188,11 +194,13 @@ clean: ros_controllers/rqt_joint_trajectory_controller/clean
 clean: ros_control/controller_manager_msgs/clean
 clean: franka_ros/franka_msgs/clean
 clean: mujoco_ros_pkgs/mujoco_ros_msgs/clean
+clean: task_control/clean
 clean: control_msgs/control_msgs/clean
 clean: ros_control/hardware_interface/clean
 clean: ros_control/combined_robot_hw/clean
 clean: ros_control/controller_interface/clean
 clean: boost_sml/clean
+clean: arm_control/clean
 clean: ros_control/controller_manager/clean
 clean: ros_control/controller_manager_tests/clean
 clean: ros_control/combined_robot_hw_tests/clean
@@ -201,6 +209,7 @@ clean: ros_controllers/force_torque_sensor_controller/clean
 clean: ros_controllers/forward_command_controller/clean
 clean: ros_controllers/position_controllers/clean
 clean: franka_ros/franka_gripper/clean
+clean: gripper_control/clean
 clean: ros_controllers/imu_sensor_controller/clean
 clean: ros_controllers/joint_state_controller/clean
 clean: ros_control/transmission_interface/clean
@@ -252,6 +261,25 @@ allegro_hand_description/preinstall:
 # Recursive "clean" directory target.
 allegro_hand_description/clean: allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/clean
 .PHONY : allegro_hand_description/clean
+
+#=============================================================================
+# Directory level rules for directory arm_control
+
+# Recursive "all" directory target.
+arm_control/all:
+.PHONY : arm_control/all
+
+# Recursive "preinstall" directory target.
+arm_control/preinstall:
+.PHONY : arm_control/preinstall
+
+# Recursive "clean" directory target.
+arm_control/clean: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/clean
+arm_control/clean: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/clean
+arm_control/clean: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
+arm_control/clean: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
+arm_control/clean: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/clean
+.PHONY : arm_control/clean
 
 #=============================================================================
 # Directory level rules for directory bimanual_panda_impedance
@@ -503,11 +531,6 @@ franka_ros/franka_hw/preinstall: franka_ros/franka_hw/test/preinstall
 .PHONY : franka_ros/franka_hw/preinstall
 
 # Recursive "clean" directory target.
-franka_ros/franka_hw/clean: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
-franka_ros/franka_hw/clean: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
-franka_ros/franka_hw/clean: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
-franka_ros/franka_hw/clean: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
-franka_ros/franka_hw/clean: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/clean
 franka_ros/franka_hw/clean: franka_ros/franka_hw/CMakeFiles/franka_hw.dir/clean
 franka_ros/franka_hw/clean: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/clean
 franka_ros/franka_hw/clean: franka_ros/franka_hw/test/clean
@@ -650,6 +673,25 @@ franka_ros_mujoco/test/clean: franka_ros_mujoco/test/CMakeFiles/_run_tests_frank
 franka_ros_mujoco/test/clean: franka_ros_mujoco/test/CMakeFiles/run_tests_franka_mujoco_gtest_franka_hw_sim_mujoco_controller_verifier_test.dir/clean
 franka_ros_mujoco/test/clean: franka_ros_mujoco/test/CMakeFiles/_run_tests_franka_mujoco_gtest_franka_hw_sim_mujoco_controller_verifier_test.dir/clean
 .PHONY : franka_ros_mujoco/test/clean
+
+#=============================================================================
+# Directory level rules for directory gripper_control
+
+# Recursive "all" directory target.
+gripper_control/all:
+.PHONY : gripper_control/all
+
+# Recursive "preinstall" directory target.
+gripper_control/preinstall:
+.PHONY : gripper_control/preinstall
+
+# Recursive "clean" directory target.
+gripper_control/clean: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
+gripper_control/clean: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
+gripper_control/clean: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
+gripper_control/clean: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+gripper_control/clean: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/clean
+.PHONY : gripper_control/clean
 
 #=============================================================================
 # Directory level rules for directory gtest
@@ -1088,11 +1130,6 @@ realtime_tools/clean: realtime_tools/CMakeFiles/_run_tests_realtime_tools_rostes
 realtime_tools/clean: realtime_tools/CMakeFiles/realtime_server_goal_handle_tests.dir/clean
 realtime_tools/clean: realtime_tools/CMakeFiles/run_tests_realtime_tools_rostest_test_realtime_server_goal_handle.test.dir/clean
 realtime_tools/clean: realtime_tools/CMakeFiles/_run_tests_realtime_tools_rostest_test_realtime_server_goal_handle.test.dir/clean
-realtime_tools/clean: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/clean
-realtime_tools/clean: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/clean
-realtime_tools/clean: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
-realtime_tools/clean: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
-realtime_tools/clean: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/clean
 .PHONY : realtime_tools/clean
 
 #=============================================================================
@@ -1716,6 +1753,21 @@ roslint/clean: roslint/CMakeFiles/run_tests_roslint_roslint_package.dir/clean
 roslint/clean: roslint/CMakeFiles/_run_tests_roslint_roslint_package.dir/clean
 roslint/clean: roslint/CMakeFiles/clean_test_results_roslint.dir/clean
 .PHONY : roslint/clean
+
+#=============================================================================
+# Directory level rules for directory task_control
+
+# Recursive "all" directory target.
+task_control/all:
+.PHONY : task_control/all
+
+# Recursive "preinstall" directory target.
+task_control/preinstall:
+.PHONY : task_control/preinstall
+
+# Recursive "clean" directory target.
+task_control/clean:
+.PHONY : task_control/clean
 
 #=============================================================================
 # Directory level rules for directory xacro
@@ -9214,6 +9266,136 @@ boost_sml/CMakeFiles/roslint_boost_sml.dir/clean:
 .PHONY : boost_sml/CMakeFiles/roslint_boost_sml.dir/clean
 
 #=============================================================================
+# Target rules for target arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir
+
+# All Build rule for target.
+arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_cpp"
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_cpp: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+.PHONY : actionlib_generate_messages_cpp
+
+# clean rule for target.
+arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/clean
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target arm_control/CMakeFiles/actionlib_generate_messages_eus.dir
+
+# All Build rule for target.
+arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/depend
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_eus"
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_eus: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+.PHONY : actionlib_generate_messages_eus
+
+# clean rule for target.
+arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/clean:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/clean
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir
+
+# All Build rule for target.
+arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/depend
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_lisp"
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_lisp: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+.PHONY : actionlib_generate_messages_lisp
+
+# clean rule for target.
+arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir
+
+# All Build rule for target.
+arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/depend
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_nodejs"
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_nodejs: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+.PHONY : actionlib_generate_messages_nodejs
+
+# clean rule for target.
+arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target arm_control/CMakeFiles/actionlib_generate_messages_py.dir
+
+# All Build rule for target.
+arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_py.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_py.dir/depend
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_py.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_py"
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+arm_control/CMakeFiles/actionlib_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_py: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/rule
+.PHONY : actionlib_generate_messages_py
+
+# clean rule for target.
+arm_control/CMakeFiles/actionlib_generate_messages_py.dir/clean:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/actionlib_generate_messages_py.dir/build.make arm_control/CMakeFiles/actionlib_generate_messages_py.dir/clean
+.PHONY : arm_control/CMakeFiles/actionlib_generate_messages_py.dir/clean
+
+#=============================================================================
 # Target rules for target ros_control/controller_manager/CMakeFiles/controller_manager.dir
 
 # All Build rule for target.
@@ -11176,136 +11358,6 @@ realtime_tools/CMakeFiles/_run_tests_realtime_tools_rostest_test_realtime_server
 .PHONY : realtime_tools/CMakeFiles/_run_tests_realtime_tools_rostest_test_realtime_server_goal_handle.test.dir/clean
 
 #=============================================================================
-# Target rules for target realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir
-
-# All Build rule for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all:
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_cpp"
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : actionlib_generate_messages_cpp
-
-# clean rule for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/clean
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/clean
-
-#=============================================================================
-# Target rules for target realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir
-
-# All Build rule for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all:
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/depend
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_eus"
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_eus: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : actionlib_generate_messages_eus
-
-# clean rule for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/clean:
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/clean
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir
-
-# All Build rule for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all:
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/depend
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_lisp"
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_lisp: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : actionlib_generate_messages_lisp
-
-# clean rule for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
-
-#=============================================================================
-# Target rules for target realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir
-
-# All Build rule for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all:
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/depend
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_nodejs"
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : actionlib_generate_messages_nodejs
-
-# clean rule for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean:
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
-
-#=============================================================================
-# Target rules for target realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir
-
-# All Build rule for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all:
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/depend
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_py"
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : actionlib_generate_messages_py
-
-# clean rule for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/clean:
-	$(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/clean
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/clean
-
-#=============================================================================
 # Target rules for target ros_controllers/force_torque_sensor_controller/CMakeFiles/force_torque_sensor_controller.dir
 
 # All Build rule for target.
@@ -12715,11 +12767,11 @@ franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: ros_control/hardwar
 franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
+franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -12790,11 +12842,11 @@ franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: ros_control/ha
 franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
+franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -12826,6 +12878,136 @@ franka_gripper_node: franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.di
 franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/clean:
 	$(MAKE) $(MAKESILENT) -f franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/build.make franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/clean
 .PHONY : franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/clean
+
+#=============================================================================
+# Target rules for target gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir
+
+# All Build rule for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all:
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_cpp"
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_cpp: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+.PHONY : std_srvs_generate_messages_cpp
+
+# clean rule for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir
+
+# All Build rule for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all:
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/depend
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_eus"
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_eus: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+.PHONY : std_srvs_generate_messages_eus
+
+# clean rule for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/clean:
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir
+
+# All Build rule for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all:
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/depend
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_lisp"
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_lisp: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+.PHONY : std_srvs_generate_messages_lisp
+
+# clean rule for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all:
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/depend
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_nodejs"
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_nodejs: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+.PHONY : std_srvs_generate_messages_nodejs
+
+# clean rule for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean:
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir
+
+# All Build rule for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all:
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/depend
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_py"
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_py: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+.PHONY : std_srvs_generate_messages_py
+
+# clean rule for target.
+gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/clean:
+	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/clean
+.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/clean
 
 #=============================================================================
 # Target rules for target ros_controllers/imu_sensor_controller/CMakeFiles/imu_sensor_controller.dir
@@ -15132,11 +15314,11 @@ mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: ros_control/
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_env_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -15403,11 +15585,11 @@ mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: ros_contr
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/ros_interface_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -15538,11 +15720,11 @@ mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: ros_c
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_ros_plugin_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -15674,11 +15856,11 @@ mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: ros_contr
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 mujoco_ros_pkgs/mujoco_ros/test/CMakeFiles/mujoco_render_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -15932,11 +16114,11 @@ mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: ros_
 mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
+mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 mujoco_ros_pkgs/mujoco_ros_mocap_plugin/test/CMakeFiles/mocap_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -16227,11 +16409,11 @@ mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: 
 mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
+mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 mujoco_ros_pkgs/mujoco_ros_sensors/test/CMakeFiles/mujoco_sensors_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -16521,11 +16703,11 @@ mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: 
 mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
+mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 mujoco_ros_pkgs/mujoco_ros_laser/test/CMakeFiles/mujoco_ros_laser_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -17253,136 +17435,6 @@ ros_controllers/effort_controllers/CMakeFiles/clean_test_results_effort_controll
 .PHONY : ros_controllers/effort_controllers/CMakeFiles/clean_test_results_effort_controllers.dir/clean
 
 #=============================================================================
-# Target rules for target franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir
-
-# All Build rule for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all:
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_cpp"
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_cpp: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : std_srvs_generate_messages_cpp
-
-# clean rule for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
-
-#=============================================================================
-# Target rules for target franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir
-
-# All Build rule for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all:
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/depend
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_eus"
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_eus: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : std_srvs_generate_messages_eus
-
-# clean rule for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/clean:
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir
-
-# All Build rule for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all:
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/depend
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_lisp"
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_lisp: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : std_srvs_generate_messages_lisp
-
-# clean rule for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
-
-#=============================================================================
-# Target rules for target franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all:
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/depend
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_nodejs"
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_nodejs: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-.PHONY : std_srvs_generate_messages_nodejs
-
-# clean rule for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean:
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
-
-#=============================================================================
-# Target rules for target franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir
-
-# All Build rule for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all:
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/depend
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_py"
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles 0
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_py: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : std_srvs_generate_messages_py
-
-# clean rule for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/clean:
-	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/clean
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/clean
-
-#=============================================================================
 # Target rules for target franka_ros/franka_hw/CMakeFiles/franka_hw.dir
 
 # All Build rule for target.
@@ -17413,16 +17465,16 @@ franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: ros_control/hardware_interfac
 franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all
 	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/franka_hw.dir/build.make franka_ros/franka_hw/CMakeFiles/franka_hw.dir/depend
 	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/franka_hw.dir/build.make franka_ros/franka_hw/CMakeFiles/franka_hw.dir/build
@@ -17476,16 +17528,16 @@ franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: ros_control/har
 franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/build.make franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/depend
 	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/build.make franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num= "Built target franka_control_services"
@@ -17539,16 +17591,16 @@ franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: ros_control/hardwar
 franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
-franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
-franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
+franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
+franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all
 franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/all: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all
 	$(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/build.make franka_ros/franka_hw/test/CMakeFiles/franka_hw_test.dir/depend
@@ -18403,12 +18455,12 @@ franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: realtime_tools/CMakeFiles/realtime_tools.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -18420,6 +18472,11 @@ franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_nodejs.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_py.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: ros_controllers/gripper_action_controller/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: ros_controllers/gripper_action_controller/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: ros_controllers/gripper_action_controller/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
@@ -18431,11 +18488,6 @@ franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: mujoco_ros_pkgs/mujoco_ros/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: mujoco_ros_pkgs/mujoco_ros/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: mujoco_ros_pkgs/mujoco_ros/CMakeFiles/tf2_msgs_generate_messages_py.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/franka_example_controllers.dir/all: franka_ros/franka_example_controllers/CMakeFiles/tf_generate_messages_cpp.dir/all
@@ -18521,12 +18573,12 @@ franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: ro
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: realtime_tools/CMakeFiles/realtime_tools.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -18538,6 +18590,11 @@ franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: fr
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_nodejs.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_py.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: ros_controllers/gripper_action_controller/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: ros_controllers/gripper_action_controller/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: ros_controllers/gripper_action_controller/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
@@ -18549,11 +18606,6 @@ franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: mu
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: mujoco_ros_pkgs/mujoco_ros/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: mujoco_ros_pkgs/mujoco_ros/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: mujoco_ros_pkgs/mujoco_ros/CMakeFiles/tf2_msgs_generate_messages_py.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all
 franka_ros/franka_example_controllers/CMakeFiles/teleop_gripper_node.dir/all: franka_ros/franka_example_controllers/CMakeFiles/tf_generate_messages_cpp.dir/all
@@ -18650,13 +18702,13 @@ franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: ros_control/hardware_
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: boost_sml/CMakeFiles/boost_sml_example.dir/all
+franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: ros_control/controller_manager/CMakeFiles/controller_manager.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: realtime_tools/CMakeFiles/realtime_tools.dir/all
-franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -18668,6 +18720,11 @@ franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_gri
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_nodejs.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_py.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all
+franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_parser.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader_plugins.dir/all
@@ -18694,11 +18751,6 @@ franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: mujoco_ros_pkgs/mujoc
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/mujoco_ros.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/mujoco_ros_control.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/default_mujoco_ros_robot_hw_sim.dir/all
-franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all
 franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/all: franka_ros/franka_example_controllers/CMakeFiles/tf_generate_messages_cpp.dir/all
@@ -18795,13 +18847,13 @@ franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: ros_control/hard
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: boost_sml/CMakeFiles/boost_sml_example.dir/all
+franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: ros_control/controller_manager/CMakeFiles/controller_manager.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: realtime_tools/CMakeFiles/realtime_tools.dir/all
-franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -18813,6 +18865,11 @@ franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/frank
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_nodejs.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_py.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all
+franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_parser.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader_plugins.dir/all
@@ -18839,11 +18896,6 @@ franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: mujoco_ros_pkgs/
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/mujoco_ros.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/mujoco_ros_control.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/default_mujoco_ros_robot_hw_sim.dir/all
-franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all
 franka_ros_mujoco/CMakeFiles/franka_gripper_sim_mujoco.dir/all: franka_ros/franka_example_controllers/CMakeFiles/tf_generate_messages_cpp.dir/all
@@ -18941,13 +18993,13 @@ franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: ros_control/hard
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: boost_sml/CMakeFiles/boost_sml_example.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: ros_control/controller_manager/CMakeFiles/controller_manager.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: realtime_tools/CMakeFiles/realtime_tools.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -18959,6 +19011,11 @@ franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/frank
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_nodejs.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_parser.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader_plugins.dir/all
@@ -18985,11 +19042,6 @@ franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: mujoco_ros_pkgs/
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/mujoco_ros.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/mujoco_ros_control.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/default_mujoco_ros_robot_hw_sim.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_mjsim_test.dir/all: franka_ros/franka_example_controllers/CMakeFiles/tf_generate_messages_cpp.dir/all
@@ -19280,13 +19332,13 @@ franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: ros_control
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: boost_sml/CMakeFiles/boost_sml_example.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: ros_control/controller_manager/CMakeFiles/controller_manager.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: realtime_tools/CMakeFiles/realtime_tools.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -19298,6 +19350,11 @@ franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_nodejs.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_parser.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader_plugins.dir/all
@@ -19324,11 +19381,6 @@ franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: mujoco_ros_
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/mujoco_ros.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/mujoco_ros_control.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/default_mujoco_ros_robot_hw_sim.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_test.dir/all: franka_ros/franka_example_controllers/CMakeFiles/tf_generate_messages_cpp.dir/all
@@ -19481,13 +19533,13 @@ franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: ros_co
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: boost_sml/CMakeFiles/boost_sml_example.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: ros_control/controller_manager/CMakeFiles/controller_manager.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: realtime_tools/CMakeFiles/realtime_tools.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -19499,6 +19551,11 @@ franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_nodejs.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_parser.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader_plugins.dir/all
@@ -19525,11 +19582,6 @@ franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: mujoco
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/mujoco_ros.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/mujoco_ros_control.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/default_mujoco_ros_robot_hw_sim.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test.dir/all: franka_ros/franka_example_controllers/CMakeFiles/tf_generate_messages_cpp.dir/all
@@ -19682,13 +19734,13 @@ franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: boost_sml/CMakeFiles/boost_sml_example.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: ros_control/controller_manager/CMakeFiles/controller_manager.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: realtime_tools/CMakeFiles/realtime_tools.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -19700,6 +19752,11 @@ franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_nodejs.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_parser.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader_plugins.dir/all
@@ -19726,11 +19783,6 @@ franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/mujoco_ros.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/mujoco_ros_control.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/default_mujoco_ros_robot_hw_sim.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_gripper_sim_mujoco_test_with_object.dir/all: franka_ros/franka_example_controllers/CMakeFiles/tf_generate_messages_cpp.dir/all
@@ -19883,13 +19935,13 @@ franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: boost_sml/CMakeFiles/boost_sml_example.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: ros_control/controller_manager/CMakeFiles/controller_manager.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: realtime_tools/CMakeFiles/realtime_tools.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_gripper/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
@@ -19901,6 +19953,11 @@ franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_nodejs.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_gripper/CMakeFiles/franka_gripper.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_parser.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: ros_control/transmission_interface/CMakeFiles/transmission_interface_loader_plugins.dir/all
@@ -19927,11 +19984,6 @@ franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/mujoco_ros.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/mujoco_ros_control.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: mujoco_ros_pkgs/mujoco_ros_control/CMakeFiles/default_mujoco_ros_robot_hw_sim.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all
 franka_ros_mujoco/test/CMakeFiles/franka_hw_sim_mujoco_controller_verifier_test.dir/all: franka_ros/franka_example_controllers/CMakeFiles/tf_generate_messages_cpp.dir/all
@@ -21483,16 +21535,16 @@ left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: ros_co
 left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: ros_control/hardware_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: ros_control/combined_robot_hw/CMakeFiles/combined_robot_hw.dir/all
-left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/all
-left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/all
-left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/all
+left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_eus.dir/all
+left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: arm_control/CMakeFiles/actionlib_generate_messages_py.dir/all
+left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/all
 left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: franka_ros/franka_hw/CMakeFiles/franka_hw.dir/all
 left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/all: franka_ros/franka_hw/CMakeFiles/franka_control_services.dir/all
 	$(MAKE) $(MAKESILENT) -f left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/build.make left_panda_fixed_pose_test/CMakeFiles/left_panda_fixed_pose_test.dir/depend

@@ -172,76 +172,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_cpp: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-# Convenience name for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_eus: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : std_srvs_generate_messages_eus
-
-# fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-# Convenience name for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_lisp: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
-
-# Convenience name for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_nodejs: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-.PHONY : std_srvs_generate_messages_nodejs
-
-# fast build rule for target.
-std_srvs_generate_messages_nodejs/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
-.PHONY : std_srvs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_py: franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/build.make franka_ros/franka_hw/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
-
-# Convenience name for target.
 franka_ros/franka_hw/CMakeFiles/franka_hw.dir/rule:
 	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 franka_ros/franka_hw/CMakeFiles/franka_hw.dir/rule
 .PHONY : franka_ros/franka_hw/CMakeFiles/franka_hw.dir/rule
@@ -450,11 +380,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_eus"
-	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... std_srvs_generate_messages_nodejs"
-	@echo "... std_srvs_generate_messages_py"
 	@echo "... franka_control_services"
 	@echo "... franka_hw"
 	@echo "... src/control_mode.o"

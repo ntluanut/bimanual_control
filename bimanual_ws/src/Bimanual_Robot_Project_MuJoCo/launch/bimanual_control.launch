@@ -37,4 +37,10 @@ output="screen" />
 <node pkg="controller_manager" type="spawner" name="left_hand_spawner"
       ns="left" args="hand_controller" output="screen"/>
 
+<node pkg="gripper_control" type="gripper_node.py" name="left_gripper_node" output="screen">
+  <param name="arm_name" value="left" />
+  <param name="controller" value="/left/hand_controller" />
+  <rosparam command="load" file="/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/config/left_hand.yaml" />
+</node>
+
 </launch>
