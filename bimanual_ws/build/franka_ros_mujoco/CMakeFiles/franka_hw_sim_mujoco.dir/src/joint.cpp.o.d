@@ -1750,7 +1750,7 @@ franka_ros_mujoco/CMakeFiles/franka_hw_sim_mujoco.dir/src/joint.cpp.o: \
  /opt/ros/noetic/include/dynamic_reconfigure/config_init_mutex.h \
  /usr/include/boost/any.hpp /opt/ros/noetic/include/rosgraph_msgs/Clock.h \
  /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/mujoco_ros_pkgs/mujoco_ros/include/mujoco_ros/glfw_adapter.h \
- /uolstore/home/users/sc23j3k/glfw_include/GLFW/glfw3.h \
+ /uolstore/home/users/sc23j3k/.local/include/GLFW/glfw3.h \
  /uolstore/home/users/sc23j3k/.local/include/GL/gl.h \
  /uolstore/home/users/sc23j3k/.local/include/GL/glext.h \
  /uolstore/home/users/sc23j3k/.local/include/KHR/khrplatform.h \

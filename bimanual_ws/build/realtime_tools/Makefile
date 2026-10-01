@@ -493,76 +493,6 @@ _run_tests_realtime_tools_rostest_test_realtime_server_goal_handle.test/fast:
 	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/_run_tests_realtime_tools_rostest_test_realtime_server_goal_handle.test.dir/build.make realtime_tools/CMakeFiles/_run_tests_realtime_tools_rostest_test_realtime_server_goal_handle.test.dir/build
 .PHONY : _run_tests_realtime_tools_rostest_test_realtime_server_goal_handle.test/fast
 
-# Convenience name for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
-
-# Convenience name for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_eus: realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : actionlib_generate_messages_eus
-
-# fast build rule for target.
-actionlib_generate_messages_eus/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_eus.dir/build
-.PHONY : actionlib_generate_messages_eus/fast
-
-# Convenience name for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_lisp: realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : actionlib_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_generate_messages_lisp/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-.PHONY : actionlib_generate_messages_lisp/fast
-
-# Convenience name for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
-realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/build.make realtime_tools/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
-
 src/realtime_clock.o: src/realtime_clock.cpp.o
 .PHONY : src/realtime_clock.o
 
@@ -728,11 +658,6 @@ help:
 	@echo "... _run_tests_realtime_tools_rostest"
 	@echo "... _run_tests_realtime_tools_rostest_test_realtime_publisher.test"
 	@echo "... _run_tests_realtime_tools_rostest_test_realtime_server_goal_handle.test"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_eus"
-	@echo "... actionlib_generate_messages_lisp"
-	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... actionlib_generate_messages_py"
 	@echo "... clean_test_results_realtime_tools"
 	@echo "... run_tests_realtime_tools"
 	@echo "... run_tests_realtime_tools_gtest"

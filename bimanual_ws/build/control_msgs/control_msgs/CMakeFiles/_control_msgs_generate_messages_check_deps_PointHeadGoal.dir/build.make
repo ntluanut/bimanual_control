@@ -67,7 +67,7 @@ include control_msgs/control_msgs/CMakeFiles/_control_msgs_generate_messages_che
 include control_msgs/control_msgs/CMakeFiles/_control_msgs_generate_messages_check_deps_PointHeadGoal.dir/progress.make
 
 control_msgs/control_msgs/CMakeFiles/_control_msgs_generate_messages_check_deps_PointHeadGoal:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/control_msgs/control_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py control_msgs /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/control_msgs/msg/PointHeadGoal.msg geometry_msgs/Vector3:std_msgs/Header:geometry_msgs/Point:geometry_msgs/PointStamped
+	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/control_msgs/control_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py control_msgs /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/control_msgs/msg/PointHeadGoal.msg std_msgs/Header:geometry_msgs/PointStamped:geometry_msgs/Vector3:geometry_msgs/Point
 
 _control_msgs_generate_messages_check_deps_PointHeadGoal: control_msgs/control_msgs/CMakeFiles/_control_msgs_generate_messages_check_deps_PointHeadGoal
 _control_msgs_generate_messages_check_deps_PointHeadGoal: control_msgs/control_msgs/CMakeFiles/_control_msgs_generate_messages_check_deps_PointHeadGoal.dir/build.make

@@ -504,6 +504,15 @@ allegro_hand_description_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual
 angles_DIR:PATH=/opt/ros/noetic/share/angles/cmake
 
 //Value Computed by CMake
+armcontrol_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/arm_control
+
+//Value Computed by CMake
+armcontrol_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+armcontrol_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control
+
+//Value Computed by CMake
 bimanual_panda_impedance_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/bimanual_panda_impedance
 
 //Value Computed by CMake
@@ -850,6 +859,15 @@ gripper_action_controller_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libacti
 
 //Value Computed by CMake
 gripper_action_controller_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_controllers/gripper_action_controller
+
+//Value Computed by CMake
+gripper_control_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/gripper_control
+
+//Value Computed by CMake
+gripper_control_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+gripper_control_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/gripper_control
 
 //Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/gtest/googletest
@@ -1224,6 +1242,15 @@ std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
 //The directory containing a CMake configuration file for std_srvs.
 std_srvs_DIR:PATH=/opt/ros/noetic/share/std_srvs/cmake
 
+//Value Computed by CMake
+task_control_BINARY_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/task_control
+
+//Value Computed by CMake
+task_control_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+task_control_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/task_control
+
 //The directory containing a CMake configuration file for tf2.
 tf2_DIR:PATH=/opt/ros/noetic/share/tf2/cmake
 
@@ -1456,7 +1483,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=61
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=64
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
