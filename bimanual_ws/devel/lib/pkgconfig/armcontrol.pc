@@ -3,6 +3,6 @@ prefix=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel
 Name: armcontrol
 Description: Description of armcontrol
 Version: 0.0.0
-Cflags: 
+Cflags: -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include
 Libs: -L${prefix}/lib 
 Requires: 

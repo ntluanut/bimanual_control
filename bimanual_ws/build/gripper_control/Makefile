@@ -171,76 +171,6 @@ depend:
 	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_cpp: gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-# Convenience name for target.
-gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_eus: gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : std_srvs_generate_messages_eus
-
-# fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-# Convenience name for target.
-gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_lisp: gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
-
-# Convenience name for target.
-gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_nodejs: gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-.PHONY : std_srvs_generate_messages_nodejs
-
-# fast build rule for target.
-std_srvs_generate_messages_nodejs/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
-.PHONY : std_srvs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_py: gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -254,11 +184,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_eus"
-	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... std_srvs_generate_messages_nodejs"
-	@echo "... std_srvs_generate_messages_py"
 .PHONY : help
 
 

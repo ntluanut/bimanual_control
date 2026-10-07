@@ -41,11 +41,11 @@ class GripperController:
             point.positions = self.open_pos
         else:
             point.positions = self.close_pos
-        point.time_from_start = rospy.Duration(2.0)
+        point.time_from_start = rospy.Duration(4.0)
         goal.trajectory.points.append(point)
 
         self.client.send_goal(goal)
-        if not self.client.wait_for_result(rospy.Duration(8.0)):
+        if not self.client.wait_for_result(rospy.Duration(10.0)):
             rospy.logerr("timeout waiting for result (sim paused?)")
             self.client.cancel_goal()
             return False

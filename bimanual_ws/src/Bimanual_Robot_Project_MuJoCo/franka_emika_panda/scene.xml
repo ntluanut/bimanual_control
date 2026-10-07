@@ -36,12 +36,13 @@
       <camera name = "cam1" pos = "0 0 0" euler="0 0 0" fovy="60"/>
     </body>
 
-    <body name="orange_cylinder" pos="0.6 0.8 0.9">
-      <geom type="cylinder" size="0.05 0.2" rgba="0.8 0.4 0 1"/>
+    <body name="orange_cylinder" pos="0.6 0.7 1.06">
+      <geom type="cylinder" size="0.03 0.15" rgba="0.8 0.4 0 1"/>
     </body>
 
-    <body name="black_cylinder" pos="0.6 1.1 0.9">
-      <geom type="cylinder" size="0.05 0.2" rgba="0 0 0 1"/>
+    <body name="black_cylinder" pos="0.6 1.1 1.03">
+    <freejoint name="black_cylinder_joint"/>
+      <geom type="cylinder" size="0.03 0.15" rgba="0 0 0 1"/>
     </body>
 
 
@@ -53,6 +54,7 @@
     0 0 0 0 0 0 0 0 0
     0 -0.785 0 -2.356 0 1.571 0.785
     0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+    0.6 1.1 1.03 1 0 0 0
   "/>
 </keyframe>
 

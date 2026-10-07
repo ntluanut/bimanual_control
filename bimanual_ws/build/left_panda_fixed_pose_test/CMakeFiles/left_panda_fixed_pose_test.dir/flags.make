@@ -6,5 +6,5 @@ CXX_DEFINES = -DENABLE_BASE_ACCELERATION -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUIL
 
 CXX_INCLUDES = -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/left_panda_fixed_pose_test/include -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_hw/include -I/usr/include/eigen3 -I/uolstore/home/users/sc23j3k/.local/include/eigen3 -isystem /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include -isystem /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/controller_interface/include -isystem /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/hardware_interface/include -isystem /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/combined_robot_hw/include -isystem /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/joint_limits_interface/include -isystem /opt/ros/noetic/include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /uolstore/home/users/sc23j3k/libfranka/include
 
-CXX_FLAGS = -fPIC -std=c++17 -Wall -Wextra
+CXX_FLAGS = -Wno-error=pedantic -fPIC -std=c++17 -Wall -Wextra
 

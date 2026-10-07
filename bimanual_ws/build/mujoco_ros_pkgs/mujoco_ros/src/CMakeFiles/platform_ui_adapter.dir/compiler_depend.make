@@ -21,7 +21,7 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/glfw_adapter.c
   /usr/include/c++/9/bits/concept_check.h \
   /usr/include/c++/9/type_traits \
   /usr/include/c++/9/initializer_list \
-  /uolstore/home/users/sc23j3k/glfw_include/GLFW/glfw3.h \
+  /uolstore/home/users/sc23j3k/.local/include/GLFW/glfw3.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h \
   /usr/include/stdint.h \
@@ -33,9 +33,10 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/glfw_adapter.c
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/include/GL/gl.h \
-  /usr/include/GL/glext.h \
-  /usr/include/KHR/khrplatform.h \
+  /uolstore/home/users/sc23j3k/.local/include/GL/gl.h \
+  /uolstore/home/users/sc23j3k/.local/include/GL/glext.h \
+  /uolstore/home/users/sc23j3k/.local/include/KHR/khrplatform.h \
+  /usr/include/inttypes.h \
   /uolstore/home/users/sc23j3k/.mujoco/mujoco-3.3.5/include/mujoco/mujoco.h \
   /usr/include/c++/9/stdlib.h \
   /usr/include/c++/9/cstdlib \
@@ -218,7 +219,7 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/glfw_adapter.c
 mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/glfw_dispatch.cc.o: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/mujoco_ros_pkgs/mujoco_ros/src/glfw_dispatch.cc \
   /usr/include/stdc-predef.h \
   /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/mujoco_ros_pkgs/mujoco_ros/include/mujoco_ros/glfw_dispatch.h \
-  /uolstore/home/users/sc23j3k/glfw_include/GLFW/glfw3.h \
+  /uolstore/home/users/sc23j3k/.local/include/GLFW/glfw3.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h \
   /usr/include/stdint.h \
@@ -236,9 +237,10 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/glfw_dispatch.
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/include/GL/gl.h \
-  /usr/include/GL/glext.h \
-  /usr/include/KHR/khrplatform.h \
+  /uolstore/home/users/sc23j3k/.local/include/GL/gl.h \
+  /uolstore/home/users/sc23j3k/.local/include/GL/glext.h \
+  /uolstore/home/users/sc23j3k/.local/include/KHR/khrplatform.h \
+  /usr/include/inttypes.h \
   /usr/include/c++/9/cstdlib \
   /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -753,15 +755,9 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/platform_ui_ad
 
 /usr/include/c++/9/bits/memoryfwd.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+/usr/include/c++/9/bits/stringfwd.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
-
-/uolstore/home/users/sc23j3k/.mujoco/mujoco-3.3.5/include/mujoco/mjmacro.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
 /usr/include/locale.h:
 
@@ -776,10 +772,6 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/platform_ui_ad
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
 /usr/include/c++/9/ext/numeric_traits.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
@@ -803,13 +795,17 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/platform_ui_ad
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-/usr/include/KHR/khrplatform.h:
-
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
-/usr/include/c++/9/string_view:
+/uolstore/home/users/sc23j3k/.local/include/KHR/khrplatform.h:
 
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/uolstore/home/users/sc23j3k/.local/include/GL/glext.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h:
 
@@ -837,6 +833,14 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/platform_ui_ad
 
 /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h:
 
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/uolstore/home/users/sc23j3k/.mujoco/mujoco-3.3.5/include/mujoco/mjmacro.h:
+
 /usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
@@ -849,13 +853,13 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/platform_ui_ad
 
 /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h:
 
-/usr/include/GL/gl.h:
-
 /usr/include/c++/9/bits/move.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/inttypes.h:
 
 /usr/include/c++/9/bits/basic_ios.h:
 
@@ -895,6 +899,8 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/platform_ui_ad
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
+/uolstore/home/users/sc23j3k/.local/include/GL/gl.h:
+
 /usr/include/wctype.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
@@ -914,6 +920,12 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/platform_ui_ad
 /usr/include/c++/9/math.h:
 
 /uolstore/home/users/sc23j3k/.mujoco/mujoco-3.3.5/include/mujoco/mjtnum.h:
+
+/usr/include/c++/9/string_view:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/uolstore/home/users/sc23j3k/.local/include/GLFW/glfw3.h:
 
 /usr/include/c++/9/bits/stl_pair.h:
 
@@ -945,10 +957,6 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/platform_ui_ad
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
-
-/usr/include/GL/glext.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/x86_64-linux-gnu/bits/select2.h:
@@ -971,9 +979,9 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/platform_ui_ad
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
-/usr/include/c++/9/bits/stl_iterator_base_funcs.h:
-
 /usr/include/c++/9/cstdlib:
+
+/usr/include/c++/9/bits/stl_iterator_base_funcs.h:
 
 /usr/include/alloca.h:
 
@@ -986,8 +994,6 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/platform_ui_ad
 /uolstore/home/users/sc23j3k/.mujoco/mujoco-3.3.5/include/mujoco/mjvisualize.h:
 
 /usr/include/c++/9/bits/locale_facets.tcc:
-
-/uolstore/home/users/sc23j3k/glfw_include/GLFW/glfw3.h:
 
 /usr/include/c++/9/tr1/poly_hermite.tcc:
 
@@ -1032,6 +1038,12 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/platform_ui_ad
 /uolstore/home/users/sc23j3k/.mujoco/mujoco-3.3.5/include/mujoco/mujoco.h:
 
 /usr/include/c++/9/tr1/beta_function.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/c++/9/string:
+
+/usr/include/c++/9/debug/assertions.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
@@ -1092,11 +1104,3 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/platform_ui_ad
 /usr/include/c++/9/tr1/poly_laguerre.tcc:
 
 /usr/include/c++/9/cstddef:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:
-
-/usr/include/c++/9/debug/assertions.h:
-
-/usr/include/c++/9/string:
-
-/usr/include/c++/9/bits/stringfwd.h:

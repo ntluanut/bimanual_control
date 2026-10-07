@@ -3604,6 +3604,227 @@ actionlib_generate_messages_py/fast:
 .PHONY : actionlib_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named std_srvs_generate_messages_cpp
+
+# Build rule for target.
+std_srvs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 std_srvs_generate_messages_cpp
+.PHONY : std_srvs_generate_messages_cpp
+
+# fast build rule for target.
+std_srvs_generate_messages_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make arm_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_eus
+
+# Build rule for target.
+std_srvs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 std_srvs_generate_messages_eus
+.PHONY : std_srvs_generate_messages_eus
+
+# fast build rule for target.
+std_srvs_generate_messages_eus/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make arm_control/CMakeFiles/std_srvs_generate_messages_eus.dir/build
+.PHONY : std_srvs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_lisp
+
+# Build rule for target.
+std_srvs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 std_srvs_generate_messages_lisp
+.PHONY : std_srvs_generate_messages_lisp
+
+# fast build rule for target.
+std_srvs_generate_messages_lisp/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make arm_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+.PHONY : std_srvs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_nodejs
+
+# Build rule for target.
+std_srvs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 std_srvs_generate_messages_nodejs
+.PHONY : std_srvs_generate_messages_nodejs
+
+# fast build rule for target.
+std_srvs_generate_messages_nodejs/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make arm_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
+.PHONY : std_srvs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_py
+
+# Build rule for target.
+std_srvs_generate_messages_py: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 std_srvs_generate_messages_py
+.PHONY : std_srvs_generate_messages_py
+
+# fast build rule for target.
+std_srvs_generate_messages_py/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/std_srvs_generate_messages_py.dir/build.make arm_control/CMakeFiles/std_srvs_generate_messages_py.dir/build
+.PHONY : std_srvs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named armcontrol_generate_messages
+
+# Build rule for target.
+armcontrol_generate_messages: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 armcontrol_generate_messages
+.PHONY : armcontrol_generate_messages
+
+# fast build rule for target.
+armcontrol_generate_messages/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/armcontrol_generate_messages.dir/build.make arm_control/CMakeFiles/armcontrol_generate_messages.dir/build
+.PHONY : armcontrol_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named _armcontrol_generate_messages_check_deps_MoveToTarget
+
+# Build rule for target.
+_armcontrol_generate_messages_check_deps_MoveToTarget: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _armcontrol_generate_messages_check_deps_MoveToTarget
+.PHONY : _armcontrol_generate_messages_check_deps_MoveToTarget
+
+# fast build rule for target.
+_armcontrol_generate_messages_check_deps_MoveToTarget/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/_armcontrol_generate_messages_check_deps_MoveToTarget.dir/build.make arm_control/CMakeFiles/_armcontrol_generate_messages_check_deps_MoveToTarget.dir/build
+.PHONY : _armcontrol_generate_messages_check_deps_MoveToTarget/fast
+
+#=============================================================================
+# Target rules for targets named armcontrol_generate_messages_cpp
+
+# Build rule for target.
+armcontrol_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 armcontrol_generate_messages_cpp
+.PHONY : armcontrol_generate_messages_cpp
+
+# fast build rule for target.
+armcontrol_generate_messages_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/armcontrol_generate_messages_cpp.dir/build.make arm_control/CMakeFiles/armcontrol_generate_messages_cpp.dir/build
+.PHONY : armcontrol_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named armcontrol_gencpp
+
+# Build rule for target.
+armcontrol_gencpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 armcontrol_gencpp
+.PHONY : armcontrol_gencpp
+
+# fast build rule for target.
+armcontrol_gencpp/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/armcontrol_gencpp.dir/build.make arm_control/CMakeFiles/armcontrol_gencpp.dir/build
+.PHONY : armcontrol_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named armcontrol_generate_messages_eus
+
+# Build rule for target.
+armcontrol_generate_messages_eus: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 armcontrol_generate_messages_eus
+.PHONY : armcontrol_generate_messages_eus
+
+# fast build rule for target.
+armcontrol_generate_messages_eus/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/armcontrol_generate_messages_eus.dir/build.make arm_control/CMakeFiles/armcontrol_generate_messages_eus.dir/build
+.PHONY : armcontrol_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named armcontrol_geneus
+
+# Build rule for target.
+armcontrol_geneus: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 armcontrol_geneus
+.PHONY : armcontrol_geneus
+
+# fast build rule for target.
+armcontrol_geneus/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/armcontrol_geneus.dir/build.make arm_control/CMakeFiles/armcontrol_geneus.dir/build
+.PHONY : armcontrol_geneus/fast
+
+#=============================================================================
+# Target rules for targets named armcontrol_generate_messages_lisp
+
+# Build rule for target.
+armcontrol_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 armcontrol_generate_messages_lisp
+.PHONY : armcontrol_generate_messages_lisp
+
+# fast build rule for target.
+armcontrol_generate_messages_lisp/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/armcontrol_generate_messages_lisp.dir/build.make arm_control/CMakeFiles/armcontrol_generate_messages_lisp.dir/build
+.PHONY : armcontrol_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named armcontrol_genlisp
+
+# Build rule for target.
+armcontrol_genlisp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 armcontrol_genlisp
+.PHONY : armcontrol_genlisp
+
+# fast build rule for target.
+armcontrol_genlisp/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/armcontrol_genlisp.dir/build.make arm_control/CMakeFiles/armcontrol_genlisp.dir/build
+.PHONY : armcontrol_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named armcontrol_generate_messages_nodejs
+
+# Build rule for target.
+armcontrol_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 armcontrol_generate_messages_nodejs
+.PHONY : armcontrol_generate_messages_nodejs
+
+# fast build rule for target.
+armcontrol_generate_messages_nodejs/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/armcontrol_generate_messages_nodejs.dir/build.make arm_control/CMakeFiles/armcontrol_generate_messages_nodejs.dir/build
+.PHONY : armcontrol_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named armcontrol_gennodejs
+
+# Build rule for target.
+armcontrol_gennodejs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 armcontrol_gennodejs
+.PHONY : armcontrol_gennodejs
+
+# fast build rule for target.
+armcontrol_gennodejs/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/armcontrol_gennodejs.dir/build.make arm_control/CMakeFiles/armcontrol_gennodejs.dir/build
+.PHONY : armcontrol_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named armcontrol_generate_messages_py
+
+# Build rule for target.
+armcontrol_generate_messages_py: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 armcontrol_generate_messages_py
+.PHONY : armcontrol_generate_messages_py
+
+# fast build rule for target.
+armcontrol_generate_messages_py/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/armcontrol_generate_messages_py.dir/build.make arm_control/CMakeFiles/armcontrol_generate_messages_py.dir/build
+.PHONY : armcontrol_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named armcontrol_genpy
+
+# Build rule for target.
+armcontrol_genpy: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 armcontrol_genpy
+.PHONY : armcontrol_genpy
+
+# fast build rule for target.
+armcontrol_genpy/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/armcontrol_genpy.dir/build.make arm_control/CMakeFiles/armcontrol_genpy.dir/build
+.PHONY : armcontrol_genpy/fast
+
+#=============================================================================
 # Target rules for targets named controller_manager
 
 # Build rule for target.
@@ -5123,71 +5344,6 @@ franka_gripper_node: cmake_check_build_system
 franka_gripper_node/fast:
 	$(MAKE) $(MAKESILENT) -f franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/build.make franka_ros/franka_gripper/CMakeFiles/franka_gripper_node.dir/build
 .PHONY : franka_gripper_node/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_cpp
-
-# Build rule for target.
-std_srvs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 std_srvs_generate_messages_cpp
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_eus
-
-# Build rule for target.
-std_srvs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 std_srvs_generate_messages_eus
-.PHONY : std_srvs_generate_messages_eus
-
-# fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_lisp
-
-# Build rule for target.
-std_srvs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 std_srvs_generate_messages_lisp
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_nodejs
-
-# Build rule for target.
-std_srvs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 std_srvs_generate_messages_nodejs
-.PHONY : std_srvs_generate_messages_nodejs
-
-# fast build rule for target.
-std_srvs_generate_messages_nodejs/fast:
-	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
-.PHONY : std_srvs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_py
-
-# Build rule for target.
-std_srvs_generate_messages_py: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 std_srvs_generate_messages_py
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	$(MAKE) $(MAKESILENT) -f gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/build.make gripper_control/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named imu_sensor_controller
@@ -8608,6 +8764,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... _armcontrol_generate_messages_check_deps_MoveToTarget"
 	@echo "... _catkin_empty_exported_target"
 	@echo "... _control_msgs_generate_messages_check_deps_FollowJointTrajectoryAction"
 	@echo "... _control_msgs_generate_messages_check_deps_FollowJointTrajectoryActionFeedback"
@@ -8870,6 +9027,17 @@ help:
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... armcontrol_gencpp"
+	@echo "... armcontrol_generate_messages"
+	@echo "... armcontrol_generate_messages_cpp"
+	@echo "... armcontrol_generate_messages_eus"
+	@echo "... armcontrol_generate_messages_lisp"
+	@echo "... armcontrol_generate_messages_nodejs"
+	@echo "... armcontrol_generate_messages_py"
+	@echo "... armcontrol_geneus"
+	@echo "... armcontrol_genlisp"
+	@echo "... armcontrol_gennodejs"
+	@echo "... armcontrol_genpy"
 	@echo "... clean_test_results"
 	@echo "... clean_test_results_combined_robot_hw_tests"
 	@echo "... clean_test_results_controller_interface"
