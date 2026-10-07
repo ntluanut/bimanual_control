@@ -10,9 +10,9 @@ class GripperController:
     def __init__(self, arm_name):
         self.name = arm_name
 
-        ctrl = rospy.get_param("~controller")
-        self.open_pos = rospy.get_param("~open_pos")
-        self.close_pos = rospy.get_param("~close_pos")
+        ctrl = rospy.get_param("~hand_controller")
+        self.open_pos = rospy.get_param(f"{ctrl}/open_pos")
+        self.close_pos = rospy.get_param(f"{ctrl}/close_pos")
         self.joint_names = rospy.get_param(f"{ctrl}/joints")
 
         self.client = actionlib.SimpleActionClient(
