@@ -6,5 +6,5 @@ CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKA
 
 CXX_INCLUDES = -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_controllers/velocity_controllers/include -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/realtime_tools/include -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/controller_interface/include -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_control/hardware_interface/include -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/ros_controllers/forward_command_controller/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp
 
-CXX_FLAGS = -fPIC
+CXX_FLAGS = -Wno-error=pedantic -fPIC
 

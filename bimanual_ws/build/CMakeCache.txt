@@ -81,7 +81,7 @@ CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/bin/gcc-ar-9
 CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/bin/gcc-ranlib-9
 
 //Flags used by the CXX compiler during all build types.
-CMAKE_CXX_FLAGS:STRING=
+CMAKE_CXX_FLAGS:STRING=-Wno-error=pedantic
 
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g
@@ -529,6 +529,9 @@ bimanual_robot_project_mujoco_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 bimanual_robot_project_mujoco_SOURCE_DIR:STATIC=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/Bimanual_Robot_Project_MuJoCo
+
+//The directory containing a CMake configuration file for boost_actionlib.
+boost_actionlib_DIR:PATH=boost_actionlib_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for boost_headers.
 boost_headers_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0

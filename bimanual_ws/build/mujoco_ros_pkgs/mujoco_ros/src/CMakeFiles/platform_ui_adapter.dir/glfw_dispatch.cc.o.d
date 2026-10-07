@@ -2,7 +2,7 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/glfw_dispatch.
  /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/mujoco_ros_pkgs/mujoco_ros/src/glfw_dispatch.cc \
  /usr/include/stdc-predef.h \
  /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/mujoco_ros_pkgs/mujoco_ros/include/mujoco_ros/glfw_dispatch.h \
- /uolstore/home/users/sc23j3k/glfw_include/GLFW/glfw3.h \
+ /uolstore/home/users/sc23j3k/.local/include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -17,9 +17,11 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/glfw_dispatch.
  /usr/include/x86_64-linux-gnu/bits/time64.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/GL/gl.h \
- /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h \
- /usr/include/c++/9/cstdlib \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /uolstore/home/users/sc23j3k/.local/include/GL/gl.h \
+ /uolstore/home/users/sc23j3k/.local/include/GL/glext.h \
+ /uolstore/home/users/sc23j3k/.local/include/KHR/khrplatform.h \
+ /usr/include/inttypes.h /usr/include/c++/9/cstdlib \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h \

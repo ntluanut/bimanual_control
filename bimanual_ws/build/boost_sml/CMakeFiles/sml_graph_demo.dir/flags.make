@@ -6,5 +6,5 @@ CXX_DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DROSCONSOLE_BACKEND_LO
 
 CXX_INCLUDES = -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/boost_sml/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp
 
-CXX_FLAGS = -std=gnu++14
+CXX_FLAGS = -Wno-error=pedantic -std=gnu++14
 

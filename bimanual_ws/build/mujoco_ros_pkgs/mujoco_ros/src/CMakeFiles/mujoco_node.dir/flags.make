@@ -6,5 +6,5 @@ CXX_DEFINES = -DGLFW=1 -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -D
 
 CXX_INCLUDES = -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/mujoco_ros_pkgs/mujoco_ros/include -isystem /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include -isystem /uolstore/home/users/sc23j3k/.mujoco/mujoco-3.3.5/include -isystem /opt/ros/noetic/include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /usr/include/eigen3
 
-CXX_FLAGS = -O3 -DNDEBUG -fPIE -mavx -Wall -Wextra -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wformat=2 -Wno-missing-field-initializers -Wno-int-in-bool-context -Wno-sign-compare -Wno-unknown-pragmas -Werror -Wmisleading-indentation -Wnull-dereference -Wimplicit-fallthrough -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -std=c++17
+CXX_FLAGS = -Wno-error=pedantic -O3 -DNDEBUG -fPIE -mavx -Wall -Wextra -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wformat=2 -Wno-missing-field-initializers -Wno-int-in-bool-context -Wno-sign-compare -Wno-unknown-pragmas -Werror -Wmisleading-indentation -Wnull-dereference -Wimplicit-fallthrough -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -std=c++17
 

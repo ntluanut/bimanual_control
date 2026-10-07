@@ -6,5 +6,5 @@ CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKA
 
 CXX_INCLUDES = -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/franka_ros/franka_gripper/include -isystem /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include -isystem /opt/ros/noetic/include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /uolstore/home/users/sc23j3k/libfranka/include
 
-CXX_FLAGS = -std=gnu++14
+CXX_FLAGS = -Wno-error=pedantic -std=gnu++14
 

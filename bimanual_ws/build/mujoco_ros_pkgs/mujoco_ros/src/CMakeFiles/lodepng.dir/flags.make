@@ -6,5 +6,5 @@ CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKA
 
 CXX_INCLUDES = -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include -I/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/mujoco_ros_pkgs/mujoco_ros/include
 
-CXX_FLAGS = -O3 -DNDEBUG -fPIC -mavx -std=c++17
+CXX_FLAGS = -Wno-error=pedantic -O3 -DNDEBUG -fPIC -mavx -std=c++17
 

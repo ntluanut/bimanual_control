@@ -15,7 +15,7 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/glfw_adapter.c
  /usr/include/c++/9/bits/stl_relops.h /usr/include/c++/9/bits/stl_pair.h \
  /usr/include/c++/9/bits/move.h /usr/include/c++/9/bits/concept_check.h \
  /usr/include/c++/9/type_traits /usr/include/c++/9/initializer_list \
- /uolstore/home/users/sc23j3k/glfw_include/GLFW/glfw3.h \
+ /uolstore/home/users/sc23j3k/.local/include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -25,8 +25,11 @@ mujoco_ros_pkgs/mujoco_ros/src/CMakeFiles/platform_ui_adapter.dir/glfw_adapter.c
  /usr/include/x86_64-linux-gnu/bits/time64.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/GL/gl.h \
- /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /uolstore/home/users/sc23j3k/.local/include/GL/gl.h \
+ /uolstore/home/users/sc23j3k/.local/include/GL/glext.h \
+ /uolstore/home/users/sc23j3k/.local/include/KHR/khrplatform.h \
+ /usr/include/inttypes.h \
  /uolstore/home/users/sc23j3k/.mujoco/mujoco-3.3.5/include/mujoco/mujoco.h \
  /usr/include/c++/9/stdlib.h /usr/include/c++/9/cstdlib \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
