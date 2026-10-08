@@ -2,10 +2,15 @@
 {
   "type": "function",
   "name": "arm_control",
-  "description": "move arm to target coordinates",
+  "description": "moving arm to implement a task",
   "parameters": {
     "type": "object",
     "properties": {
+      "task": {
+        "type": "string",
+        "enum": ["pick_up","rotate","place"],
+        "description": "choose task to perform"
+      },
       "arm": {
         "type": "string",
         "enum": ["left", "right"],
@@ -30,7 +35,7 @@
         "maxItems": 4
       }
     },
-    "required": ["arm", "color", "object"]
+    "required": ["task", "arm", "color", "object"]
   }
 }
 ]
