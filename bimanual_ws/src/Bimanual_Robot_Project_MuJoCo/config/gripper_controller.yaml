@@ -13,16 +13,16 @@ hand_controller:
   constraints:
     goal_time: 2.0
     stopped_velocity_tolerance: 0.01
-    joint_0_0: {trajectory: 0.3, goal: 0.2}
-    joint_1_0: {trajectory: 0.3, goal: 0.2}
-    joint_2_0: {trajectory: 0.3, goal: 0.2}
-    joint_3_0: {trajectory: 0.3, goal: 0.2}
-    joint_4_0: {trajectory: 0.3, goal: 0.2}
-    joint_5_0: {trajectory: 0.3, goal: 0.2}
-    joint_6_0: {trajectory: 0.3, goal: 0.2}
-    joint_7_0: {trajectory: 0.3, goal: 0.2}
-    joint_8_0: {trajectory: 0.3, goal: 0.2}
+    joint_0_0: {trajectory: 0, goal: 0.2}
+    joint_1_0: {trajectory: 0, goal: 0.2}
+    joint_2_0: {trajectory: 0, goal: 0.2}
+    joint_3_0: {trajectory: 0, goal: 0.2}
+    joint_4_0: {trajectory: 0, goal: 0.2}
+    joint_5_0: {trajectory: 0, goal: 0.2}
+    joint_6_0: {trajectory: 0, goal: 0.2}
+    joint_7_0: {trajectory: 0, goal: 0.2}
+    joint_8_0: {trajectory: 0, goal: 0.2}
 
-  open_pos:  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-  close_pos: [0, 1, 1, 0, 1, 1, 0, 1, 1]
+  open_pos: [-1, 0.0, 0.0, 1, 0.0, 0.0, 0.0, 0.0, 0.0]
+  close_pos: [-1, 0.45, 0.45, 1, 0.45, 0.45, 0, 0.45, 0.45]
     
