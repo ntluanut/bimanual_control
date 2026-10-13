@@ -69,7 +69,7 @@
       <inertia ixx="1.2854008e-05" ixy="2.04e-08" ixz="1.89e-06" iyy="1.225e-05" iyz="1.51e-07" izz="2.999e-06"/>
     </inertial>
   </link>
-  <joint name="joint_0_0" type="revolute">
+  <joint name="right_joint_0_0" type="revolute">
     <axis xyz="0 0 1"/>
     <limit effort="15" lower="-0.47" upper="0.47" velocity="7"/>
     <parent link="palm_link"/>
@@ -127,7 +127,7 @@
       <inertia ixx="3.8070280e-06" ixy="5.7154287e-03" ixz="-9.9708657e-07" iyy="1.4547214e-05" iyz="2.632663e-04" izz="1.2905337e-05"/>
     </inertial>
   </link>
-  <joint name="joint_2_0" type="revolute">
+  <joint name="right_joint_2_0" type="revolute">
     <axis xyz="0 1 0"/>
     <limit effort="15" lower="-0.174" upper="1.709" velocity="7"/>
     <parent link="link_1_0"/>
@@ -156,7 +156,7 @@
       <inertia ixx="1.176928e-06" ixy="5.0891669e-03" ixz="0.000000e-06" iyy="2.40127e-06" iyz="-5.3128971e-11" izz="1.674842e-06"/>
     </inertial>
   </link>
-  <joint name="joint_3_0" type="revolute">
+  <joint name="right_joint_3_0" type="revolute">
     <axis xyz="0 1 0"/>
     <limit effort="15" lower="-0.227" upper="1.618" velocity="7"/>
     <parent link="link_2_0"/>
@@ -187,7 +187,7 @@
       <inertia ixx="9.68e-07" ixy="0" ixz="0" iyy="9.68e-07" iyz="0" izz="9.68e-07"/>
     </inertial>
   </link>
-  <joint name="joint_3_0_tip" type="fixed">
+  <joint name="right_joint_3_0_tip" type="fixed">
     <parent link="link_3_0"/>
     <child link="link_3_0_tip"/>
     <origin rpy="0 0 0" xyz="0 0 0.0267"/>
@@ -242,7 +242,7 @@
       <inertia ixx="6.2497616e-06" ixy="0.0000e-06" ixz="-1.892683e-06" iyy="3.1284129e-05" iyz="0.0000e-06" izz="2.9004797e-05"/>
     </inertial>
   </link>
-  <joint name="joint_5_0" type="revolute">
+  <joint name="right_joint_5_0" type="revolute">
     <limit effort="15" lower="-0.196" upper="1.8" velocity="7"/>
     <axis xyz="0 1 0"/>
     <parent link="link_4_0"/>
@@ -300,7 +300,7 @@
       <inertia ixx="1.176928e-06" ixy="5.0891669e-03" ixz="0.000000e-06" iyy="2.40127e-06" iyz="-5.3128971e-11" izz="1.674842e-06"/>
     </inertial>
   </link>
-  <joint name="joint_7_0" type="revolute">
+  <joint name="right_joint_7_0" type="revolute">
     <axis xyz="0 1 0"/>
     <limit effort="15" lower="-0.227" upper="1.618" velocity="7"/>
     <parent link="link_6_0"/>
@@ -359,7 +359,7 @@
       <inertia ixx="1.2854008e-05" ixy="2.04e-08" ixz="1.89e-06" iyy="1.225e-05" iyz="1.51e-07" izz="2.999e-06"/>
     </inertial>
   </link>
-  <joint name="joint_8_0" type="revolute">
+  <joint name="right_joint_8_0" type="revolute">
     <axis xyz="0 0 1"/>
     <limit effort="15" lower="-0.47" upper="0.47" velocity="7"/>
     <parent link="palm_link"/>
@@ -417,7 +417,7 @@
       <inertia ixx="3.8070280e-06" ixy="5.7154287e-03" ixz="-9.9708657e-07" iyy="1.4547214e-05" iyz="2.632663e-04" izz="1.2905337e-05"/>
     </inertial>
   </link>
-  <joint name="joint_10_0" type="revolute">
+  <joint name="right_joint_10_0" type="revolute">
     <axis xyz="0 1 0"/>
     <limit effort="15" lower="-0.174" upper="1.709" velocity="7"/>
     <parent link="link_9_0"/>
@@ -446,7 +446,7 @@
       <inertia ixx="1.176928e-06" ixy="5.0891669e-03" ixz="0.000000e-06" iyy="2.40127e-06" iyz="-5.3128971e-11" izz="1.674842e-06"/>
     </inertial>
   </link>
-  <joint name="joint_11_0" type="revolute">
+  <joint name="right_joint_11_0" type="revolute">
     <axis xyz="0 1 0"/>
     <limit effort="15" lower="-0.227" upper="1.618" velocity="7"/>
     <parent link="link_10_0"/>
@@ -477,7 +477,7 @@
       <inertia ixx="9.68e-07" ixy="0" ixz="0" iyy="9.68e-07" iyz="0" izz="9.68e-07"/>
     </inertial>
   </link>
-  <joint name="joint_11_0_tip" type="fixed">
+  <joint name="right_joint_11_0_tip" type="fixed">
     <parent link="link_11_0"/>
     <child link="link_11_0_tip"/>
     <origin rpy="0 0 0" xyz="0 0 0.0267"/>
@@ -506,7 +506,7 @@
       <inertia ixx="5.44e-5" ixy="4.0e-07" ixz="-1.12e-07" iyy="9.19e-06" iyz="1.07e-05" izz="4.8e-05"/>
     </inertial>
   </link>
-  <joint name="joint_12_0" type="revolute">
+  <joint name="right_joint_12_0" type="revolute">
     <axis xyz="-1 0 0"/>
     <limit effort="15" lower="0.00" upper="1.78" velocity="7"/>
     <parent link="palm_link"/>
@@ -567,7 +567,7 @@
       <inertia ixx="3.7e-06" ixy="2.43e-07" ixz="6.48e-07" iyy="1.54e-05" iyz="-3.11e-08" izz="1.388e-05"/>
     </inertial>
   </link>
-  <joint name="joint_14_0" type="revolute">
+  <joint name="right_joint_14_0" type="revolute">
     <axis xyz="0 1 0"/>
     <!--<limit effort="15" lower="-0.54" upper="1.53" velocity="7"/>-->
            <limit effort="15" lower="-0.05" upper="1.85" velocity="7"/>
@@ -629,7 +629,7 @@
       <inertia ixx="9.68e-07" ixy="0" ixz="0" iyy="9.68e-07" iyz="0" izz="9.68e-07"/>
     </inertial>
   </link>
-  <joint name="joint_15_0_tip" type="fixed">
+  <joint name="right_joint_15_0_tip" type="fixed">
     <parent link="link_15_0"/>
     <child link="link_15_0_tip"/>
     <origin rpy="0 0 0" xyz="0 0 0.05"/>
