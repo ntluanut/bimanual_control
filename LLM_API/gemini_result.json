@@ -1,1 +1,1 @@
-{"arm": "left", "object": "cylinder", "color": "black"}
+{"arm": "left", "color": "black", "task": "pick_up", "object": "cylinder"}

@@ -10,6 +10,19 @@ OFFSET = 0.25
 
 
 def get_target_pose():
+
+    with open(JSON) as f:
+        args = json.load(f)
+
+    task = args["task"]
+    arm = args["arm"]
+    color = args["color"]
+    object_type = args["object"]
+
+
+    body_name = f"{color}_{object_type}"
+    base_name = f"{arm}_link0"
+
     model = mujoco.MjModel.from_xml_path("../../Bimanual_Robot_Project_MuJoCo/franka_emika_panda/scene.xml")
     data = mujoco.MjData(model)
     mujoco.mj_forward(model, data)
@@ -28,29 +41,14 @@ def get_target_pose():
 
     x,y,z = relative_pos
 
-    return arm, x,y,z
+    return task, arm, x,y,z
 
 def main():
-    with open(JSON) as f:
-        args = json.load(f)
-
-    arm = args["arm"]
-    color = args["color"]
-    object_type = args["object"]
-
-    body_name = f"{color}_{object_type}"
-    base_name = f"{arm}_link0"
 
     rospy.init_node("task_node")
 
     print("node started")
 
-    task = args["task"]
-    arm = args["arm"]
-    color = args["color"]
-    object_type = args["object"]
-
-    print("pose loaded")
 
     rospy.wait_for_service("/left/gripper/open", timeout=30.0)
     rospy.wait_for_service("/left/gripper/close", timeout=30.0)
@@ -67,9 +65,9 @@ def main():
 
     print("starting task")
 
+    task, arm, x, y, z = get_target_pose()
 
     if task == "pick_up":
-        arm, x, y, z = get_target_pose()
         move_left_arm(arm, x, y, z+OFFSET)
         rospy.sleep(3.0)
         open_gripper()
@@ -81,6 +79,8 @@ def main():
         move_left_arm(arm, x+0.2, y+0.2, 0.9)
         open_gripper()
         rospy.sleep(3.0)
+
+    
 
 if __name__ == "__main__":
     main()

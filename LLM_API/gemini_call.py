@@ -13,7 +13,7 @@ with open("tools.json") as f:
     TOOLS = json.load(f)
 print("call gemini")
 interaction = client.interactions.create(
-    model="gemini-3.6-flash",
+    model="gemini-3.5-flash",
     input="pick up the black cylinder in front of left robot",
     tools=TOOLS
 )

@@ -18,13 +18,13 @@
       },
       "color": {
         "type": "string",
-        "enum": ["orange", "black"],
+        "enum": ["orange", "black","blue", "white"],
         "minItems": 0,
         "maxItems": 1
       },
       "object": {
         "type": "string",
-        "enum": ["cylinder", "box"],
+        "enum": ["cylinder", "box","sphere"],
         "minItems": 1,
         "maxItems": 1
       },
