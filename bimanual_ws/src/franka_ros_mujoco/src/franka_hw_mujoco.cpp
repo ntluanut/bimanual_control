@@ -159,18 +159,27 @@ bool FrankaHWSim::initSim(const mjModel *m_ptr, mjData *d_ptr, mujoco_ros::Mujoc
 		joint->m_ptr = m_ptr;
 		joint->d_ptr = d_ptr;
 
-		static const std::vector<std::string> kHandJointNames = {
+		static const std::vector<std::string> kLeftHandJointNames = {
 		"joint_0_0", "joint_1_0", "joint_2_0", "joint_3_0", "joint_4_0",
 		"joint_5_0", "joint_6_0", "joint_7_0", "joint_8_0"
+		};
+
+		static const std::vector<std::string> kRightHandJointNames = {
+			"right_joint_0_0",  "right_joint_1_0",  "right_joint_2_0",  "right_joint_3_0",
+			"right_joint_4_0",  "right_joint_5_0",  "right_joint_6_0",  "right_joint_7_0",
+			"right_joint_8_0",  "right_joint_9_0",  "right_joint_10_0", "right_joint_11_0",
+			"right_joint_12_0", "right_joint_13_0", "right_joint_14_0", "right_joint_15_0"
 		};
 
 		bool is_franka_joint = std::any_of(kRobotJointSuffixes.begin(), kRobotJointSuffixes.end(),
                                    [&](const auto &suffix) { return joint->name == arm_id_ + suffix; });
 
-		bool is_hand_joint = (arm_id_ == "left") &&
-                     std::find(kHandJointNames.begin(), kHandJointNames.end(), joint->name) != kHandJointNames.end();
+		bool is_left_hand_joint = (arm_id_ == "left") &&
+                     std::find(kLeftHandJointNames.begin(), kLeftHandJointNames.end(), joint->name) != kLeftHandJointNames.end();
+		
+		bool is_right_hand = joint->name.rfind(arm_id_ + "_joint_", 0) == 0;
 
-		if (!is_franka_joint && !is_hand_joint) {
+		if (!is_franka_joint && !is_left_hand_joint && !is_right_hand) {
 			ROS_WARN_STREAM_NAMED("franka_hw_sim", "Joint '" << joint->name << "' contains a '" << transmission.type_
 															<< "' transmission, but it's not part of the Franka robot. "
 																"Ignoring this joint in FrankaHWSim.");
@@ -664,7 +673,7 @@ void FrankaHWSim::writeSim(ros::Time time, ros::Duration period)
 
 			Eigen::Matrix4d T_world = Eigen::Matrix4d::Identity();
 			T_world.block<3,3>(0,0) = R_base * T_cmd.block<3,3>(0,0);
-    		T_world.block<3,1>(0,3) = p_base + T_cmd.block<3,1>(0,3);
+    		T_world.block<3,1>(0,3) = p_base + R_base * T_cmd.block<3,1>(0,3);
 
 			
 			Eigen::Map<Eigen::Matrix4d>(world_pose_command.data()) = T_world;
@@ -721,11 +730,16 @@ void FrankaHWSim::writeSim(ros::Time time, ros::Duration period)
 		}
 
 		// Check if this joint is affected by gravity compensation
+
+		bool is_hand_joint_name = pair.first.rfind(this->arm_id_ + "_joint_", 0) == 0;
+
 		std::string prefix = this->arm_id_ + "_joint";
-		if (pair.first.rfind(prefix, 0) != std::string::npos) {
+		if (!is_hand_joint_name && pair.first.rfind(prefix, 0) != std::string::npos) {
 			int i          = std::stoi(pair.first.substr(prefix.size())) - 1;
 			joint->gravity = g.at(i);
 		}
+
+
 
 		//effort += joint->gravity;
 
@@ -1010,9 +1024,11 @@ void FrankaHWSim::forControlledJoint(const std::list<hardware_interface::Control
                                      const std::function<void(franka_mujoco::Joint &joint, const ControlMethod &)> &f)
 {
         for (const auto &controller : controllers) {
-                bool is_hand = arm_id_ == "left" and
-                               std::any_of(controller.claimed_resources.begin(), controller.claimed_resources.end(),
-                                           [](const auto &r) { return r.resources.count("joint_0_0") > 0; });
+			bool is_hand = std::any_of(controller.claimed_resources.begin(), controller.claimed_resources.end(),	
+                           [&](const auto &r) {
+                               if (arm_id_ == "left") return r.resources.count("joint_0_0") > 0;
+                               return r.resources.count(arm_id_ + "_joint_0_0") > 0;
+                           });
                 if (not verifier_->isClaimingArmController(controller) and not is_hand) {
                         continue;
                 }

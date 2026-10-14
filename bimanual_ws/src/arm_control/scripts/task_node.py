@@ -56,7 +56,7 @@ def main():
 
     print("services available")
 
-    move_left_arm = rospy.ServiceProxy('/arm_node/move_to_target', MoveToTarget)
+    move_arm = rospy.ServiceProxy('/arm_node/move_to_target', MoveToTarget)
 
     open_gripper = rospy.ServiceProxy("/left/gripper/open", Trigger)
     close_gripper = rospy.ServiceProxy("/left/gripper/close", Trigger)
@@ -68,15 +68,15 @@ def main():
     task, arm, x, y, z = get_target_pose()
 
     if task == "pick_up":
-        move_left_arm(arm, x, y, z+OFFSET)
+        move_arm(arm, x, y, z+OFFSET)
         rospy.sleep(3.0)
         open_gripper()
-        move_left_arm(arm, x, y, z+0.08)
+        move_arm(arm, x, y, z+0.08)
         close_gripper()
         rospy.sleep(2.0)
-        move_left_arm(arm, x, y, z+OFFSET)
+        move_arm(arm, x, y, z+OFFSET)
         rospy.sleep(3.0)
-        move_left_arm(arm, x+0.2, y+0.2, 0.9)
+        move_arm(arm, x+0.2, y+0.2, 0.9)
         open_gripper()
         rospy.sleep(3.0)
 
