@@ -178,13 +178,28 @@ bool BottlePoseController::start(std_srvs::Trigger::Request&, std_srvs::Trigger:
   if (active_) {
     r.success = false;
     r.message = "motion active";
-  } else {
-    start_req_ = true;
+    return true;
+
+  }
+  result_ = 0;
+  start_req_ = true;
+  while (result_ == 0 && ros::ok()) {
+    ros::WallDuration(0.02).sleep();
+  }
+  r.success = (result_ == 1);
+  if (result_ == 1) {
     r.success = true;
-    r.message = "start requested";
+    r.message = "reached";
+  }else if (result_ == -1) {
+    r.success = false;
+    r.message = "rejected";
+  } else {
+    r.success = false;
+    r.message = "aborted";
   }
   return true;
 }
+
 
 bool BottlePoseController::stop(std_srvs::Trigger::Request&, std_srvs::Trigger::Response& r) {
   stop_req_ = true;

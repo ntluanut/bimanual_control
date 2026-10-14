@@ -58,29 +58,44 @@ bool ControllerVerifier::isClaimingArmController(const hardware_interface::Contr
 
 bool ControllerVerifier::isClaimingGripperController(const hardware_interface::ControllerInfo &info) const
 {
-	static const std::vector<std::string> kHandJointNames = {
-                "joint_0_0", "joint_1_0", "joint_2_0", "joint_3_0", "joint_4_0",
-                "joint_5_0", "joint_6_0", "joint_7_0", "joint_8_0"
-        };
+	static const std::vector<std::string> kLeftHandJointNames = {
+	        "joint_0_0", "joint_1_0", "joint_2_0", "joint_3_0", "joint_4_0",
+	        "joint_5_0", "joint_6_0", "joint_7_0", "joint_8_0"
+	};
+
+	static const std::vector<std::string> kRightHandJointNames = {
+	        "right_joint_0_0",  "right_joint_1_0",  "right_joint_2_0",  "right_joint_3_0",
+	        "right_joint_4_0",  "right_joint_5_0",  "right_joint_6_0",  "right_joint_7_0",
+	        "right_joint_8_0",  "right_joint_9_0",  "right_joint_10_0", "right_joint_11_0",
+	        "right_joint_12_0", "right_joint_13_0", "right_joint_14_0", "right_joint_15_0"
+	};
 
 	for (const auto &claimed_resource : info.claimed_resources) {
-		if (claimed_resource.resources.size() != 9) {
-			continue;
-		}
 		auto control_method = ControllerVerifier::determineControlMethod(claimed_resource.hardware_interface);
 		if (not control_method or control_method.value() != POSITION) {
 			continue;
 		}
-		
-		bool all_hand = std::all_of(claimed_resource.resources.begin(), claimed_resource.resources.end(),
-                        [&](const std::string &name) {
-                                return std::find(kHandJointNames.begin(), kHandJointNames.end(), name) != kHandJointNames.end();
-                        });
 
-		if (all_hand) {
-                        return true;
-                }
-				
+		const std::vector<std::string> *expected = nullptr;
+		if (claimed_resource.resources.size() == kLeftHandJointNames.size()) {
+			expected = &kLeftHandJointNames;
+		} else if (claimed_resource.resources.size() == kRightHandJointNames.size()) {
+			expected = &kRightHandJointNames;
+		} else {
+			continue;
+		}
+
+		bool all_found = true;
+		for (const std::string &name : claimed_resource.resources) {
+			if (std::find(expected->begin(), expected->end(), name) == expected->end()) {
+				all_found = false;
+				break;
+			}
+		}
+
+		if (all_found) {
+			return true;
+		}
 	}
 	return false;
 }

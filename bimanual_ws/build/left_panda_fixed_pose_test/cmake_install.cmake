@@ -69,7 +69,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libleft_panda_fixed_pose_test.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libleft_panda_fixed_pose_test.so"
-         OLD_RPATH "/opt/ros/noetic/lib:/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib:/uolstore/home/users/sc23j3k/libfranka/build:"
+         OLD_RPATH "/opt/ros/noetic/lib:/uolstore/home/users/sc23j3k/.local/lib:/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib:/uolstore/home/users/sc23j3k/libfranka/build:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libleft_panda_fixed_pose_test.so")
