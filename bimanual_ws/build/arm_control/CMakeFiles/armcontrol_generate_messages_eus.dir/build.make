@@ -67,6 +67,7 @@ include arm_control/CMakeFiles/armcontrol_generate_messages_eus.dir/compiler_dep
 include arm_control/CMakeFiles/armcontrol_generate_messages_eus.dir/progress.make
 
 arm_control/CMakeFiles/armcontrol_generate_messages_eus: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/srv/MoveToTarget.l
+arm_control/CMakeFiles/armcontrol_generate_messages_eus: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/srv/MoveToTargetOri.l
 arm_control/CMakeFiles/armcontrol_generate_messages_eus: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/manifest.l
 
 /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
@@ -78,9 +79,15 @@ arm_control/CMakeFiles/armcontrol_generate_messages_eus: /uolstore/home/users/sc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from armcontrol/MoveToTarget.srv"
 	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/arm_control && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTarget.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p armcontrol -o /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/srv
 
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/srv/MoveToTargetOri.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/srv/MoveToTargetOri.l: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTargetOri.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from armcontrol/MoveToTargetOri.srv"
+	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/arm_control && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTargetOri.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p armcontrol -o /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/srv
+
 armcontrol_generate_messages_eus: arm_control/CMakeFiles/armcontrol_generate_messages_eus
 armcontrol_generate_messages_eus: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/manifest.l
 armcontrol_generate_messages_eus: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/srv/MoveToTarget.l
+armcontrol_generate_messages_eus: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/srv/MoveToTargetOri.l
 armcontrol_generate_messages_eus: arm_control/CMakeFiles/armcontrol_generate_messages_eus.dir/build.make
 .PHONY : armcontrol_generate_messages_eus
 

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/manifest.l"
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/srv/MoveToTarget.l"
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/roseus/ros/armcontrol/srv/MoveToTargetOri.l"
   "CMakeFiles/armcontrol_generate_messages_eus"
 )
 

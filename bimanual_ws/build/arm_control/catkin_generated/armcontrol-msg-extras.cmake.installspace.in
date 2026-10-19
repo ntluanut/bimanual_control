@@ -1,2 +1,2 @@
 set(armcontrol_MESSAGE_FILES "")
-set(armcontrol_SERVICE_FILES "srv/MoveToTarget.srv")
+set(armcontrol_SERVICE_FILES "srv/MoveToTarget.srv;srv/MoveToTargetOri.srv")

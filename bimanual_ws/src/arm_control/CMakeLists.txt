@@ -63,6 +63,9 @@ find_package(catkin REQUIRED COMPONENTS
 add_service_files(
 FILES
 MoveToTarget.srv
+MoveToTargetOri.srv
+GetCurrentPos.srv
+
 )
 
 ## Generate actions in the 'action' folder

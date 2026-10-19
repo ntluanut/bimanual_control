@@ -7,4 +7,6 @@
           Y
           Z-VAL
           Z
+          REACHED-VAL
+          REACHED
 ))

@@ -20,6 +20,7 @@ class BottlePoseController : public controller_interface::MultiInterfaceControll
   void update(const ros::Time&, const ros::Duration&) override;
   void stopping(const ros::Time&) override;
  private:
+  std::atomic<int> result_{0};
   bool start(std_srvs::Trigger::Request&, std_srvs::Trigger::Response&);
   bool stop(std_srvs::Trigger::Request&, std_srvs::Trigger::Response&);
   void targetCb(const geometry_msgs::PoseStampedConstPtr&);

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/gennodejs/ros/armcontrol/srv/MoveToTarget.js"
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/gennodejs/ros/armcontrol/srv/MoveToTargetOri.js"
   "CMakeFiles/armcontrol_generate_messages_nodejs"
 )
 

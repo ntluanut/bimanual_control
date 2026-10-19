@@ -67,6 +67,7 @@ include arm_control/CMakeFiles/armcontrol_generate_messages_cpp.dir/compiler_dep
 include arm_control/CMakeFiles/armcontrol_generate_messages_cpp.dir/progress.make
 
 arm_control/CMakeFiles/armcontrol_generate_messages_cpp: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol/MoveToTarget.h
+arm_control/CMakeFiles/armcontrol_generate_messages_cpp: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol/MoveToTargetOri.h
 
 /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol/MoveToTarget.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol/MoveToTarget.h: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTarget.srv
@@ -75,8 +76,16 @@ arm_control/CMakeFiles/armcontrol_generate_messages_cpp: /uolstore/home/users/sc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from armcontrol/MoveToTarget.srv"
 	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control && /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTarget.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p armcontrol -o /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol -e /opt/ros/noetic/share/gencpp/cmake/..
 
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol/MoveToTargetOri.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol/MoveToTargetOri.h: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTargetOri.srv
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol/MoveToTargetOri.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol/MoveToTargetOri.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from armcontrol/MoveToTargetOri.srv"
+	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control && /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTargetOri.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p armcontrol -o /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol -e /opt/ros/noetic/share/gencpp/cmake/..
+
 armcontrol_generate_messages_cpp: arm_control/CMakeFiles/armcontrol_generate_messages_cpp
 armcontrol_generate_messages_cpp: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol/MoveToTarget.h
+armcontrol_generate_messages_cpp: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol/MoveToTargetOri.h
 armcontrol_generate_messages_cpp: arm_control/CMakeFiles/armcontrol_generate_messages_cpp.dir/build.make
 .PHONY : armcontrol_generate_messages_cpp
 

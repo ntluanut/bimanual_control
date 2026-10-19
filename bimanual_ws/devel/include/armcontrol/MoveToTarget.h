@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::armcontrol::MoveToTarget > {
   static const char* value()
   {
-    return "350d48a9c3526923e8d975c2c3cd295a";
+    return "c6e581f7dcdda530f6ce296205020671";
   }
 
   static const char* value(const ::armcontrol::MoveToTarget&) { return value(); }

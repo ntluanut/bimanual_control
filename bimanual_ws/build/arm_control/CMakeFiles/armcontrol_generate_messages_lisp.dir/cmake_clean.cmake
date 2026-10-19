@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/common-lisp/ros/armcontrol/srv/MoveToTarget.lisp"
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/common-lisp/ros/armcontrol/srv/MoveToTargetOri.lisp"
   "CMakeFiles/armcontrol_generate_messages_lisp"
 )
 

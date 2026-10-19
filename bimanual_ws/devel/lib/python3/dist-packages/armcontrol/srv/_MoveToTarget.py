@@ -165,13 +165,13 @@ import struct
 
 
 class MoveToTargetResponse(genpy.Message):
-  _md5sum = "d41d8cd98f00b204e9800998ecf8427e"
+  _md5sum = "80204a6ff2622a7071680d5597cbd3aa"
   _type = "armcontrol/MoveToTargetResponse"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """
+  _full_text = """bool reached
 """
-  __slots__ = []
-  _slot_types = []
+  __slots__ = ['reached']
+  _slot_types = ['bool']
 
   def __init__(self, *args, **kwds):
     """
@@ -181,7 +181,7 @@ class MoveToTargetResponse(genpy.Message):
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       
+       reached
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -189,6 +189,11 @@ class MoveToTargetResponse(genpy.Message):
     """
     if args or kwds:
       super(MoveToTargetResponse, self).__init__(*args, **kwds)
+      # message fields cannot be None, assign default values for those that are
+      if self.reached is None:
+        self.reached = False
+    else:
+      self.reached = False
 
   def _get_types(self):
     """
@@ -202,7 +207,8 @@ class MoveToTargetResponse(genpy.Message):
     :param buff: buffer, ``StringIO``
     """
     try:
-      pass
+      _x = self.reached
+      buff.write(_get_struct_B().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -215,6 +221,10 @@ class MoveToTargetResponse(genpy.Message):
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       end = 0
+      start = end
+      end += 1
+      (self.reached,) = _get_struct_B().unpack(str[start:end])
+      self.reached = bool(self.reached)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -227,7 +237,8 @@ class MoveToTargetResponse(genpy.Message):
     :param numpy: numpy python module
     """
     try:
-      pass
+      _x = self.reached
+      buff.write(_get_struct_B().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -241,6 +252,10 @@ class MoveToTargetResponse(genpy.Message):
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       end = 0
+      start = end
+      end += 1
+      (self.reached,) = _get_struct_B().unpack(str[start:end])
+      self.reached = bool(self.reached)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -249,8 +264,14 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
+_struct_B = None
+def _get_struct_B():
+    global _struct_B
+    if _struct_B is None:
+        _struct_B = struct.Struct("<B")
+    return _struct_B
 class MoveToTarget(object):
   _type          = 'armcontrol/MoveToTarget'
-  _md5sum = '350d48a9c3526923e8d975c2c3cd295a'
+  _md5sum = 'c6e581f7dcdda530f6ce296205020671'
   _request_class  = MoveToTargetRequest
   _response_class = MoveToTargetResponse

@@ -36,3 +36,7 @@ right_hand_controller:
     right_joint_13_0: {trajectory: 0, goal: 0.2}
     right_joint_14_0: {trajectory: 0, goal: 0.2}
     right_joint_15_0: {trajectory: 0, goal: 0.2}
+
+  open_pos: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  close_pos: [0,1,1,1,0,1,1,1,0,1,1,1,1.2,1,1,1]
+  

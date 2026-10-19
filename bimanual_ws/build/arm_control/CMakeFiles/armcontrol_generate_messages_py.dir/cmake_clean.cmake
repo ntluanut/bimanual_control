@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/_MoveToTarget.py"
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/_MoveToTargetOri.py"
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/__init__.py"
   "CMakeFiles/armcontrol_generate_messages_py"
 )

@@ -151,13 +151,22 @@ class MoveToTargetResponse {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
+      this.reached = null;
     }
     else {
+      if (initObj.hasOwnProperty('reached')) {
+        this.reached = initObj.reached
+      }
+      else {
+        this.reached = false;
+      }
     }
   }
 
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type MoveToTargetResponse
+    // Serialize message field [reached]
+    bufferOffset = _serializer.bool(obj.reached, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -165,11 +174,13 @@ class MoveToTargetResponse {
     //deserializes a message object of type MoveToTargetResponse
     let len;
     let data = new MoveToTargetResponse(null);
+    // Deserialize message field [reached]
+    data.reached = _deserializer.bool(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 0;
+    return 1;
   }
 
   static datatype() {
@@ -179,13 +190,13 @@ class MoveToTargetResponse {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'd41d8cd98f00b204e9800998ecf8427e';
+    return '80204a6ff2622a7071680d5597cbd3aa';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
+    bool reached
     
     `;
   }
@@ -196,6 +207,13 @@ class MoveToTargetResponse {
       msg = {};
     }
     const resolved = new MoveToTargetResponse(null);
+    if (msg.reached !== undefined) {
+      resolved.reached = msg.reached;
+    }
+    else {
+      resolved.reached = false
+    }
+
     return resolved;
     }
 };
@@ -203,6 +221,6 @@ class MoveToTargetResponse {
 module.exports = {
   Request: MoveToTargetRequest,
   Response: MoveToTargetResponse,
-  md5sum() { return '350d48a9c3526923e8d975c2c3cd295a'; },
+  md5sum() { return 'c6e581f7dcdda530f6ce296205020671'; },
   datatype() { return 'armcontrol/MoveToTarget'; }
 };
