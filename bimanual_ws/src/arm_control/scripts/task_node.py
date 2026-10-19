@@ -2,22 +2,23 @@
 import rospy,json, mujoco
 import math
 from tf.transformations import quaternion_from_euler, quaternion_multiply
+from geometry_msgs.msg import PoseStamped
 from std_srvs.srv import Trigger
-from armcontrol.srv import MoveToTarget, MoveToTargetOri, GetCurrentPose
+from armcontrol.srv import MoveToTarget, MoveToTargetOri
 import numpy as np
 
 
 SCENE = "../../Bimanual_Robot_Project_MuJoCo/franka_emika_panda/scene.xml"
 JSON = "../../../../LLM_API/gemini_result.json"
-OFFSET = 0.25
+OFFSET = 0.3
 
-model = mujoco.MjModel.from_xml_path("../../Bimanual_Robot_Project_MuJoCo/franka_emika_panda/scene.xml")
-data = mujoco.MjData(model)
 
+#subscribe topic
 def get_current_pose(arm):
-    r = get_pose(arm)
-    return (r.x, r.y, r.z), (r.qx, r.qy, r.qz, r.qw)
-
+    p = rospy.wait_for_message(f"/{arm}/site_pose", PoseStamped, timeout=2.0)
+    pos = (p.pose.position.x, p.pose.position.y, p.pose.position.z)
+    quat = (p.pose.orientation.x, p.pose.orientation.y, p.pose.orientation.z, p.pose.orientation.w)
+    return pos, quat
 
 def quat_calc(axis,th):
     axis_value = {
@@ -54,8 +55,6 @@ def get_target_pose(arm_param=None):
     mujoco.mj_forward(model, data)
     site_id = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_SITE, "right_ee_site")
 
-    model = mujoco.MjModel.from_xml_path(SCENE)
-    data = mujoco.MjData(model)
     mujoco.mj_forward(model, data)
 
 
@@ -69,8 +68,12 @@ def get_target_pose(arm_param=None):
     return task, arm, x,y,z
 
 def main():
+    global model, data
 
     rospy.init_node("task_node")
+
+    model = mujoco.MjModel.from_xml_path("../../Bimanual_Robot_Project_MuJoCo/franka_emika_panda/scene.xml")
+    data = mujoco.MjData(model)
 
     print("node started")
 
@@ -82,7 +85,6 @@ def main():
 
     move_pos = rospy.ServiceProxy('/arm_node/move_to_target', MoveToTarget)
     move_ori = rospy.ServiceProxy('/arm_node/move_to_target_ori', MoveToTargetOri)
-    get_pose = rospy.ServiceProxy('/arm_node/get_current_pose', GetCurrentPose)
 
     open_gripper = rospy.ServiceProxy("/left/gripper/open", Trigger)
     close_gripper = rospy.ServiceProxy("/left/gripper/close", Trigger)
@@ -96,8 +98,35 @@ def main():
     task, arm, x, y, z = get_target_pose()
 
     if task == "rotate":
-        current_pose = get_current_pose(arm)
+        # 0.4 0.3 1
+        move_ori(arm, *quat_calc("z", math.radians(-45)))
+        move_pos(arm, x,y,z+OFFSET)
+        pos, _ = get_current_pose(arm)
+        move_pos(arm, pos[0]+0.05, pos[1],pos[2])
         
+        move_ori(arm, *quat_calc("x", math.radians(90)))
+        move_ori(arm, *quat_calc("z", math.radians(45)))
+
+        pos, _ = get_current_pose(arm)
+        move_pos(arm, pos[0]+0.06, pos[1],pos[2]- 0.32)
+        pos, _ = get_current_pose(arm)
+        move_pos(arm, pos[0]-0.05, pos[1],pos[2])
+        close_gripper_right()
+        rospy.sleep(2.0)
+        pos, _ = get_current_pose(arm)
+        move_pos(arm, pos[0], pos[1],pos[2]+0.2)
+        move_pos(arm, pos[0], pos[1]+0.35,pos[2])
+
+        #left arm
+        task, arm, x, y, z = get_target_pose("left")
+        pos, _ = get_current_pose("left")
+        move_pos("left",x,y,z+OFFSET)
+        move_pos("left",x,y,z+OFFSET-0.1)
+        close_gripper()
+
+        
+
+
 
 
 if __name__ == "__main__":

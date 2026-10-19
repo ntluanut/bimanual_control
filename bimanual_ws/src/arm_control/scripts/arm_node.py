@@ -4,7 +4,10 @@ from geometry_msgs.msg import PoseStamped
 from std_srvs.srv import Trigger
 from armcontrol.srv import MoveToTarget, MoveToTargetResponse,MoveToTargetOri,MoveToTargetOriResponse
 from tf.transformations import quaternion_multiply
+import numpy as np
+from sensor_msgs.msg import JointState
 
+SCENE = "../../Bimanual_Robot_Project_MuJoCo/franka_emika_panda/scene.xml"
 
 HOME_QUAT = {
     "left":  (0.0, 0.9238795, -0.3826834, 0.0),
@@ -35,6 +38,7 @@ starts = {}
 last_pos = {}
 last_quat = {}
 joint_msgs = {}
+site_pubs = {}
 lock = threading.Lock()
 model = None
 data = None
@@ -104,7 +108,7 @@ def move_to_target_ori(req):
     return MoveToTargetOriResponse(reached=res.success)
 
 
-def compute_current_pos(arm):
+def compute_site_pose(arm):
     msg = joint_msgs.get(arm)
     if msg is None:
         return None
@@ -148,9 +152,19 @@ def publish_site_pose(_):
         out.pose.orientation.z, out.pose.orientation.w = qz, qw
         site_pubs[arm].publish(out)
 
+def left_joint_cb(msg):
+    joint_msgs["left"] = msg
+
+def right_joint_cb(msg):
+    joint_msgs["right"] = msg
 
 
 def main():
+    global model, data
+    rospy.init_node("arm_node")
+    model = mujoco.MjModel.from_xml_path(SCENE)
+    data = mujoco.MjData(model)
+
     rospy.init_node("arm_node")
 
     pubs["left"]  = rospy.Publisher("/left/left_bottle_pose_controller/target_pose", PoseStamped, queue_size=1)
@@ -159,6 +173,9 @@ def main():
     site_pubs["left"]  = rospy.Publisher("/left/site_pose",  PoseStamped, queue_size=1)
     site_pubs["right"] = rospy.Publisher("/right/site_pose", PoseStamped, queue_size=1)
 
+    rospy.Subscriber("/left/joint_states",  JointState, left_joint_cb)
+    rospy.Subscriber("/right/joint_states", JointState, right_joint_cb)
+
     rospy.sleep(1.0)
 
     starts["left"]  = rospy.ServiceProxy("/left/left_bottle_pose_controller/start", Trigger)
@@ -166,9 +183,9 @@ def main():
     
     rospy.Service('/arm_node/move_to_target', MoveToTarget, move_to_target_pos)
     rospy.Service('/arm_node/move_to_target_ori', MoveToTargetOri, move_to_target_ori)
-
-    site_name = rospy.get_param("~site",f"{arm}_ee_site")
     
+    rospy.Timer(rospy.Duration(0.05), publish_site_pose)
+    rospy.spin()
 
 
     print("services available")

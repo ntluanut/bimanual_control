@@ -64,7 +64,6 @@ add_service_files(
 FILES
 MoveToTarget.srv
 MoveToTargetOri.srv
-GetCurrentPos.srv
 
 )
 
