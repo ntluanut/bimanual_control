@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTarget.srv"
+services_str = "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTarget.srv;/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTargetOri.srv"
 pkg_name = "armcontrol"
 dependencies_str = "std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

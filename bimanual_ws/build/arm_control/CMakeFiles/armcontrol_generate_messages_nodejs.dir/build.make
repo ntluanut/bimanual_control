@@ -67,14 +67,21 @@ include arm_control/CMakeFiles/armcontrol_generate_messages_nodejs.dir/compiler_
 include arm_control/CMakeFiles/armcontrol_generate_messages_nodejs.dir/progress.make
 
 arm_control/CMakeFiles/armcontrol_generate_messages_nodejs: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/gennodejs/ros/armcontrol/srv/MoveToTarget.js
+arm_control/CMakeFiles/armcontrol_generate_messages_nodejs: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/gennodejs/ros/armcontrol/srv/MoveToTargetOri.js
 
 /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/gennodejs/ros/armcontrol/srv/MoveToTarget.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/gennodejs/ros/armcontrol/srv/MoveToTarget.js: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTarget.srv
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from armcontrol/MoveToTarget.srv"
 	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/arm_control && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTarget.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p armcontrol -o /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/gennodejs/ros/armcontrol/srv
 
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/gennodejs/ros/armcontrol/srv/MoveToTargetOri.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/gennodejs/ros/armcontrol/srv/MoveToTargetOri.js: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTargetOri.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from armcontrol/MoveToTargetOri.srv"
+	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/arm_control && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTargetOri.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p armcontrol -o /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/gennodejs/ros/armcontrol/srv
+
 armcontrol_generate_messages_nodejs: arm_control/CMakeFiles/armcontrol_generate_messages_nodejs
 armcontrol_generate_messages_nodejs: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/gennodejs/ros/armcontrol/srv/MoveToTarget.js
+armcontrol_generate_messages_nodejs: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/gennodejs/ros/armcontrol/srv/MoveToTargetOri.js
 armcontrol_generate_messages_nodejs: arm_control/CMakeFiles/armcontrol_generate_messages_nodejs.dir/build.make
 .PHONY : armcontrol_generate_messages_nodejs
 

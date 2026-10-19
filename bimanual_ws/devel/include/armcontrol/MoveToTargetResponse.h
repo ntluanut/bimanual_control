@@ -24,14 +24,17 @@ struct MoveToTargetResponse_
   typedef MoveToTargetResponse_<ContainerAllocator> Type;
 
   MoveToTargetResponse_()
-    {
+    : reached(false)  {
     }
   MoveToTargetResponse_(const ContainerAllocator& _alloc)
-    {
+    : reached(false)  {
   (void)_alloc;
     }
 
 
+
+   typedef uint8_t _reached_type;
+  _reached_type reached;
 
 
 
@@ -56,6 +59,19 @@ std::ostream& operator<<(std::ostream& s, const ::armcontrol::MoveToTargetRespon
 {
 ros::message_operations::Printer< ::armcontrol::MoveToTargetResponse_<ContainerAllocator> >::stream(s, "", v);
 return s;
+}
+
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::armcontrol::MoveToTargetResponse_<ContainerAllocator1> & lhs, const ::armcontrol::MoveToTargetResponse_<ContainerAllocator2> & rhs)
+{
+  return lhs.reached == rhs.reached;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::armcontrol::MoveToTargetResponse_<ContainerAllocator1> & lhs, const ::armcontrol::MoveToTargetResponse_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
 }
 
 
@@ -106,12 +122,12 @@ struct MD5Sum< ::armcontrol::MoveToTargetResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "d41d8cd98f00b204e9800998ecf8427e";
+    return "80204a6ff2622a7071680d5597cbd3aa";
   }
 
   static const char* value(const ::armcontrol::MoveToTargetResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xd41d8cd98f00b204ULL;
-  static const uint64_t static_value2 = 0xe9800998ecf8427eULL;
+  static const uint64_t static_value1 = 0x80204a6ff2622a70ULL;
+  static const uint64_t static_value2 = 0x71680d5597cbd3aaULL;
 };
 
 template<class ContainerAllocator>
@@ -130,7 +146,7 @@ struct Definition< ::armcontrol::MoveToTargetResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "\n"
+    return "bool reached\n"
 ;
   }
 
@@ -147,8 +163,10 @@ namespace serialization
 
   template<class ContainerAllocator> struct Serializer< ::armcontrol::MoveToTargetResponse_<ContainerAllocator> >
   {
-    template<typename Stream, typename T> inline static void allInOne(Stream&, T)
-    {}
+    template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
+    {
+      stream.next(m.reached);
+    }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
   }; // struct MoveToTargetResponse_
@@ -164,8 +182,13 @@ namespace message_operations
 template<class ContainerAllocator>
 struct Printer< ::armcontrol::MoveToTargetResponse_<ContainerAllocator> >
 {
-  template<typename Stream> static void stream(Stream&, const std::string&, const ::armcontrol::MoveToTargetResponse_<ContainerAllocator>&)
-  {}
+  template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::armcontrol::MoveToTargetResponse_<ContainerAllocator>& v)
+  {
+    if (false || !indent.empty())
+      s << std::endl;
+    s << indent << "reached: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.reached);
+  }
 };
 
 } // namespace message_operations

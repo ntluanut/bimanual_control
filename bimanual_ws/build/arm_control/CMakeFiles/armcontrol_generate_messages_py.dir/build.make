@@ -67,6 +67,7 @@ include arm_control/CMakeFiles/armcontrol_generate_messages_py.dir/compiler_depe
 include arm_control/CMakeFiles/armcontrol_generate_messages_py.dir/progress.make
 
 arm_control/CMakeFiles/armcontrol_generate_messages_py: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/_MoveToTarget.py
+arm_control/CMakeFiles/armcontrol_generate_messages_py: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/_MoveToTargetOri.py
 arm_control/CMakeFiles/armcontrol_generate_messages_py: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/__init__.py
 
 /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/_MoveToTarget.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
@@ -74,13 +75,20 @@ arm_control/CMakeFiles/armcontrol_generate_messages_py: /uolstore/home/users/sc2
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV armcontrol/MoveToTarget"
 	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/arm_control && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTarget.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p armcontrol -o /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv
 
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/_MoveToTargetOri.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/_MoveToTargetOri.py: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTargetOri.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV armcontrol/MoveToTargetOri"
+	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/arm_control && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTargetOri.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p armcontrol -o /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv
+
 /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/__init__.py: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/_MoveToTarget.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python srv __init__.py for armcontrol"
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/__init__.py: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/_MoveToTargetOri.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python srv __init__.py for armcontrol"
 	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/arm_control && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv --initpy
 
 armcontrol_generate_messages_py: arm_control/CMakeFiles/armcontrol_generate_messages_py
 armcontrol_generate_messages_py: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/_MoveToTarget.py
+armcontrol_generate_messages_py: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/_MoveToTargetOri.py
 armcontrol_generate_messages_py: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib/python3/dist-packages/armcontrol/srv/__init__.py
 armcontrol_generate_messages_py: arm_control/CMakeFiles/armcontrol_generate_messages_py.dir/build.make
 .PHONY : armcontrol_generate_messages_py

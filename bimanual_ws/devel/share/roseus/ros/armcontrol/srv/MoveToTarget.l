@@ -90,27 +90,37 @@
 
 (defclass armcontrol::MoveToTargetResponse
   :super ros::object
-  :slots ())
+  :slots (_reached ))
 
 (defmethod armcontrol::MoveToTargetResponse
   (:init
    (&key
+    ((:reached __reached) nil)
     )
    (send-super :init)
+   (setq _reached __reached)
    self)
+  (:reached
+   (&optional (__reached :null))
+   (if (not (eq __reached :null)) (setq _reached __reached)) _reached)
   (:serialization-length
    ()
    (+
-    0
+    ;; bool _reached
+    1
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
+     ;; bool _reached
+       (if _reached (write-byte -1 s) (write-byte 0 s))
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
+   ;; bool _reached
+     (setq _reached (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
    ;;
    self)
   )
@@ -119,7 +129,7 @@
   :super ros::object
   :slots ())
 
-(setf (get armcontrol::MoveToTarget :md5sum-) "350d48a9c3526923e8d975c2c3cd295a")
+(setf (get armcontrol::MoveToTarget :md5sum-) "c6e581f7dcdda530f6ce296205020671")
 (setf (get armcontrol::MoveToTarget :datatype-) "armcontrol/MoveToTarget")
 (setf (get armcontrol::MoveToTarget :request) armcontrol::MoveToTargetRequest)
 (setf (get armcontrol::MoveToTarget :response) armcontrol::MoveToTargetResponse)
@@ -127,7 +137,7 @@
 (defmethod armcontrol::MoveToTargetRequest
   (:response () (instance armcontrol::MoveToTargetResponse :init)))
 
-(setf (get armcontrol::MoveToTargetRequest :md5sum-) "350d48a9c3526923e8d975c2c3cd295a")
+(setf (get armcontrol::MoveToTargetRequest :md5sum-) "c6e581f7dcdda530f6ce296205020671")
 (setf (get armcontrol::MoveToTargetRequest :datatype-) "armcontrol/MoveToTargetRequest")
 (setf (get armcontrol::MoveToTargetRequest :definition-)
       "string arm
@@ -135,10 +145,10 @@ float64 x
 float64 y
 float64 z
 ---
-
+bool reached
 ")
 
-(setf (get armcontrol::MoveToTargetResponse :md5sum-) "350d48a9c3526923e8d975c2c3cd295a")
+(setf (get armcontrol::MoveToTargetResponse :md5sum-) "c6e581f7dcdda530f6ce296205020671")
 (setf (get armcontrol::MoveToTargetResponse :datatype-) "armcontrol/MoveToTargetResponse")
 (setf (get armcontrol::MoveToTargetResponse :definition-)
       "string arm
@@ -146,11 +156,11 @@ float64 x
 float64 y
 float64 z
 ---
-
+bool reached
 ")
 
 
 
-(provide :armcontrol/MoveToTarget "350d48a9c3526923e8d975c2c3cd295a")
+(provide :armcontrol/MoveToTarget "c6e581f7dcdda530f6ce296205020671")
 
 

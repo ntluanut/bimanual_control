@@ -67,14 +67,21 @@ include arm_control/CMakeFiles/armcontrol_generate_messages_lisp.dir/compiler_de
 include arm_control/CMakeFiles/armcontrol_generate_messages_lisp.dir/progress.make
 
 arm_control/CMakeFiles/armcontrol_generate_messages_lisp: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/common-lisp/ros/armcontrol/srv/MoveToTarget.lisp
+arm_control/CMakeFiles/armcontrol_generate_messages_lisp: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/common-lisp/ros/armcontrol/srv/MoveToTargetOri.lisp
 
 /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/common-lisp/ros/armcontrol/srv/MoveToTarget.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/common-lisp/ros/armcontrol/srv/MoveToTarget.lisp: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTarget.srv
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from armcontrol/MoveToTarget.srv"
 	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/arm_control && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTarget.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p armcontrol -o /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/common-lisp/ros/armcontrol/srv
 
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/common-lisp/ros/armcontrol/srv/MoveToTargetOri.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/common-lisp/ros/armcontrol/srv/MoveToTargetOri.lisp: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTargetOri.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from armcontrol/MoveToTargetOri.srv"
+	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/arm_control && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/arm_control/srv/MoveToTargetOri.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p armcontrol -o /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/common-lisp/ros/armcontrol/srv
+
 armcontrol_generate_messages_lisp: arm_control/CMakeFiles/armcontrol_generate_messages_lisp
 armcontrol_generate_messages_lisp: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/common-lisp/ros/armcontrol/srv/MoveToTarget.lisp
+armcontrol_generate_messages_lisp: /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/share/common-lisp/ros/armcontrol/srv/MoveToTargetOri.lisp
 armcontrol_generate_messages_lisp: arm_control/CMakeFiles/armcontrol_generate_messages_lisp.dir/build.make
 .PHONY : armcontrol_generate_messages_lisp
 

@@ -340,6 +340,20 @@ _armcontrol_generate_messages_check_deps_MoveToTarget/fast:
 .PHONY : _armcontrol_generate_messages_check_deps_MoveToTarget/fast
 
 # Convenience name for target.
+arm_control/CMakeFiles/_armcontrol_generate_messages_check_deps_MoveToTargetOri.dir/rule:
+	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 arm_control/CMakeFiles/_armcontrol_generate_messages_check_deps_MoveToTargetOri.dir/rule
+.PHONY : arm_control/CMakeFiles/_armcontrol_generate_messages_check_deps_MoveToTargetOri.dir/rule
+
+# Convenience name for target.
+_armcontrol_generate_messages_check_deps_MoveToTargetOri: arm_control/CMakeFiles/_armcontrol_generate_messages_check_deps_MoveToTargetOri.dir/rule
+.PHONY : _armcontrol_generate_messages_check_deps_MoveToTargetOri
+
+# fast build rule for target.
+_armcontrol_generate_messages_check_deps_MoveToTargetOri/fast:
+	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/_armcontrol_generate_messages_check_deps_MoveToTargetOri.dir/build.make arm_control/CMakeFiles/_armcontrol_generate_messages_check_deps_MoveToTargetOri.dir/build
+.PHONY : _armcontrol_generate_messages_check_deps_MoveToTargetOri/fast
+
+# Convenience name for target.
 arm_control/CMakeFiles/armcontrol_generate_messages_cpp.dir/rule:
 	cd /uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 arm_control/CMakeFiles/armcontrol_generate_messages_cpp.dir/rule
 .PHONY : arm_control/CMakeFiles/armcontrol_generate_messages_cpp.dir/rule
@@ -493,6 +507,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... _armcontrol_generate_messages_check_deps_MoveToTarget"
+	@echo "... _armcontrol_generate_messages_check_deps_MoveToTargetOri"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_eus"
 	@echo "... actionlib_generate_messages_lisp"

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol/MoveToTarget.h"
+  "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/include/armcontrol/MoveToTargetOri.h"
   "CMakeFiles/armcontrol_generate_messages_cpp"
 )
 

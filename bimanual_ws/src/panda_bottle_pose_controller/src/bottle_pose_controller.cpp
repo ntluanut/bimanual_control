@@ -5,6 +5,7 @@
 #include <exception>
 #include <sstream>
 #include <vector>
+#include <atomic>
 
 #include <Eigen/Core>
 #include <Eigen/Geometry>
@@ -113,6 +114,7 @@ void BottlePoseController::update(const ros::Time& now, const ros::Duration&) {
   if (stop_req_.exchange(false)) {
     hold_pose_ = state_handle_->getRobotState().O_T_EE_d;
     active_ = false;
+    result_ = -2;
     pose_handle_->setCommand(hold_pose_);
     return;
   }
@@ -134,6 +136,7 @@ void BottlePoseController::update(const ros::Time& now, const ros::Duration&) {
     if (d > max_translation_ || r > max_rotation_) {
       ROS_ERROR_STREAM("Rejected: translation=" << d << " m, rotation=" << r << " rad");
       active_ = false;
+      result_ = -1;
     } else {
       t0_ = now;
       active_ = true;
@@ -166,12 +169,14 @@ void BottlePoseController::update(const ros::Time& now, const ros::Duration&) {
 
   if (s >= 1) {
     active_ = false;
+    result_ = 1;
     ROS_INFO("Target reached");
   }
 }
 
 void BottlePoseController::stopping(const ros::Time&) {
   active_ = false;
+  result_ = -2;
 }
 
 bool BottlePoseController::start(std_srvs::Trigger::Request&, std_srvs::Trigger::Response& r) {

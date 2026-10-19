@@ -3695,6 +3695,19 @@ _armcontrol_generate_messages_check_deps_MoveToTarget/fast:
 .PHONY : _armcontrol_generate_messages_check_deps_MoveToTarget/fast
 
 #=============================================================================
+# Target rules for targets named _armcontrol_generate_messages_check_deps_MoveToTargetOri
+
+# Build rule for target.
+_armcontrol_generate_messages_check_deps_MoveToTargetOri: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _armcontrol_generate_messages_check_deps_MoveToTargetOri
+.PHONY : _armcontrol_generate_messages_check_deps_MoveToTargetOri
+
+# fast build rule for target.
+_armcontrol_generate_messages_check_deps_MoveToTargetOri/fast:
+	$(MAKE) $(MAKESILENT) -f arm_control/CMakeFiles/_armcontrol_generate_messages_check_deps_MoveToTargetOri.dir/build.make arm_control/CMakeFiles/_armcontrol_generate_messages_check_deps_MoveToTargetOri.dir/build
+.PHONY : _armcontrol_generate_messages_check_deps_MoveToTargetOri/fast
+
+#=============================================================================
 # Target rules for targets named armcontrol_generate_messages_cpp
 
 # Build rule for target.
@@ -8765,6 +8778,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... _armcontrol_generate_messages_check_deps_MoveToTarget"
+	@echo "... _armcontrol_generate_messages_check_deps_MoveToTargetOri"
 	@echo "... _catkin_empty_exported_target"
 	@echo "... _control_msgs_generate_messages_check_deps_FollowJointTrajectoryAction"
 	@echo "... _control_msgs_generate_messages_check_deps_FollowJointTrajectoryActionFeedback"

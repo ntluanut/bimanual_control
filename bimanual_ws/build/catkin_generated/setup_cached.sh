@@ -7,4 +7,5 @@
 # new environment variables
 
 # modified environment variables
+export LD_LIBRARY_PATH='/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/devel/lib:/uolstore/home/users/sc23j3k/.local/lib:/uolstore/home/users/sc23j3k/.local/lib/x86_64-linux-gnu:/opt/ros/noetic/lib:/uolstore/home/users/sc23j3k/.mujoco/mujoco-3.3.5/lib:/usr/local/lib:/lib/x86_64-linux-gnu:/lib:/.singularity.d/libs'
 export PWD='/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build'
