@@ -1,0 +1,71 @@
+
+    <mujoco model="bottle_screw_cap">
+
+      <compiler angle="radian"/>
+      <option timestep="0.001" integrator="implicitfast"/>
+
+      <worldbody>
+
+        <!-- Bottle: radius 25 mm, total height 120 mm; fixed to the world -->
+        <body name="bottle" pos="0 0 0.060">
+          <geom name="bottle_geom"
+                type="cylinder"
+                size="0.025 0.060"
+                mass="0.10"
+                rgba="0.65 0.80 0.95 1"/>
+
+          <!-- Cap: initially positioned at the top of the bottle -->
+          <body name="cap" pos="0 0 0.066">
+
+            <!-- Translation along the bottle axis, with a travel range of 0 to 6 mm -->
+            <joint name="cap_slide"
+                   type="slide"
+                   axis="0 0 1"
+                   ref="0"
+                   limited="true"
+                   range="0 0.006"
+                   damping="0.1"/>
+
+            <!-- Rotation about the same axis; multiple revolutions are allowed -->
+            <joint name="cap_hinge"
+                   type="hinge"
+                   axis="0 0 1"
+                   ref="0"
+                   limited="false"
+                   damping="0.001"/>
+
+            <!-- Cap: radius 28 mm, total height 12 mm -->
+            <geom name="cap_geom"
+                  type="cylinder"
+                  size="0.028 0.006"
+                  mass="0.02"
+                  rgba="0.90 0.30 0.20 1"/>
+
+            <!-- Offset marker to make cap rotation visible -->
+            <site name="cap_marker"
+                  type="sphere"
+                  pos="0.020 0 0.007"
+                  size="0.002"
+                  rgba="1 1 1 1"/>
+
+          </body>
+        </body>
+
+      </worldbody>
+
+      <!-- Joints represent the simplified thread; exclude collisions between the bottle and cap -->
+      <contact>
+        <exclude body1="bottle" body2="cap"/>
+      </contact>
+
+      <equality>
+        <!-- Each full revolution (2*pi rad) raises the cap by 0.002 m along the z axis -->
+        <joint name="screw_coupling"
+               joint1="cap_slide"
+               joint2="cap_hinge"
+               polycoef="0 0.000318309886 0 0 0"
+               solref="0.005 1"
+               solimp="0.99 0.99 0.001 0.5 2"/>
+      </equality>
+
+    </mujoco>
