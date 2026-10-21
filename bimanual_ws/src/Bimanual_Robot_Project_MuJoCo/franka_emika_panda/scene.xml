@@ -2,6 +2,7 @@
   <include file="panda_assets.xml"/>
   <include file="panda_left.xml"/>
   <include file="panda_right.xml"/>
+    <include file="bottle.xml"/>
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>

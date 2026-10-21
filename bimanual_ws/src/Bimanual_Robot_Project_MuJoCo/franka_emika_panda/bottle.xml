@@ -7,7 +7,7 @@
       <worldbody>
 
         <!-- Bottle: radius 25 mm, total height 120 mm; fixed to the world -->
-        <body name="bottle" pos="0 0 0.060">
+        <body name="bottle" pos="2 0 0.060">
           <geom name="bottle_geom"
                 type="cylinder"
                 size="0.025 0.060"
@@ -15,7 +15,7 @@
                 rgba="0.65 0.80 0.95 1"/>
 
           <!-- Cap: initially positioned at the top of the bottle -->
-          <body name="cap" pos="0 0 0.066">
+          <body name="cap" pos="2 0 0.066">
 
             <!-- Translation along the bottle axis, with a travel range of 0 to 6 mm -->
             <joint name="cap_slide"
