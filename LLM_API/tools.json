@@ -1,0 +1,41 @@
+[
+{
+  "type": "function",
+  "name": "arm_control",
+  "description": "moving arm to implement a task",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "task": {
+        "type": "string",
+        "enum": ["pick_up","rotate","place"],
+        "description": "choose task to perform"
+      },
+      "arm": {
+        "type": "string",
+        "enum": ["left", "right"],
+        "description": "choose arm to move"
+      },
+      "color": {
+        "type": "string",
+        "enum": ["orange", "black","blue", "white"],
+        "minItems": 0,
+        "maxItems": 1
+      },
+      "object": {
+        "type": "string",
+        "enum": ["cylinder", "box","sphere"],
+        "minItems": 1,
+        "maxItems": 1
+      },
+      "orientation": {
+        "type": "array",
+        "items": {"type": "number"},
+        "minItems": 4,
+        "maxItems": 4
+      }
+    },
+    "required": ["task", "arm", "color", "object"]
+  }
+}
+]

@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# generated from catkin/cmake/template/script.py.in
+# creates a relay to a python script source file, acting as that file.
+# The purpose is that of a symlink
+python_script = '/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/src/Bimanual_Robot_Project_MuJoCo/diffik_nullspace.py'
+with open(python_script, 'r') as fh:
+    context = {
+        '__builtins__': __builtins__,
+        '__doc__': None,
+        '__file__': python_script,
+        '__name__': __name__,
+        '__package__': None,
+    }
+    exec(compile(fh.read(), python_script, 'exec'), context)

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <p class="title">VOICE RECORDER</p>
+    <div class="main">
+    <div class="card">
+        <div class ="card">
+            <span class = "output">
+            </span>
+        </div>
+        <div class = "button">
+        <button class="btn">REC</button>
+        </div>
+    </div>
+    </div>
+
+
+    <script>
+        const recognition = new SpeechRecognition();
+        recognition.continuous = false;
+        recognition.lang = "en-US";
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        const diagnostic = document.querySelector(".output");
+        const bg = document.querySelector("html");
+        const startBtn = document.querySelector("button");
+
+        startBtn.onclick = () => {
+        recognition.start();
+        console.log("Ready to receive.");
+        startBtn.style.backgroundColor = "red";
+        startBtn.style.color = "white"
+
+        };
+
+        recognition.onresult = (event) => {
+        const color = event.results[0][0].transcript;
+        diagnostic.style.fontFamily = "sans-serif"
+        diagnostic.style.fontWeight = "bold"
+        diagnostic.textContent = `Result: ${color}`;
+        bg.style.backgroundColor = color;
+
+
+        const audio_input = event.results[0][0].transcript;
+
+        fetch("/input",{
+            method: "POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({
+                audio: audio_input
+            })
+        });
+        };  
+
+        recognition.onerror = (event) => {
+        console.log("Error:", event.error);
+        };
+
+        recognition.onspeechend = () => {
+        console.log("Ended");
+        startBtn.style.backgroundColor = "white";
+        startBtn.style.color = "red"
+        };
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/*********************************************************************
+ * Copyright 2017 Franka Emika GmbH
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Changes made for franka_mujoco:
+ *  - namespace
+ *********************************************************************/
+
+#include <franka_mujoco/controller_verifier.hpp>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+namespace franka_mujoco {
+
+ControllerVerifier::ControllerVerifier(const std::map<std::string, std::shared_ptr<franka_mujoco::Joint>> &joints,
+                                       const std::string &arm_id)
+    : arm_id_(arm_id)
+{
+	for (const auto &joint : joints) {
+		joint_names_.push_back(joint.first);
+	}
+}
+
+bool ControllerVerifier::isValidController(const hardware_interface::ControllerInfo &controller) const
+{
+	if (isClaimingGripperController(controller) or isClaimingArmController(controller)) {
+		return true;
+	}
+	return std::none_of(
+	    controller.claimed_resources.begin(), controller.claimed_resources.end(),
+	    [](const auto &resource) { return ControllerVerifier::determineControlMethod(resource.hardware_interface); });
+}
+
+bool ControllerVerifier::isClaimingArmController(const hardware_interface::ControllerInfo &info) const
+{
+        for (const auto &claimed_resource : info.claimed_resources) {
+                if (claimed_resource.hardware_interface.find("franka_hw::FrankaPoseCartesianInterface") != std::string::npos) {
+                        return true;
+                }
+                if (hasControlMethodAndValidSize(claimed_resource)) {
+                        return areArmJoints(claimed_resource.resources);
+                }
+        }
+        return false;
+}
+
+bool ControllerVerifier::isClaimingGripperController(const hardware_interface::ControllerInfo &info) const
+{
+	static const std::vector<std::string> kLeftHandJointNames = {
+	        "joint_0_0", "joint_1_0", "joint_2_0", "joint_3_0", "joint_4_0",
+	        "joint_5_0", "joint_6_0", "joint_7_0", "joint_8_0"
+	};
+
+	static const std::vector<std::string> kRightHandJointNames = {
+	        "right_joint_0_0",  "right_joint_1_0",  "right_joint_2_0",  "right_joint_3_0",
+	        "right_joint_4_0",  "right_joint_5_0",  "right_joint_6_0",  "right_joint_7_0",
+	        "right_joint_8_0",  "right_joint_9_0",  "right_joint_10_0", "right_joint_11_0",
+	        "right_joint_12_0", "right_joint_13_0", "right_joint_14_0", "right_joint_15_0"
+	};
+
+	for (const auto &claimed_resource : info.claimed_resources) {
+		auto control_method = ControllerVerifier::determineControlMethod(claimed_resource.hardware_interface);
+		if (not control_method or control_method.value() != POSITION) {
+			continue;
+		}
+
+		const std::vector<std::string> *expected = nullptr;
+		if (claimed_resource.resources.size() == kLeftHandJointNames.size()) {
+			expected = &kLeftHandJointNames;
+		} else if (claimed_resource.resources.size() == kRightHandJointNames.size()) {
+			expected = &kRightHandJointNames;
+		} else {
+			continue;
+		}
+
+		bool all_found = true;
+		for (const std::string &name : claimed_resource.resources) {
+			if (std::find(expected->begin(), expected->end(), name) == expected->end()) {
+				all_found = false;
+				break;
+			}
+		}
+
+		if (all_found) {
+			return true;
+		}
+	}
+	return false;
+}
+
+bool ControllerVerifier::hasControlMethodAndValidSize(const hardware_interface::InterfaceResources &resource)
+{
+        if (resource.hardware_interface.find("franka_hw::FrankaPoseCartesianInterface") != std::string::npos) {
+                return resource.resources.size() == 1;
+        }
+        return ControllerVerifier::determineControlMethod(resource.hardware_interface).is_initialized() and
+               resource.resources.size() == 7;
+}
+
+bool ControllerVerifier::areArmJoints(const std::set<std::string> &resources) const
+{
+	return std::all_of(resources.begin(), resources.end(), [this](const std::string &joint_name) {
+		return std::find_if(joint_names_.begin(), joint_names_.end(), [&joint_name, this](const std::string &joint) {
+			       // make sure that the joint is not a finger joint
+			       if (joint.find(arm_id_ + "_finger_joint") != std::string::npos) {
+				       return false;
+			       }
+			       return joint == joint_name;
+		       }) != joint_names_.end();
+	});
+}
+
+
+boost::optional<ControlMethod> ControllerVerifier::determineControlMethod(const std::string &hardware_interface)
+{
+        if (hardware_interface.find("hardware_interface::PositionJointInterface") != std::string::npos) {
+                return POSITION;
+        }
+        if (hardware_interface.find("hardware_interface::VelocityJointInterface") != std::string::npos) {
+                return VELOCITY;
+        }
+        if (hardware_interface.find("hardware_interface::EffortJointInterface") != std::string::npos) {
+                return EFFORT;
+        }
+        if (hardware_interface.find("franka_hw::FrankaPoseCartesianInterface") != std::string::npos) {
+                return POSITION;
+        }
+        return boost::none;
+}
+} // namespace franka_mujoco

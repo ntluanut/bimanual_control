@@ -37,6 +37,11 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   
       if (NOT EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}")
@@ -56,7 +61,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE PROGRAM FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/_setup_util.py")
+  file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE PROGRAM FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -68,7 +73,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE PROGRAM FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/env.sh")
+  file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE PROGRAM FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -80,7 +85,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE FILE FILES
+  file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE FILE FILES
     "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/setup.bash"
     "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/local_setup.bash"
     )
@@ -95,7 +100,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE FILE FILES
+  file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE FILE FILES
     "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/setup.sh"
     "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/local_setup.sh"
     )
@@ -110,7 +115,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE FILE FILES
+  file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE FILE FILES
     "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/setup.zsh"
     "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/local_setup.zsh"
     )
@@ -125,7 +130,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE FILE FILES
+  file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE FILE FILES
     "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/setup.fish"
     "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/local_setup.fish"
     )
@@ -140,12 +145,13 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE FILE FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/.rosinstall")
+  file(INSTALL DESTINATION "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/install" TYPE FILE FILES "/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/gtest/cmake_install.cmake")
+  include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/allegro_hand_description/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/bimanual_panda_impedance/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/Bimanual_Robot_Project_MuJoCo/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/franka_ros/franka_ros/cmake_install.cmake")
@@ -160,11 +166,13 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/controller_manager_msgs/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/franka_ros/franka_msgs/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/mujoco_ros_pkgs/mujoco_ros_msgs/cmake_install.cmake")
+  include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/task_control/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/control_msgs/control_msgs/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/hardware_interface/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/combined_robot_hw/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/controller_interface/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/boost_sml/cmake_install.cmake")
+  include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/arm_control/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/controller_manager/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/controller_manager_tests/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/combined_robot_hw_tests/cmake_install.cmake")
@@ -173,6 +181,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_controllers/forward_command_controller/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_controllers/position_controllers/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/franka_ros/franka_gripper/cmake_install.cmake")
+  include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/gripper_control/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_controllers/imu_sensor_controller/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_controllers/joint_state_controller/cmake_install.cmake")
   include("/uolstore/home/users/sc23j3k/bimanual_control/bimanual_ws/build/ros_control/transmission_interface/cmake_install.cmake")

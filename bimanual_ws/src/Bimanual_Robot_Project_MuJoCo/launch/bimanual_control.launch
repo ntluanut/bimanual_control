@@ -32,4 +32,23 @@ output="screen" />
 ns="right"
 args="joint_state_controller right_bottle_pose_controller"
 output="screen" />
+
+<rosparam command="load" file="$(find bimanual_robot_project_mujoco)/config/left_hand_controller.yaml" ns="/left"/>
+<node pkg="controller_manager" type="spawner" name="left_hand_controller_spawner"
+      ns="left" args="hand_controller" output="screen"/>
+
+<node pkg="gripper_control" type="gripper_node.py" name="left_gripper_node" output="screen">
+  <param name="arm_name" value="left" />
+  <param name="hand_controller" value="/left/hand_controller" />
+</node>
+
+<node pkg="gripper_control" type="gripper_node.py" name="right_gripper_node" output="screen">
+  <param name="arm_name" value="right" />
+  <param name="hand_controller" value="/right/right_hand_controller" />
+</node>
+
+<rosparam command="load" file="$(find bimanual_robot_project_mujoco)/config/right_hand_controller.yaml" ns="/right"/>
+<node pkg="controller_manager" type="spawner" name="right_hand_controller_spawner"
+      ns="right" output="screen" args="right_hand_controller"/>
+
 </launch>
