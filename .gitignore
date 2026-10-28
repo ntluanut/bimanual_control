@@ -1,1 +1,6 @@
 *.sif
+bimanual_ws/devel/
+bimanual_ws/build/
+bimanual_ws/install/
+__pycache__/
+*.pyc
