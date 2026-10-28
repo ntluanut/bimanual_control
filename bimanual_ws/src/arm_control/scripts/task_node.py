@@ -68,6 +68,19 @@ def get_target_pose(arm_param=None):
 
     return task, arm, x,y,z
 
+
+
+
+def rotate_cap(move_ori, open_gripper, close_gripper,arm="left",angle_deg = 90):
+    rot = move_ori(arm,*quat_calc("z", math.radians(angle_deg)))
+    if rot.reached:
+        open_gripper()
+    
+    rot_back = move_ori(arm,*quat_calc("z", math.radians(-angle_deg)))
+    if rot_back.reached:
+        close_gripper()
+
+
 def main():
     global model, data, get_body
 
@@ -78,6 +91,7 @@ def main():
 
     print("node started")
 
+    #service
     rospy.wait_for_service("/left/gripper/open", timeout=30.0)
     rospy.wait_for_service("/left/gripper/close", timeout=30.0)
     rospy.wait_for_service("/arm_node/move_to_target")
@@ -90,24 +104,28 @@ def main():
 
     get_body = rospy.ServiceProxy("/mujoco_server/get_body_state", GetBodyState)
 
+    #Service for gripper
+
+    #left hand gripper
     open_gripper = rospy.ServiceProxy("/left/gripper/open", Trigger)
     close_gripper = rospy.ServiceProxy("/left/gripper/close", Trigger)
-
+    
+    #right hand gripper
     open_gripper_right = rospy.ServiceProxy("/right/gripper/open", Trigger)
     close_gripper_right = rospy.ServiceProxy("/right/gripper/close", Trigger)
 
     print("service proxies initialized")
     print("starting task")
 
+    #load target position
     task, arm, x, y, z = get_target_pose()
 
     if task == "rotate":
-        # 0.4 0.3 1
+        
         move_ori(arm, *quat_calc("z", math.radians(-45)))
         move_pos(arm, x,y,z+OFFSET)
         pos, _ = get_current_pose(arm)
         move_pos(arm, pos[0]+0.05, pos[1],pos[2])
-        
         move_ori(arm, *quat_calc("x", math.radians(90)))
         move_ori(arm, *quat_calc("z", math.radians(45)))
 
@@ -120,11 +138,13 @@ def main():
         rospy.sleep(2.0)
         pos, _ = get_current_pose(arm)
         print("lift")
-        move_pos(arm, pos[0], pos[1],pos[2]+0.3)
+        move_pos(arm, pos[0], pos[1],pos[2]+0.35)
         print("moving in left arm")
-        rospy.sleep(2.0)
+        rospy.sleep(4.0)
         pos, _ = get_current_pose(arm)
         move_pos(arm, pos[0], pos[1]+0.35,pos[2])
+        move_ori(arm, *quat_calc("z", math.radians(-5)))
+        
 
         #left arm
         task, arm, lx, ly, lz = get_target_pose("left")
@@ -132,22 +152,10 @@ def main():
         move_pos("left",lx,ly,lz+OFFSET)
         move_pos("left",lx,ly,lz+OFFSET-0.2)
         close_gripper()
-        move_ori("left",*quat_calc("z", math.radians(90)))
-        rospy.sleep(3.0)
-        open_gripper()
-        rospy.sleep(3.0)
-        move_ori("left",*quat_calc("z", math.radians(-90)))
-        rospy.sleep(3.0)
-        close_gripper()
-        rospy.sleep(3.0)
-        move_ori("left",*quat_calc("z", math.radians(90)))
-        rospy.sleep(3.0)
-        open_gripper()
-        rospy.sleep(3.0)
-        move_ori("left",*quat_calc("z", math.radians(-90)))
-        rospy.sleep(3.0)
-        close_gripper()
-        rospy.sleep(3.0)
+        rospy.sleep(2.0)
+
+        for _ in range(5):
+            rotate_cap()
 
 
         
