@@ -68,16 +68,17 @@ def get_target_pose(arm_param=None):
 
     return task, arm, x,y,z
 
-def initialize_arm():
 
 
-def rotate_cap(arm="left",angle_deg = 90):
-    move_ori(arm,*quat_calc("z", math.radians(angle_deg)))
-    rospy.sleep(8.0)
-    open_gripper()
-    move_ori(arm,*quat_calc("z", math.radians(-angle_deg)))
-    rospy.sleep(9.0)
-    close_gripper()
+
+def rotate_cap(move_ori, open_gripper, close_gripper,arm="left",angle_deg = 90):
+    rot = move_ori(arm,*quat_calc("z", math.radians(angle_deg)))
+    if rot.reached:
+        open_gripper()
+    
+    rot_back = move_ori(arm,*quat_calc("z", math.radians(-angle_deg)))
+    if rot_back.reached:
+        close_gripper()
 
 
 def main():
@@ -90,6 +91,7 @@ def main():
 
     print("node started")
 
+    #service
     rospy.wait_for_service("/left/gripper/open", timeout=30.0)
     rospy.wait_for_service("/left/gripper/close", timeout=30.0)
     rospy.wait_for_service("/arm_node/move_to_target")
@@ -102,19 +104,23 @@ def main():
 
     get_body = rospy.ServiceProxy("/mujoco_server/get_body_state", GetBodyState)
 
+    #Service for gripper
+
+    #left hand gripper
     open_gripper = rospy.ServiceProxy("/left/gripper/open", Trigger)
     close_gripper = rospy.ServiceProxy("/left/gripper/close", Trigger)
-
+    
+    #right hand gripper
     open_gripper_right = rospy.ServiceProxy("/right/gripper/open", Trigger)
     close_gripper_right = rospy.ServiceProxy("/right/gripper/close", Trigger)
 
     print("service proxies initialized")
     print("starting task")
 
+    #load target position
     task, arm, x, y, z = get_target_pose()
 
     if task == "rotate":
-        # 0.4 0.3 1
         
         move_ori(arm, *quat_calc("z", math.radians(-45)))
         move_pos(arm, x,y,z+OFFSET)
