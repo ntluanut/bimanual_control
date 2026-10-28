@@ -68,6 +68,18 @@ def get_target_pose(arm_param=None):
 
     return task, arm, x,y,z
 
+def initialize_arm():
+
+
+def rotate_cap(arm="left",angle_deg = 90):
+    move_ori(arm,*quat_calc("z", math.radians(angle_deg)))
+    rospy.sleep(8.0)
+    open_gripper()
+    move_ori(arm,*quat_calc("z", math.radians(-angle_deg)))
+    rospy.sleep(9.0)
+    close_gripper()
+
+
 def main():
     global model, data, get_body
 
@@ -103,11 +115,11 @@ def main():
 
     if task == "rotate":
         # 0.4 0.3 1
+        
         move_ori(arm, *quat_calc("z", math.radians(-45)))
         move_pos(arm, x,y,z+OFFSET)
         pos, _ = get_current_pose(arm)
         move_pos(arm, pos[0]+0.05, pos[1],pos[2])
-        
         move_ori(arm, *quat_calc("x", math.radians(90)))
         move_ori(arm, *quat_calc("z", math.radians(45)))
 
@@ -120,12 +132,13 @@ def main():
         rospy.sleep(2.0)
         pos, _ = get_current_pose(arm)
         print("lift")
-        move_pos(arm, pos[0], pos[1],pos[2]+0.3)
+        move_pos(arm, pos[0], pos[1],pos[2]+0.35)
         print("moving in left arm")
         rospy.sleep(4.0)
         pos, _ = get_current_pose(arm)
         move_pos(arm, pos[0], pos[1]+0.35,pos[2])
         move_ori(arm, *quat_calc("z", math.radians(-5)))
+        
 
         #left arm
         task, arm, lx, ly, lz = get_target_pose("left")
@@ -134,28 +147,9 @@ def main():
         move_pos("left",lx,ly,lz+OFFSET-0.2)
         close_gripper()
         rospy.sleep(2.0)
-        move_ori("left",*quat_calc("z", math.radians(90)))
-        rospy.sleep(8.0)
-        open_gripper()
-        move_ori("left",*quat_calc("z", math.radians(-90)))
-        rospy.sleep(8.0)
-        close_gripper()
-        rospy.sleep(2.0)
-        move_ori("left",*quat_calc("z", math.radians(90)))
-        rospy.sleep(8.0)
-        open_gripper()
-        move_ori("left",*quat_calc("z", math.radians(-90)))
-        rospy.sleep(8.0)
-        close_gripper()
-        rospy.sleep(2.0)
-        move_ori("left",*quat_calc("z", math.radians(90)))
-        rospy.sleep(8.0)
-        open_gripper()
-        move_ori("left",*quat_calc("z", math.radians(-90)))
-        rospy.sleep(8.0)
-        close_gripper()
-        rospy.sleep(2.0)
-        move_ori("left",*quat_calc("z", math.radians(90)))
+
+        for _ in range(5):
+            rotate_cap()
 
 
         

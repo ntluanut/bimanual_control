@@ -17,7 +17,8 @@ command="$(find xacro)/xacro $(find bimanual_robot_project_mujoco)/urdf/bimanual
 value="$(find mujoco_ros)/config/rosconsole.config"/>
 
 <include file="$(find mujoco_ros)/launch/launch_server.launch" pass_all_args="true">
-<arg name="use_sim_time" value="true" />
+  <arg name="use_sim_time" value="true" />
+  <arg name="realtime" value="-1" />
 </include>
 
 
@@ -50,5 +51,7 @@ output="screen" />
 <rosparam command="load" file="$(find bimanual_robot_project_mujoco)/config/right_hand_controller.yaml" ns="/right"/>
 <node pkg="controller_manager" type="spawner" name="right_hand_controller_spawner"
       ns="right" output="screen" args="right_hand_controller"/>
+
+
 
 </launch>
